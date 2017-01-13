@@ -1,0 +1,1 @@
+/home/osnapdev/postgres/src/interfaces/ecpg/test/connect/Makefile

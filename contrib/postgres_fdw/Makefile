@@ -1,0 +1,1 @@
+/home/osnapdev/postgres/contrib/postgres_fdw/Makefile

@@ -1,0 +1,1 @@
+/home/osnapdev/postgres/contrib/oid2name/Makefile

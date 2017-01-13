@@ -1,0 +1,1 @@
+/home/osnapdev/postgres/src/interfaces/ecpg/test/compat_informix/Makefile
