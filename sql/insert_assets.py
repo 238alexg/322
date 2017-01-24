@@ -46,9 +46,9 @@ with open('osnap_legacy/MB005_inventory.csv') as csvfile:
         cur.execute("INSERT INTO assets (product_fk, asset_tag, description, alt_description) VALUES (%s, %s, %s, %s)", (H20, row[0],row[1],row[3]))
 print("MB005 assets added!")
 
-# Read in data from MB005_inventory
+# Read in data from NC_inventory
 firstline = True
-with open('osnap_legacy/MB005_inventory.csv') as csvfile:
+with open('osnap_legacy/NC_inventory.csv') as csvfile:
     cur.execute("SELECT product_pk FROM products WHERE description = 'notepad'")
     notepad = cur.fetchone()[0]
     reader = csv.reader(csvfile, delimiter=',')
@@ -62,20 +62,20 @@ with open('osnap_legacy/MB005_inventory.csv') as csvfile:
         elif (i == 1):
         	cur.execute("INSERT INTO assets (product_fk, asset_tag, description, alt_description) VALUES (%s, %s, %s, %s)", (H20, row[0],row[1],row[3]))
         else:
-        	cur.execute("INSERT INTO assets (product_fk, asset_tag, description, alt_description) VALUES (%s, %s, %s)", (row[0],row[1],row[3]))
+        	cur.execute("INSERT INTO assets (asset_tag, description, alt_description) VALUES (%s, %s, %s)", (row[0],row[1],row[3]))
         i += 1
-print("MB005 assets added!")
+print("NC assets added!")
 
 # Read in data from SPNV_inventory
 firstline = True
-with open('osnap_legacy/MB005_inventory.csv') as csvfile:
+with open('osnap_legacy/SPNV_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     for row in reader:
         if (firstline):
             firstline = False
             continue
         cur.execute("INSERT INTO assets (asset_tag, description, alt_description) VALUES (%s, %s, %s)", (row[0],row[1],row[3]))
-print("MB005 assets added!")
+print("SPNV assets added!")
 
 
 conn.commit()
