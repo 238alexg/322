@@ -1,1 +1,0 @@
-/home/osnapdev/322/src/backend/storage/lmgr/lwlocknames.h

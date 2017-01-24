@@ -1,1 +1,0 @@
-/home/osnapdev/322/postgres/contrib/pg_stat_statements/Makefile

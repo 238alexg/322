@@ -1,1 +1,0 @@
-/home/osnapdev/322/postgres/src/test/locale/de_DE.ISO8859-1/Makefile
