@@ -1,8 +1,8 @@
-top_srcdir   = /home/osnapdev/httpd-2.4.25
-top_builddir = /home/osnapdev/httpd-2.4.25
-srcdir       = /home/osnapdev/httpd-2.4.25/modules/slotmem
-builddir     = /home/osnapdev/httpd-2.4.25/modules/slotmem
-VPATH        = /home/osnapdev/httpd-2.4.25/modules/slotmem
+top_srcdir   = /home/osnapdev/322/httpd-2.4.25
+top_builddir = /home/osnapdev/322/httpd-2.4.25
+srcdir       = /home/osnapdev/322/httpd-2.4.25/modules/slotmem
+builddir     = /home/osnapdev/322/httpd-2.4.25/modules/slotmem
+VPATH        = /home/osnapdev/322/httpd-2.4.25/modules/slotmem
 # a modules Makefile has no explicit targets -- they will be defined by
 # whatever modules are enabled. just grab special.mk to deal with this.
 include $(top_srcdir)/build/special.mk

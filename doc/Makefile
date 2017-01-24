@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/doc/Makefile
+/home/osnapdev/322/postgres/doc/Makefile

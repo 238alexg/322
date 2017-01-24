@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/regress/GNUmakefile
+/home/osnapdev/322/postgres/src/test/regress/GNUmakefile

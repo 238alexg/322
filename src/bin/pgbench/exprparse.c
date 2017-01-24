@@ -68,7 +68,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:339  */
+#line 1 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:339  */
 
 /*-------------------------------------------------------------------------
  *
@@ -144,7 +144,7 @@ extern int expr_yydebug;
 
 union YYSTYPE
 {
-#line 40 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:355  */
+#line 40 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:355  */
 
 	int64		ival;
 	double		dval;
@@ -1258,104 +1258,104 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 63 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 63 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { expr_parse_result = (yyvsp[0].expr); }
 #line 1264 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 65 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 65 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.elist) = NULL; }
 #line 1270 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 66 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 66 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.elist) = make_elist((yyvsp[0].expr), NULL); }
 #line 1276 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 67 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 67 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.elist) = make_elist((yyvsp[0].expr), (yyvsp[-2].elist)); }
 #line 1282 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 70 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 70 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = (yyvsp[-1].expr); }
 #line 1288 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 71 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 71 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = (yyvsp[0].expr); }
 #line 1294 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 72 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 72 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "-",
 										   make_integer_constant(0), (yyvsp[0].expr)); }
 #line 1301 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 74 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 74 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "+", (yyvsp[-2].expr), (yyvsp[0].expr)); }
 #line 1307 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 75 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 75 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "-", (yyvsp[-2].expr), (yyvsp[0].expr)); }
 #line 1313 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 76 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 76 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "*", (yyvsp[-2].expr), (yyvsp[0].expr)); }
 #line 1319 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 77 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 77 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "/", (yyvsp[-2].expr), (yyvsp[0].expr)); }
 #line 1325 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 78 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 78 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_op(yyscanner, "%", (yyvsp[-2].expr), (yyvsp[0].expr)); }
 #line 1331 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 79 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 79 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_integer_constant((yyvsp[0].ival)); }
 #line 1337 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 80 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 80 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_double_constant((yyvsp[0].dval)); }
 #line 1343 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 81 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 81 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_variable((yyvsp[0].str)); }
 #line 1349 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 82 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 82 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.expr) = make_func(yyscanner, (yyvsp[-3].ival), (yyvsp[-1].elist)); }
 #line 1355 "exprparse.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 85 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
+#line 85 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1646  */
     { (yyval.ival) = find_func(yyscanner, (yyvsp[0].str)); pg_free((yyvsp[0].str)); }
 #line 1361 "exprparse.c" /* yacc.c:1646  */
     break;
@@ -1589,7 +1589,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 88 "/home/osnapdev/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1906  */
+#line 88 "/home/osnapdev/322/postgres/src/bin/pgbench/exprparse.y" /* yacc.c:1906  */
 
 
 static PgBenchExpr *

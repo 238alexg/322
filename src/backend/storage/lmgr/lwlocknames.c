@@ -44,5 +44,7 @@ char *MainLWLockNames[] = {
 	"ReplicationOriginLock",
 	"MultiXactTruncationLock",
 	"OldSnapshotTimeMapLock",
-	"BackendRandomLock"
+	"BackendRandomLock",
+	"LogicalRepLauncherLock",
+	"LogicalRepWorkerLock"
 };

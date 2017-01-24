@@ -172,7 +172,7 @@ extern int plpgsql_yydebug;
 
 union YYSTYPE
 {
-#line 117 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1909  */
+#line 117 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1909  */
 
 		core_YYSTYPE			core_yystype;
 		/* these fields must match core_YYSTYPE: */

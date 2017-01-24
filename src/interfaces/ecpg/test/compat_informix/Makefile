@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/interfaces/ecpg/test/compat_informix/Makefile
+/home/osnapdev/322/postgres/src/interfaces/ecpg/test/compat_informix/Makefile

@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/locale/koi8-to-win1251/Makefile
+/home/osnapdev/322/postgres/src/test/locale/koi8-to-win1251/Makefile

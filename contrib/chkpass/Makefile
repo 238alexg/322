@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/contrib/chkpass/Makefile
+/home/osnapdev/322/postgres/contrib/chkpass/Makefile

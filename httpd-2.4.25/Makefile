@@ -1,8 +1,8 @@
-top_srcdir   = /home/osnapdev/httpd-2.4.25
-top_builddir = /home/osnapdev/httpd-2.4.25
-srcdir       = /home/osnapdev/httpd-2.4.25
-builddir     = /home/osnapdev/httpd-2.4.25
-VPATH        = /home/osnapdev/httpd-2.4.25
+top_srcdir   = /home/osnapdev/322/httpd-2.4.25
+top_builddir = /home/osnapdev/322/httpd-2.4.25
+srcdir       = /home/osnapdev/322/httpd-2.4.25
+builddir     = /home/osnapdev/322/httpd-2.4.25
+VPATH        = /home/osnapdev/322/httpd-2.4.25
 
 SUBDIRS = srclib os server modules support
 CLEAN_SUBDIRS = test

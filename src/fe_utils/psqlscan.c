@@ -2876,9 +2876,9 @@ static yyconst YY_CHAR yy_ec[256] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 1 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 
-#line 42 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 42 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 #include "fe_utils/psqlscan_int.h"
 
 /*
@@ -3359,7 +3359,7 @@ YY_DECL
 		}
 
 	{
-#line 356 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 356 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 
 
 
@@ -3410,7 +3410,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 373 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 373 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/*
 					 * Note that the whitespace rule includes both true
@@ -3426,7 +3426,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 386 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 386 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					cur_state->xcdepth = 0;
 					BEGIN(xc);
@@ -3437,7 +3437,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 394 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 394 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					cur_state->xcdepth++;
 					/* Put back any characters past slash-star; see above */
@@ -3447,7 +3447,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 401 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 401 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					if (cur_state->xcdepth <= 0)
 						BEGIN(INITIAL);
@@ -3459,28 +3459,28 @@ YY_RULE_SETUP
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 409 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 409 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 413 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 413 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 417 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 417 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 421 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 421 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(xb);
 					ECHO;
@@ -3488,11 +3488,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 /* rule 9 can match eol */
-#line 426 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 426 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 426 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 426 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -3501,29 +3501,29 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
-#line 432 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 432 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 432 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 432 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
-#line 436 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 436 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 436 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 436 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 440 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 440 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Hexadecimal bit type.
 					 * At some point we should simply pass the string
@@ -3537,11 +3537,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
-#line 451 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 451 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 451 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 451 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -3550,7 +3550,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 457 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 457 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(1);	/* eat only 'n' this time */
 					ECHO;
@@ -3558,7 +3558,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 462 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 462 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					if (cur_state->std_strings)
 						BEGIN(xq);
@@ -3569,7 +3569,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 469 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 469 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(xe);
 					ECHO;
@@ -3577,7 +3577,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 473 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 473 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(xus);
 					ECHO;
@@ -3585,11 +3585,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 /* rule 22 can match eol */
-#line 478 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 478 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 478 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 478 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -3598,11 +3598,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 /* rule 24 can match eol */
-#line 484 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 484 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
-#line 484 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 484 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* throw back all but the quote */
 					yyless(1);
@@ -3613,17 +3613,17 @@ YY_RULE_SETUP
 case 26:
 /* rule 26 can match eol */
 YY_RULE_SETUP
-#line 490 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 490 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 27:
-#line 494 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 494 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 494 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 494 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(0);
 					BEGIN(INITIAL);
@@ -3633,7 +3633,7 @@ YY_RULE_SETUP
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 499 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 499 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(INITIAL);
 					ECHO;
@@ -3641,7 +3641,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 503 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 503 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3649,7 +3649,7 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 506 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 506 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3657,21 +3657,21 @@ YY_RULE_SETUP
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 509 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 509 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 512 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 512 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 515 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 515 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3679,21 +3679,21 @@ YY_RULE_SETUP
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 518 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 518 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 521 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 521 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 524 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 524 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3701,14 +3701,14 @@ YY_RULE_SETUP
 case 38:
 /* rule 38 can match eol */
 YY_RULE_SETUP
-#line 527 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 527 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 530 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 530 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* This is only needed for \ just before EOF */
 					ECHO;
@@ -3716,7 +3716,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 535 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 535 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					cur_state->dolqstart = pg_strdup(yytext);
 					BEGIN(xdolq);
@@ -3725,7 +3725,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 540 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 540 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* throw back all but the initial "$" */
 					yyless(1);
@@ -3734,7 +3734,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 545 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 545 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					if (strcmp(yytext, cur_state->dolqstart) == 0)
 					{
@@ -3757,21 +3757,21 @@ YY_RULE_SETUP
 case 43:
 /* rule 43 can match eol */
 YY_RULE_SETUP
-#line 563 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 563 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 566 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 566 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 569 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 569 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* This is only needed for $ inside the quoted text */
 					ECHO;
@@ -3779,7 +3779,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 574 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 574 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(xd);
 					ECHO;
@@ -3787,7 +3787,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 578 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 578 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(xui);
 					ECHO;
@@ -3795,7 +3795,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 582 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 582 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(INITIAL);
 					ECHO;
@@ -3803,7 +3803,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 586 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 586 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(1);
 					BEGIN(xuiend);
@@ -3813,17 +3813,17 @@ YY_RULE_SETUP
 case 50:
 /* rule 50 can match eol */
 YY_RULE_SETUP
-#line 591 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 591 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 51:
-#line 595 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 595 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 595 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 595 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					yyless(0);
 					BEGIN(INITIAL);
@@ -3833,7 +3833,7 @@ YY_RULE_SETUP
 case 53:
 /* rule 53 can match eol */
 YY_RULE_SETUP
-#line 600 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 600 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					BEGIN(INITIAL);
 					ECHO;
@@ -3841,7 +3841,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 604 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 604 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3849,14 +3849,14 @@ YY_RULE_SETUP
 case 55:
 /* rule 55 can match eol */
 YY_RULE_SETUP
-#line 607 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 607 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 611 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 611 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* throw back all but the initial u/U */
 					yyless(1);
@@ -3865,56 +3865,56 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 617 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 617 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 621 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 621 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 625 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 625 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 629 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 629 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 633 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 633 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 637 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 637 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 641 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 641 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 645 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 645 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -3926,7 +3926,7 @@ YY_RULE_SETUP
 	 */
 case 65:
 YY_RULE_SETUP
-#line 655 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 655 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					cur_state->paren_depth++;
 					ECHO;
@@ -3934,7 +3934,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 660 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 660 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					if (cur_state->paren_depth > 0)
 						cur_state->paren_depth--;
@@ -3943,7 +3943,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 666 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 666 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 					if (cur_state->paren_depth == 0)
@@ -3960,7 +3960,7 @@ YY_RULE_SETUP
 	 */
 case 68:
 YY_RULE_SETUP
-#line 681 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 681 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Force a semicolon or colon into the query buffer */
 					psqlscan_emit(cur_state, yytext + 1, 1);
@@ -3968,7 +3968,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 686 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 686 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Terminate lexing temporarily */
 					cur_state->start_state = YY_START;
@@ -3977,7 +3977,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 692 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 692 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Possible psql variable substitution */
 					char	   *varname;
@@ -4026,14 +4026,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 738 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 738 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					psqlscan_escape_variable(cur_state, yytext, yyleng, false);
 				}
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 742 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 742 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					psqlscan_escape_variable(cur_state, yytext, yyleng, true);
 				}
@@ -4044,7 +4044,7 @@ YY_RULE_SETUP
 	 */
 case 73:
 YY_RULE_SETUP
-#line 751 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 751 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Throw back everything but the colon */
 					yyless(1);
@@ -4053,7 +4053,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 757 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 757 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* Throw back everything but the colon */
 					yyless(1);
@@ -4065,14 +4065,14 @@ YY_RULE_SETUP
 	 */
 case 75:
 YY_RULE_SETUP
-#line 767 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 767 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 771 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 771 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/*
 					 * Check for embedded slash-star or dash-dash; those
@@ -4129,28 +4129,28 @@ YY_RULE_SETUP
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 825 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 825 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 829 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 829 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 832 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 832 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 835 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 835 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* throw back the .., and treat as integer */
 					yyless(yyleng - 2);
@@ -4159,14 +4159,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 840 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 840 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 843 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 843 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/*
 					 * throw back the [Ee], and treat as {decimal}.  Note
@@ -4180,7 +4180,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 853 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 853 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					/* throw back the [Ee][+-], and proceed as above */
 					yyless(yyleng - 2);
@@ -4189,14 +4189,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 860 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 860 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 864 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 864 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					ECHO;
 				}
@@ -4213,7 +4213,7 @@ case YY_STATE_EOF(xui):
 case YY_STATE_EOF(xuiend):
 case YY_STATE_EOF(xus):
 case YY_STATE_EOF(xusend):
-#line 868 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 868 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 {
 					if (cur_state->buffer_stack == NULL)
 					{
@@ -4231,7 +4231,7 @@ case YY_STATE_EOF(xusend):
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 883 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 883 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 4238 "psqlscan.c"
@@ -5350,7 +5350,7 @@ void psql_yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 883 "/home/osnapdev/postgres/src/fe_utils/psqlscan.l"
+#line 883 "/home/osnapdev/322/postgres/src/fe_utils/psqlscan.l"
 
 
 

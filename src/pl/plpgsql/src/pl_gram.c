@@ -71,7 +71,7 @@
 #define yylloc          plpgsql_yylloc
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:339  */
+#line 1 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:339  */
 
 /*-------------------------------------------------------------------------
  *
@@ -345,7 +345,7 @@ extern int plpgsql_yydebug;
 
 union YYSTYPE
 {
-#line 117 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:355  */
+#line 117 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:355  */
 
 		core_YYSTYPE			core_yystype;
 		/* these fields must match core_YYSTYPE: */
@@ -2071,7 +2071,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 352 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 352 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_parse_result = (PLpgSQL_stmt_block *) (yyvsp[-1].stmt);
 					}
@@ -2079,7 +2079,7 @@ yyreduce:
     break;
 
   case 5:
-#line 362 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 362 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_DumpExecTree = true;
 					}
@@ -2087,7 +2087,7 @@ yyreduce:
     break;
 
   case 6:
-#line 366 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 366 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						if (strcmp((yyvsp[0].str), "on") == 0)
 							plpgsql_curr_compile->print_strict_params = true;
@@ -2100,7 +2100,7 @@ yyreduce:
     break;
 
   case 7:
-#line 375 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 375 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_curr_compile->resolve_option = PLPGSQL_RESOLVE_ERROR;
 					}
@@ -2108,7 +2108,7 @@ yyreduce:
     break;
 
   case 8:
-#line 379 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 379 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_curr_compile->resolve_option = PLPGSQL_RESOLVE_VARIABLE;
 					}
@@ -2116,7 +2116,7 @@ yyreduce:
     break;
 
   case 9:
-#line 383 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 383 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_curr_compile->resolve_option = PLPGSQL_RESOLVE_COLUMN;
 					}
@@ -2124,7 +2124,7 @@ yyreduce:
     break;
 
   case 10:
-#line 389 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 389 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.str) = (yyvsp[0].word).ident;
 				}
@@ -2132,7 +2132,7 @@ yyreduce:
     break;
 
   case 11:
-#line 393 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 393 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.str) = pstrdup((yyvsp[0].keyword));
 				}
@@ -2140,7 +2140,7 @@ yyreduce:
     break;
 
   case 14:
-#line 402 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 402 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_block *new;
 
@@ -2163,7 +2163,7 @@ yyreduce:
     break;
 
   case 15:
-#line 424 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 424 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* done with decls, so resume identifier lookup */
 						plpgsql_IdentifierLookup = IDENTIFIER_LOOKUP_NORMAL;
@@ -2175,7 +2175,7 @@ yyreduce:
     break;
 
   case 16:
-#line 432 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 432 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_IdentifierLookup = IDENTIFIER_LOOKUP_NORMAL;
 						(yyval.declhdr).label	  = (yyvsp[-1].str);
@@ -2186,7 +2186,7 @@ yyreduce:
     break;
 
   case 17:
-#line 439 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 439 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_IdentifierLookup = IDENTIFIER_LOOKUP_NORMAL;
 						(yyval.declhdr).label	  = (yyvsp[-2].str);
@@ -2197,7 +2197,7 @@ yyreduce:
     break;
 
   case 18:
-#line 448 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 448 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* Forget any variables created before block */
 						plpgsql_add_initdatums(NULL);
@@ -2211,7 +2211,7 @@ yyreduce:
     break;
 
   case 22:
-#line 465 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 465 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* We allow useless extra DECLAREs */
 					}
@@ -2219,7 +2219,7 @@ yyreduce:
     break;
 
   case 23:
-#line 469 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 469 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/*
 						 * Throw a helpful error if user tries to put block
@@ -2234,7 +2234,7 @@ yyreduce:
     break;
 
   case 24:
-#line 482 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 482 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_variable	*var;
 
@@ -2293,7 +2293,7 @@ yyreduce:
     break;
 
   case 25:
-#line 537 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 537 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_ns_additem((yyvsp[-1].nsitem)->itemtype,
 										   (yyvsp[-1].nsitem)->itemno, (yyvsp[-4].varname).name);
@@ -2302,13 +2302,13 @@ yyreduce:
     break;
 
   case 26:
-#line 542 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 542 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { plpgsql_ns_push((yyvsp[-2].varname).name, PLPGSQL_LABEL_OTHER); }
 #line 2308 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 544 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 544 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_var *new;
 						PLpgSQL_expr *curname_def;
@@ -2360,7 +2360,7 @@ yyreduce:
     break;
 
   case 28:
-#line 594 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 594 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.ival) = 0;
 					}
@@ -2368,7 +2368,7 @@ yyreduce:
     break;
 
   case 29:
-#line 598 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 598 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.ival) = CURSOR_OPT_NO_SCROLL;
 					}
@@ -2376,7 +2376,7 @@ yyreduce:
     break;
 
   case 30:
-#line 602 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 602 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.ival) = CURSOR_OPT_SCROLL;
 					}
@@ -2384,7 +2384,7 @@ yyreduce:
     break;
 
   case 31:
-#line 608 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 608 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.expr) = read_sql_stmt("");
 					}
@@ -2392,7 +2392,7 @@ yyreduce:
     break;
 
   case 32:
-#line 614 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 614 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.datum) = NULL;
 					}
@@ -2400,7 +2400,7 @@ yyreduce:
     break;
 
   case 33:
-#line 618 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 618 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_row *new;
 						int i;
@@ -2431,7 +2431,7 @@ yyreduce:
     break;
 
   case 34:
-#line 647 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 647 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = list_make1((yyvsp[0].datum));
 					}
@@ -2439,7 +2439,7 @@ yyreduce:
     break;
 
   case 35:
-#line 651 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 651 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = lappend((yyvsp[-2].list), (yyvsp[0].datum));
 					}
@@ -2447,7 +2447,7 @@ yyreduce:
     break;
 
   case 36:
-#line 657 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 657 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.datum) = (PLpgSQL_datum *)
 							plpgsql_build_variable((yyvsp[-1].varname).name, (yyvsp[-1].varname).lineno,
@@ -2457,7 +2457,7 @@ yyreduce:
     break;
 
   case 39:
-#line 668 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 668 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_nsitem *nsi;
 
@@ -2476,7 +2476,7 @@ yyreduce:
     break;
 
   case 40:
-#line 683 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 683 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_nsitem *nsi;
 
@@ -2495,7 +2495,7 @@ yyreduce:
     break;
 
   case 41:
-#line 698 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 698 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_nsitem *nsi;
 
@@ -2525,7 +2525,7 @@ yyreduce:
     break;
 
   case 42:
-#line 726 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 726 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.varname).name = (yyvsp[0].word).ident;
 						(yyval.varname).lineno = plpgsql_location_to_lineno((yylsp[0]));
@@ -2557,7 +2557,7 @@ yyreduce:
     break;
 
   case 43:
-#line 754 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 754 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.varname).name = pstrdup((yyvsp[0].keyword));
 						(yyval.varname).lineno = plpgsql_location_to_lineno((yylsp[0]));
@@ -2589,19 +2589,19 @@ yyreduce:
     break;
 
   case 44:
-#line 784 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 784 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.boolean) = false; }
 #line 2595 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 786 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 786 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.boolean) = true; }
 #line 2601 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 790 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 790 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/*
 						 * If there's a lookahead token, read_datatype
@@ -2614,13 +2614,13 @@ yyreduce:
     break;
 
   case 47:
-#line 801 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 801 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.oid) = InvalidOid; }
 #line 2620 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 803 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 803 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.oid) = get_collation_oid(list_make1(makeString((yyvsp[0].word).ident)),
 											   false);
@@ -2629,7 +2629,7 @@ yyreduce:
     break;
 
   case 49:
-#line 808 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 808 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.oid) = get_collation_oid(list_make1(makeString(pstrdup((yyvsp[0].keyword)))),
 											   false);
@@ -2638,7 +2638,7 @@ yyreduce:
     break;
 
   case 50:
-#line 813 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 813 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.oid) = get_collation_oid((yyvsp[0].cword).idents, false);
 					}
@@ -2646,25 +2646,25 @@ yyreduce:
     break;
 
   case 51:
-#line 819 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 819 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.boolean) = false; }
 #line 2652 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 821 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 821 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.boolean) = true; }
 #line 2658 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 825 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 825 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = NULL; }
 #line 2664 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 827 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 827 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.expr) = read_sql_expression(';', ";");
 					}
@@ -2672,13 +2672,13 @@ yyreduce:
     break;
 
   case 59:
-#line 846 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 846 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.list) = NIL; }
 #line 2678 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 848 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 848 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* don't bother linking null statements into list */
 						if ((yyvsp[0].stmt) == NULL)
@@ -2690,133 +2690,133 @@ yyreduce:
     break;
 
   case 61:
-#line 858 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 858 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[-1].stmt); }
 #line 2696 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 860 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 860 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2702 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 862 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 862 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2708 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 864 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 864 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2714 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 866 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 866 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2720 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 868 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 868 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2726 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 870 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 870 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2732 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 872 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 872 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2738 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 874 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 874 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2744 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 876 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 876 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2750 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 878 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 878 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2756 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 880 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 880 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2762 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 882 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 882 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2768 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 884 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 884 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2774 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 886 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 886 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2780 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 888 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 888 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2786 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 890 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 890 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2792 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 892 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 892 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2798 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 894 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 894 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2804 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 896 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 896 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2810 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 898 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 898 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.stmt) = (yyvsp[0].stmt); }
 #line 2816 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 902 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 902 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_perform *new;
 
@@ -2831,7 +2831,7 @@ yyreduce:
     break;
 
   case 83:
-#line 915 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 915 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_assign *new;
 
@@ -2847,7 +2847,7 @@ yyreduce:
     break;
 
   case 84:
-#line 929 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 929 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_getdiag	 *new;
 						ListCell		*lc;
@@ -2911,7 +2911,7 @@ yyreduce:
     break;
 
   case 85:
-#line 991 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 991 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.boolean) = false;
 					}
@@ -2919,7 +2919,7 @@ yyreduce:
     break;
 
   case 86:
-#line 995 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 995 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.boolean) = false;
 					}
@@ -2927,7 +2927,7 @@ yyreduce:
     break;
 
   case 87:
-#line 999 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 999 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.boolean) = true;
 					}
@@ -2935,7 +2935,7 @@ yyreduce:
     break;
 
   case 88:
-#line 1005 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1005 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = lappend((yyvsp[-2].list), (yyvsp[0].diagitem));
 					}
@@ -2943,7 +2943,7 @@ yyreduce:
     break;
 
   case 89:
-#line 1009 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1009 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = list_make1((yyvsp[0].diagitem));
 					}
@@ -2951,7 +2951,7 @@ yyreduce:
     break;
 
   case 90:
-#line 1015 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1015 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_diag_item *new;
 
@@ -2965,7 +2965,7 @@ yyreduce:
     break;
 
   case 91:
-#line 1027 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1027 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int	tok = yylex();
 
@@ -3015,7 +3015,7 @@ yyreduce:
     break;
 
   case 92:
-#line 1075 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1075 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						if ((yyvsp[0].datum)->dtype == PLPGSQL_DTYPE_ROW ||
 							(yyvsp[0].datum)->dtype == PLPGSQL_DTYPE_REC)
@@ -3030,7 +3030,7 @@ yyreduce:
     break;
 
   case 93:
-#line 1086 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1086 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* just to give a better message than "syntax error" */
 						word_is_not_variable(&((yyvsp[0].word)), (yylsp[0]));
@@ -3039,7 +3039,7 @@ yyreduce:
     break;
 
   case 94:
-#line 1091 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1091 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* just to give a better message than "syntax error" */
 						cword_is_not_variable(&((yyvsp[0].cword)), (yylsp[0]));
@@ -3048,7 +3048,7 @@ yyreduce:
     break;
 
   case 95:
-#line 1099 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1099 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						check_assignable((yyvsp[0].wdatum).datum, (yylsp[0]));
 						(yyval.datum) = (yyvsp[0].wdatum).datum;
@@ -3057,7 +3057,7 @@ yyreduce:
     break;
 
   case 96:
-#line 1104 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1104 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_arrayelem	*new;
 
@@ -3076,7 +3076,7 @@ yyreduce:
     break;
 
   case 97:
-#line 1121 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1121 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_if *new;
 
@@ -3094,7 +3094,7 @@ yyreduce:
     break;
 
   case 98:
-#line 1137 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1137 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = NIL;
 					}
@@ -3102,7 +3102,7 @@ yyreduce:
     break;
 
   case 99:
-#line 1141 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1141 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_if_elsif *new;
 
@@ -3117,7 +3117,7 @@ yyreduce:
     break;
 
   case 100:
-#line 1154 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1154 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = NIL;
 					}
@@ -3125,7 +3125,7 @@ yyreduce:
     break;
 
   case 101:
-#line 1158 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1158 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = (yyvsp[0].list);
 					}
@@ -3133,7 +3133,7 @@ yyreduce:
     break;
 
   case 102:
-#line 1164 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1164 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.stmt) = make_case((yylsp[-6]), (yyvsp[-5].expr), (yyvsp[-4].list), (yyvsp[-3].list));
 					}
@@ -3141,7 +3141,7 @@ yyreduce:
     break;
 
   case 103:
-#line 1170 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1170 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_expr *expr = NULL;
 						int	tok = yylex();
@@ -3158,7 +3158,7 @@ yyreduce:
     break;
 
   case 104:
-#line 1185 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1185 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = lappend((yyvsp[-1].list), (yyvsp[0].casewhen));
 					}
@@ -3166,7 +3166,7 @@ yyreduce:
     break;
 
   case 105:
-#line 1189 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1189 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = list_make1((yyvsp[0].casewhen));
 					}
@@ -3174,7 +3174,7 @@ yyreduce:
     break;
 
   case 106:
-#line 1195 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1195 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_case_when *new = palloc(sizeof(PLpgSQL_case_when));
 
@@ -3187,7 +3187,7 @@ yyreduce:
     break;
 
   case 107:
-#line 1206 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1206 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.list) = NIL;
 					}
@@ -3195,7 +3195,7 @@ yyreduce:
     break;
 
   case 108:
-#line 1210 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1210 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/*
 						 * proc_sect could return an empty list, but we
@@ -3212,7 +3212,7 @@ yyreduce:
     break;
 
   case 109:
-#line 1225 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1225 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_loop *new;
 
@@ -3231,7 +3231,7 @@ yyreduce:
     break;
 
   case 110:
-#line 1242 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1242 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_while *new;
 
@@ -3251,7 +3251,7 @@ yyreduce:
     break;
 
   case 111:
-#line 1260 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1260 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* This runs after we've scanned the loop body */
 						if ((yyvsp[-1].stmt)->cmd_type == PLPGSQL_STMT_FORI)
@@ -3287,7 +3287,7 @@ yyreduce:
     break;
 
   case 112:
-#line 1294 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1294 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int			tok = yylex();
 						int			tokloc = yylloc;
@@ -3533,7 +3533,7 @@ yyreduce:
     break;
 
   case 113:
-#line 1556 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1556 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.forvariable).name = NameOfDatum(&((yyvsp[0].wdatum)));
 						(yyval.forvariable).lineno = plpgsql_location_to_lineno((yylsp[0]));
@@ -3569,7 +3569,7 @@ yyreduce:
     break;
 
   case 114:
-#line 1588 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1588 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int			tok;
 
@@ -3588,7 +3588,7 @@ yyreduce:
     break;
 
   case 115:
-#line 1603 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1603 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* just to give a better message than "syntax error" */
 						cword_is_not_variable(&((yyvsp[0].cword)), (yylsp[0]));
@@ -3597,7 +3597,7 @@ yyreduce:
     break;
 
   case 116:
-#line 1610 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1610 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_foreach_a *new;
 
@@ -3641,7 +3641,7 @@ yyreduce:
     break;
 
   case 117:
-#line 1652 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1652 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.ival) = 0;
 					}
@@ -3649,7 +3649,7 @@ yyreduce:
     break;
 
   case 118:
-#line 1656 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1656 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.ival) = (yyvsp[0].ival);
 					}
@@ -3657,7 +3657,7 @@ yyreduce:
     break;
 
   case 119:
-#line 1662 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1662 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_exit *new;
 
@@ -3711,7 +3711,7 @@ yyreduce:
     break;
 
   case 120:
-#line 1714 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1714 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.boolean) = true;
 					}
@@ -3719,7 +3719,7 @@ yyreduce:
     break;
 
   case 121:
-#line 1718 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1718 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.boolean) = false;
 					}
@@ -3727,7 +3727,7 @@ yyreduce:
     break;
 
   case 122:
-#line 1724 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1724 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int	tok;
 
@@ -3755,7 +3755,7 @@ yyreduce:
     break;
 
   case 123:
-#line 1750 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1750 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_raise		*new;
 						int	tok;
@@ -3901,7 +3901,7 @@ yyreduce:
     break;
 
   case 124:
-#line 1894 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1894 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_assert		*new;
 						int	tok;
@@ -3926,7 +3926,7 @@ yyreduce:
     break;
 
   case 125:
-#line 1917 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1917 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.loop_body).stmts = (yyvsp[-4].list);
 						(yyval.loop_body).end_label = (yyvsp[-1].str);
@@ -3936,7 +3936,7 @@ yyreduce:
     break;
 
   case 126:
-#line 1935 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1935 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.stmt) = make_execsql_stmt(K_IMPORT, (yylsp[0]));
 					}
@@ -3944,7 +3944,7 @@ yyreduce:
     break;
 
   case 127:
-#line 1939 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1939 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.stmt) = make_execsql_stmt(K_INSERT, (yylsp[0]));
 					}
@@ -3952,7 +3952,7 @@ yyreduce:
     break;
 
   case 128:
-#line 1943 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1943 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int			tok;
 
@@ -3966,7 +3966,7 @@ yyreduce:
     break;
 
   case 129:
-#line 1953 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1953 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						int			tok;
 
@@ -3980,7 +3980,7 @@ yyreduce:
     break;
 
   case 130:
-#line 1965 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 1965 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_dynexecute *new;
 						PLpgSQL_expr *expr;
@@ -4045,7 +4045,7 @@ yyreduce:
     break;
 
   case 131:
-#line 2029 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2029 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_open *new;
 						int				  tok;
@@ -4124,7 +4124,7 @@ yyreduce:
     break;
 
   case 132:
-#line 2106 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2106 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_fetch *fetch = (yyvsp[-2].fetch);
 						PLpgSQL_rec	   *rec;
@@ -4158,7 +4158,7 @@ yyreduce:
     break;
 
   case 133:
-#line 2138 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2138 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_fetch *fetch = (yyvsp[-2].fetch);
 
@@ -4172,7 +4172,7 @@ yyreduce:
     break;
 
   case 134:
-#line 2150 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2150 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.fetch) = read_fetch_direction();
 					}
@@ -4180,7 +4180,7 @@ yyreduce:
     break;
 
   case 135:
-#line 2156 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2156 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_stmt_close *new;
 
@@ -4195,7 +4195,7 @@ yyreduce:
     break;
 
   case 136:
-#line 2169 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2169 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* We do not bother building a node for NULL */
 						(yyval.stmt) = NULL;
@@ -4204,7 +4204,7 @@ yyreduce:
     break;
 
   case 137:
-#line 2176 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2176 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/*
 						 * In principle we should support a cursor_variable
@@ -4230,7 +4230,7 @@ yyreduce:
     break;
 
   case 138:
-#line 2198 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2198 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* just to give a better message than "syntax error" */
 						word_is_not_variable(&((yyvsp[0].word)), (yylsp[0]));
@@ -4239,7 +4239,7 @@ yyreduce:
     break;
 
   case 139:
-#line 2203 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2203 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* just to give a better message than "syntax error" */
 						cword_is_not_variable(&((yyvsp[0].cword)), (yylsp[0]));
@@ -4248,13 +4248,13 @@ yyreduce:
     break;
 
   case 140:
-#line 2210 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2210 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.exception_block) = NULL; }
 #line 4254 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 141:
-#line 2212 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2212 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/*
 						 * We use a mid-rule action to add these
@@ -4289,7 +4289,7 @@ yyreduce:
     break;
 
   case 142:
-#line 2243 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2243 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_exception_block *new = (yyvsp[-1].exception_block);
 						new->exc_list = (yyvsp[0].list);
@@ -4300,7 +4300,7 @@ yyreduce:
     break;
 
   case 143:
-#line 2252 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2252 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 							(yyval.list) = lappend((yyvsp[-1].list), (yyvsp[0].exception));
 						}
@@ -4308,7 +4308,7 @@ yyreduce:
     break;
 
   case 144:
-#line 2256 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2256 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 							(yyval.list) = list_make1((yyvsp[0].exception));
 						}
@@ -4316,7 +4316,7 @@ yyreduce:
     break;
 
   case 145:
-#line 2262 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2262 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						PLpgSQL_exception *new;
 
@@ -4331,7 +4331,7 @@ yyreduce:
     break;
 
   case 146:
-#line 2275 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2275 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 							PLpgSQL_condition	*old;
 
@@ -4344,7 +4344,7 @@ yyreduce:
     break;
 
   case 147:
-#line 2284 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2284 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 							(yyval.condition) = (yyvsp[0].condition);
 						}
@@ -4352,7 +4352,7 @@ yyreduce:
     break;
 
   case 148:
-#line 2290 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2290 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 							if (strcmp((yyvsp[0].str), "sqlstate") != 0)
 							{
@@ -4390,31 +4390,31 @@ yyreduce:
     break;
 
   case 149:
-#line 2326 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2326 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = read_sql_expression(';', ";"); }
 #line 4396 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 150:
-#line 2330 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2330 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = read_sql_expression(']', "]"); }
 #line 4402 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 151:
-#line 2334 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2334 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = read_sql_expression(K_THEN, "THEN"); }
 #line 4408 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 152:
-#line 2338 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2338 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = read_sql_expression(K_LOOP, "LOOP"); }
 #line 4414 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 153:
-#line 2342 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2342 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_ns_push(NULL, PLPGSQL_LABEL_BLOCK);
 						(yyval.str) = NULL;
@@ -4423,7 +4423,7 @@ yyreduce:
     break;
 
   case 154:
-#line 2347 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2347 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_ns_push((yyvsp[-1].str), PLPGSQL_LABEL_BLOCK);
 						(yyval.str) = (yyvsp[-1].str);
@@ -4432,7 +4432,7 @@ yyreduce:
     break;
 
   case 155:
-#line 2354 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2354 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_ns_push(NULL, PLPGSQL_LABEL_LOOP);
 						(yyval.str) = NULL;
@@ -4441,7 +4441,7 @@ yyreduce:
     break;
 
   case 156:
-#line 2359 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2359 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						plpgsql_ns_push((yyvsp[-1].str), PLPGSQL_LABEL_LOOP);
 						(yyval.str) = (yyvsp[-1].str);
@@ -4450,7 +4450,7 @@ yyreduce:
     break;
 
   case 157:
-#line 2366 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2366 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.str) = NULL;
 					}
@@ -4458,7 +4458,7 @@ yyreduce:
     break;
 
   case 158:
-#line 2370 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2370 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						/* label validity will be checked by outer production */
 						(yyval.str) = (yyvsp[0].str);
@@ -4467,19 +4467,19 @@ yyreduce:
     break;
 
   case 159:
-#line 2377 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2377 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = NULL; }
 #line 4473 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 160:
-#line 2379 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2379 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     { (yyval.expr) = (yyvsp[0].expr); }
 #line 4479 "pl_gram.c" /* yacc.c:1646  */
     break;
 
   case 161:
-#line 2386 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2386 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.str) = (yyvsp[0].word).ident;
 					}
@@ -4487,7 +4487,7 @@ yyreduce:
     break;
 
   case 162:
-#line 2390 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2390 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						(yyval.str) = pstrdup((yyvsp[0].keyword));
 					}
@@ -4495,7 +4495,7 @@ yyreduce:
     break;
 
   case 163:
-#line 2394 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
+#line 2394 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1646  */
     {
 						if ((yyvsp[0].wdatum).ident == NULL) /* composite name not OK */
 							yyerror("syntax error");
@@ -4740,7 +4740,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 2479 "/home/osnapdev/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1906  */
+#line 2479 "/home/osnapdev/322/postgres/src/pl/plpgsql/src/pl_gram.y" /* yacc.c:1906  */
 
 
 /*

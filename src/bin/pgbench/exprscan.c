@@ -347,8 +347,8 @@ static void yynoreturn yy_fatal_error (yyconst char* msg ,yyscan_t yyscanner );
 	*yy_cp = '\0'; \
 	yyg->yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 20
-#define YY_END_OF_BUFFER 21
+#define YY_NUM_RULES 23
+#define YY_END_OF_BUFFER 24
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -356,12 +356,13 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[40] =
+static yyconst flex_int16_t yy_accept[46] =
     {   0,
-        0,    0,    0,    0,   21,    1,    2,    3,   19,   18,
-       17,    8,    9,   10,    6,    4,   11,    5,   19,    7,
-       13,   19,   16,    1,    2,   18,   15,   14,   13,    0,
-       12,   16,    0,   14,    0,   14,    0,   15,    0
+        0,    0,    0,    0,   24,    1,    3,    5,    1,   22,
+       19,   21,   10,   11,   12,    8,    6,   13,    7,   22,
+        9,   15,   22,   18,   22,    1,    1,    3,    4,   19,
+       17,   16,   15,    0,   14,   18,   20,    2,    0,   16,
+        0,   16,    0,   17,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -375,7 +376,7 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,   15,   15,   15,   15,   16,   15,
        15,   15,   15,   15,   15,   15,   15,   15,   15,   15,
        15,   15,   15,   15,   15,   15,   15,   15,   15,   15,
-        1,    1,    1,    1,   15,    1,   15,   15,   15,   15,
+        1,   17,    1,    1,   15,    1,   15,   15,   15,   15,
 
        16,   15,   15,   15,   15,   15,   15,   15,   15,   15,
        15,   15,   15,   15,   15,   15,   15,   15,   15,   15,
@@ -396,52 +397,60 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[17] =
+static yyconst YY_CHAR yy_meta[18] =
     {   0,
         1,    2,    2,    1,    1,    1,    1,    3,    1,    3,
-        1,    1,    4,    1,    5,    5
+        1,    1,    4,    1,    5,    5,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[46] =
+static yyconst flex_uint16_t yy_base[52] =
     {   0,
-        0,    2,    5,    0,   59,    0,   56,   60,   60,   55,
-       60,   60,   60,   60,   60,   60,   60,   60,   43,   60,
-       11,    0,    0,    0,   53,   52,   10,   12,    0,   40,
-        0,    0,   39,   16,   38,   26,   18,   17,   60,   32,
-       37,   39,   41,   44,   46
+        0,   16,   33,    0,   76,   58,   61,   77,    3,   77,
+       53,   77,   77,   77,   77,   77,   77,   77,   77,   41,
+       77,   40,    0,    0,   49,   15,    4,   29,   77,   28,
+        0,    9,    0,   16,    0,    0,   77,   77,   15,   10,
+       14,   11,    2,    1,   77,   56,   61,   63,   65,   68,
+       70
     } ;
 
-static yyconst flex_int16_t yy_def[46] =
+static yyconst flex_int16_t yy_def[52] =
     {   0,
-       40,   40,   39,    3,   39,   41,   39,   39,   39,   39,
-       39,   39,   39,   39,   39,   39,   39,   39,   39,   39,
-       39,   42,   43,   41,   39,   39,   39,   39,   21,   44,
-       42,   43,   45,   39,   39,   39,   39,   39,    0,   39,
-       39,   39,   39,   39,   39
+       46,   46,   45,    3,   45,   47,   45,   45,   47,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   48,   49,   45,   47,   47,   45,   45,   45,
+       45,   45,   22,   50,   48,   49,   45,   45,   51,   45,
+       45,   45,   45,   45,    0,   45,   45,   45,   45,   45,
+       45
     } ;
 
-static yyconst flex_uint16_t yy_nxt[77] =
+static yyconst flex_uint16_t yy_nxt[95] =
     {   0,
-       39,    7,    8,    7,    8,    9,   10,   11,   12,   13,
-       14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
-       23,   28,   27,   29,   34,   33,   30,   30,   34,   38,
-       38,   30,    6,    6,    6,    6,    6,   24,   36,   24,
-       24,   24,   31,   31,   32,   32,   35,   35,   37,   37,
-       36,   38,   36,   26,   25,   27,   26,   25,   39,    5,
-       39,   39,   39,   39,   39,   39,   39,   39,   39,   39,
-       39,   39,   39,   39,   39,   39
+       45,    7,    8,   45,   45,   29,   38,   45,   45,   45,
+       45,   45,   31,   44,   44,   39,    9,    7,    8,   27,
+       27,   40,   40,   42,   34,   34,   42,   44,   42,   30,
+       28,   27,    9,   10,   11,   12,   13,   14,   15,   16,
+       17,   18,   19,   20,   21,   22,   23,   24,   24,   25,
+       32,   37,   33,   31,   30,   34,    6,    6,    6,    6,
+        6,   26,   28,   26,   26,   26,   35,   35,   36,   36,
+       41,   41,   43,   43,   27,   45,    5,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45
+
     } ;
 
-static yyconst flex_int16_t yy_chk[77] =
+static yyconst flex_int16_t yy_chk[95] =
     {   0,
-        0,    1,    1,    2,    2,    3,    3,    3,    3,    3,
+        0,    1,    1,    0,    0,    9,   27,    0,    0,    0,
+        0,    0,   31,   44,   43,   31,    1,    2,    2,    9,
+       27,   32,   40,   42,   32,   40,   41,   39,   34,   30,
+       28,   26,    2,    3,    3,    3,    3,    3,    3,    3,
         3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,   21,   27,   21,   28,   27,   21,   28,   34,   38,
-       37,   34,   40,   40,   40,   40,   40,   41,   36,   41,
-       41,   41,   42,   42,   43,   43,   44,   44,   45,   45,
-       35,   33,   30,   26,   25,   19,   10,    7,    5,   39,
-       39,   39,   39,   39,   39,   39,   39,   39,   39,   39,
-       39,   39,   39,   39,   39,   39
+       22,   25,   22,   20,   11,   22,   46,   46,   46,   46,
+       46,   47,    7,   47,   47,   47,   48,   48,   49,   49,
+       50,   50,   51,   51,    6,    5,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45
+
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -451,8 +460,8 @@ static yyconst flex_int16_t yy_chk[77] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-#line 2 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 1 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+#line 2 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 /*-------------------------------------------------------------------------
  *
  * exprscan.l
@@ -501,9 +510,10 @@ extern void expr_yyset_column(int column_no, yyscan_t yyscanner);
 #define YY_NO_INPUT 1
 /* Character classes */
 /* {space} + {nonspace} + {newline} should cover all characters */
+/* Line continuation marker */
 /* Exclusive states */
 
-#line 507 "exprscan.c"
+#line 517 "exprscan.c"
 
 #define INITIAL 0
 #define EXPR 1
@@ -777,7 +787,7 @@ YY_DECL
 		}
 
 	{
-#line 72 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 75 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 
 
 
@@ -799,7 +809,7 @@ YY_DECL
 
 	/* INITIAL state */
 
-#line 803 "exprscan.c"
+#line 813 "exprscan.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -826,13 +836,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 40 )
+				if ( yy_current_state >= 46 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
 			++yy_cp;
 			}
-		while ( yy_current_state != 39 );
+		while ( yy_current_state != 45 );
 		yy_cp = yyg->yy_last_accepting_cpos;
 		yy_current_state = yyg->yy_last_accepting_state;
 
@@ -854,22 +864,42 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 93 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 96 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					/* Found a word, emit and return it */
 					psqlscan_emit(cur_state, yytext, yyleng);
 					return 1;
 				}
 	YY_BREAK
+/*
+	 * We need this rule to avoid returning "word\" instead of recognizing
+	 * a continuation marker just after a word:
+	 */
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 99 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ /* ignore */ }
+#line 106 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{
+					/* Found "word\\\n", emit and return just "word" */
+					psqlscan_emit(cur_state, yytext, yyleng - 2);
+					return 1;
+				}
 	YY_BREAK
 case 3:
-/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 101 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 112 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ /* ignore */ }
+	YY_BREAK
+case 4:
+/* rule 4 can match eol */
+YY_RULE_SETUP
+#line 114 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ /* ignore */ }
+	YY_BREAK
+case 5:
+/* rule 5 can match eol */
+YY_RULE_SETUP
+#line 116 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					/* report end of command */
 					last_was_newline = true;
@@ -878,104 +908,110 @@ YY_RULE_SETUP
 	YY_BREAK
 /* EXPR state */
 
-case 4:
-YY_RULE_SETUP
-#line 111 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '+'; }
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 112 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '-'; }
-	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 113 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '*'; }
+#line 126 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '+'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 114 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '/'; }
+#line 127 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '-'; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 115 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '%'; }
+#line 128 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '*'; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 116 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return '('; }
+#line 129 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '/'; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 117 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return ')'; }
+#line 130 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '%'; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 118 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ return ','; }
+#line 131 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return '('; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 120 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 132 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return ')'; }
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 133 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ return ','; }
+	YY_BREAK
+case 14:
+YY_RULE_SETUP
+#line 135 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					yylval->str = pg_strdup(yytext + 1);
 					return VARIABLE;
 				}
 	YY_BREAK
-case 13:
+case 15:
 YY_RULE_SETUP
-#line 124 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 139 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					yylval->ival = strtoint64(yytext);
 					return INTEGER_CONST;
 				}
 	YY_BREAK
-case 14:
-YY_RULE_SETUP
-#line 128 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{
-					yylval->dval = atof(yytext);
-					return DOUBLE_CONST;
-				}
-	YY_BREAK
-case 15:
-YY_RULE_SETUP
-#line 132 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{
-					yylval->dval = atof(yytext);
-					return DOUBLE_CONST;
-				}
-	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 136 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 143 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{
+					yylval->dval = atof(yytext);
+					return DOUBLE_CONST;
+				}
+	YY_BREAK
+case 17:
+YY_RULE_SETUP
+#line 147 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{
+					yylval->dval = atof(yytext);
+					return DOUBLE_CONST;
+				}
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 151 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					yylval->str = pg_strdup(yytext);
 					return FUNCTION;
 				}
 	YY_BREAK
-case 17:
-/* rule 17 can match eol */
+case 19:
 YY_RULE_SETUP
-#line 141 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 156 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ /* ignore */ }
+	YY_BREAK
+case 20:
+/* rule 20 can match eol */
+YY_RULE_SETUP
+#line 158 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
+{ /* ignore */ }
+	YY_BREAK
+case 21:
+/* rule 21 can match eol */
+YY_RULE_SETUP
+#line 160 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					/* report end of command */
 					last_was_newline = true;
 					return 0;
 				}
 	YY_BREAK
-case 18:
+case 22:
 YY_RULE_SETUP
-#line 147 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
-{ /* ignore */ }
-	YY_BREAK
-case 19:
-YY_RULE_SETUP
-#line 149 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 166 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					/*
 					 * must strdup yytext so that expr_yyerror_more doesn't
@@ -990,7 +1026,7 @@ YY_RULE_SETUP
 
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(EXPR):
-#line 162 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 179 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 {
 					if (cur_state->buffer_stack == NULL)
 						return 0;			/* end of input reached */
@@ -1003,12 +1039,12 @@ case YY_STATE_EOF(EXPR):
 					psqlscan_select_top_buffer(cur_state);
 				}
 	YY_BREAK
-case 20:
+case 23:
 YY_RULE_SETUP
-#line 174 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 191 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
-#line 1012 "exprscan.c"
+#line 1048 "exprscan.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1302,7 +1338,7 @@ static int yy_get_next_buffer (yyscan_t yyscanner)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 40 )
+			if ( yy_current_state >= 46 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
@@ -1331,11 +1367,11 @@ static int yy_get_next_buffer (yyscan_t yyscanner)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 40 )
+		if ( yy_current_state >= 46 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
-	yy_is_jam = (yy_current_state == 39);
+	yy_is_jam = (yy_current_state == 45);
 
 	(void)yyg;
 	return yy_is_jam ? 0 : yy_current_state;
@@ -2150,7 +2186,7 @@ void expr_yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 174 "/home/osnapdev/postgres/src/bin/pgbench/exprscan.l"
+#line 191 "/home/osnapdev/322/postgres/src/bin/pgbench/exprscan.l"
 
 
 

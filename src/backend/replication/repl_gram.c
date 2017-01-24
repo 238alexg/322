@@ -70,7 +70,7 @@
 #define yychar          replication_yychar
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:339  */
+#line 1 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:339  */
 
 /*-------------------------------------------------------------------------
  *
@@ -174,7 +174,7 @@ extern int replication_yydebug;
 
 union YYSTYPE
 {
-#line 45 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:355  */
+#line 45 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:355  */
 
 		char					*str;
 		bool					boolval;
@@ -1321,7 +1321,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 98 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 98 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					replication_parse_result = (yyvsp[-1].node);
 				}
@@ -1329,7 +1329,7 @@ yyreduce:
     break;
 
   case 12:
-#line 122 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 122 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.node) = (Node *) makeNode(IdentifySystemCmd);
 				}
@@ -1337,7 +1337,7 @@ yyreduce:
     break;
 
   case 13:
-#line 133 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 133 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					BaseBackupCmd *cmd = makeNode(BaseBackupCmd);
 					cmd->options = (yyvsp[0].list);
@@ -1347,19 +1347,19 @@ yyreduce:
     break;
 
   case 14:
-#line 142 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 142 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.list) = lappend((yyvsp[-1].list), (yyvsp[0].defelt)); }
 #line 1353 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 144 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 144 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.list) = NIL; }
 #line 1359 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 149 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 149 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("label",
 								   (Node *)makeString((yyvsp[0].str)), -1);
@@ -1368,7 +1368,7 @@ yyreduce:
     break;
 
   case 17:
-#line 154 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 154 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("progress",
 								   (Node *)makeInteger(TRUE), -1);
@@ -1377,7 +1377,7 @@ yyreduce:
     break;
 
   case 18:
-#line 159 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 159 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("fast",
 								   (Node *)makeInteger(TRUE), -1);
@@ -1386,7 +1386,7 @@ yyreduce:
     break;
 
   case 19:
-#line 164 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 164 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("wal",
 								   (Node *)makeInteger(TRUE), -1);
@@ -1395,7 +1395,7 @@ yyreduce:
     break;
 
   case 20:
-#line 169 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 169 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("nowait",
 								   (Node *)makeInteger(TRUE), -1);
@@ -1404,7 +1404,7 @@ yyreduce:
     break;
 
   case 21:
-#line 174 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 174 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("max_rate",
 								   (Node *)makeInteger((yyvsp[0].uintval)), -1);
@@ -1413,7 +1413,7 @@ yyreduce:
     break;
 
   case 22:
-#line 179 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 179 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 				  (yyval.defelt) = makeDefElem("tablespace_map",
 								   (Node *)makeInteger(TRUE), -1);
@@ -1422,7 +1422,7 @@ yyreduce:
     break;
 
   case 23:
-#line 188 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 188 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					CreateReplicationSlotCmd *cmd;
 					cmd = makeNode(CreateReplicationSlotCmd);
@@ -1436,7 +1436,7 @@ yyreduce:
     break;
 
   case 24:
-#line 199 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 199 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					CreateReplicationSlotCmd *cmd;
 					cmd = makeNode(CreateReplicationSlotCmd);
@@ -1450,7 +1450,7 @@ yyreduce:
     break;
 
   case 25:
-#line 213 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 213 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					DropReplicationSlotCmd *cmd;
 					cmd = makeNode(DropReplicationSlotCmd);
@@ -1461,7 +1461,7 @@ yyreduce:
     break;
 
   case 26:
-#line 226 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 226 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					StartReplicationCmd *cmd;
 
@@ -1476,7 +1476,7 @@ yyreduce:
     break;
 
   case 27:
-#line 241 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 241 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					StartReplicationCmd *cmd;
 					cmd = makeNode(StartReplicationCmd);
@@ -1490,7 +1490,7 @@ yyreduce:
     break;
 
   case 28:
-#line 256 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 256 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					TimeLineHistoryCmd *cmd;
 
@@ -1508,43 +1508,43 @@ yyreduce:
     break;
 
   case 31:
-#line 277 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 277 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.boolval) = true; }
 #line 1514 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 278 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 278 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.boolval) = false; }
 #line 1520 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 282 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 282 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.boolval) = true; }
 #line 1526 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 283 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 283 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.boolval) = false; }
 #line 1532 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 288 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 288 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].str); }
 #line 1538 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 290 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 290 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.str) = NULL; }
 #line 1544 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 295 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 295 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					if ((yyvsp[0].uintval) <= 0)
 						ereport(ERROR,
@@ -1556,25 +1556,25 @@ yyreduce:
     break;
 
   case 38:
-#line 302 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 302 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.uintval) = 0; }
 #line 1562 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 307 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 307 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.list) = (yyvsp[-1].list); }
 #line 1568 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 308 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 308 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.list) = NIL; }
 #line 1574 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 313 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 313 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.list) = list_make1((yyvsp[0].defelt));
 				}
@@ -1582,7 +1582,7 @@ yyreduce:
     break;
 
   case 42:
-#line 317 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 317 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.list) = lappend((yyvsp[-2].list), (yyvsp[0].defelt));
 				}
@@ -1590,7 +1590,7 @@ yyreduce:
     break;
 
   case 43:
-#line 324 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 324 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     {
 					(yyval.defelt) = makeDefElem((yyvsp[-1].str), (yyvsp[0].node), -1);
 				}
@@ -1598,13 +1598,13 @@ yyreduce:
     break;
 
   case 44:
-#line 330 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 330 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.node) = (Node *) makeString((yyvsp[0].str)); }
 #line 1604 "repl_gram.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 331 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
+#line 331 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1610 "repl_gram.c" /* yacc.c:1646  */
     break;
@@ -1838,7 +1838,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 333 "/home/osnapdev/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1906  */
+#line 333 "/home/osnapdev/322/postgres/src/backend/replication/repl_gram.y" /* yacc.c:1906  */
 
 
 #include "repl_scanner.c"

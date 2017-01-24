@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/contrib/pg_standby/Makefile
+/home/osnapdev/322/postgres/contrib/pg_standby/Makefile

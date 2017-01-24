@@ -70,7 +70,7 @@
 #define yychar          boot_yychar
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:339  */
+#line 1 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:339  */
 
 /*-------------------------------------------------------------------------
  *
@@ -195,35 +195,34 @@ extern int boot_yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    CONST_P = 258,
-    ID = 259,
-    OPEN = 260,
-    XCLOSE = 261,
-    XCREATE = 262,
-    INSERT_TUPLE = 263,
-    XDECLARE = 264,
-    INDEX = 265,
-    ON = 266,
-    USING = 267,
-    XBUILD = 268,
-    INDICES = 269,
-    UNIQUE = 270,
-    XTOAST = 271,
-    COMMA = 272,
-    EQUALS = 273,
-    LPAREN = 274,
-    RPAREN = 275,
-    OBJ_ID = 276,
-    XBOOTSTRAP = 277,
-    XSHARED_RELATION = 278,
-    XWITHOUT_OIDS = 279,
-    XROWTYPE_OID = 280,
-    NULLVAL = 281,
-    XFORCE = 282,
-    XNOT = 283,
-    XNULL = 284,
-    low = 285,
-    high = 286
+    ID = 258,
+    OPEN = 259,
+    XCLOSE = 260,
+    XCREATE = 261,
+    INSERT_TUPLE = 262,
+    XDECLARE = 263,
+    INDEX = 264,
+    ON = 265,
+    USING = 266,
+    XBUILD = 267,
+    INDICES = 268,
+    UNIQUE = 269,
+    XTOAST = 270,
+    COMMA = 271,
+    EQUALS = 272,
+    LPAREN = 273,
+    RPAREN = 274,
+    OBJ_ID = 275,
+    XBOOTSTRAP = 276,
+    XSHARED_RELATION = 277,
+    XWITHOUT_OIDS = 278,
+    XROWTYPE_OID = 279,
+    NULLVAL = 280,
+    XFORCE = 281,
+    XNOT = 282,
+    XNULL = 283,
+    low = 284,
+    high = 285
   };
 #endif
 
@@ -232,7 +231,7 @@ extern int boot_yydebug;
 
 union YYSTYPE
 {
-#line 98 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:355  */
+#line 98 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:355  */
 
 	List		*list;
 	IndexElem	*ielem;
@@ -240,7 +239,7 @@ union YYSTYPE
 	int			ival;
 	Oid			oidval;
 
-#line 244 "bootparse.c" /* yacc.c:355  */
+#line 243 "bootparse.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -257,7 +256,7 @@ int boot_yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 261 "bootparse.c" /* yacc.c:358  */
+#line 260 "bootparse.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -499,21 +498,21 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  28
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   84
+#define YYLAST   82
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  32
+#define YYNTOKENS  31
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  30
+#define YYNNTS  29
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  53
+#define YYNRULES  51
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  99
+#define YYNSTATES  97
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   286
+#define YYMAXUTOK   285
 
 #define YYTRANSLATE(YYX)                                                \
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -550,7 +549,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
-      25,    26,    27,    28,    29,    30,    31
+      25,    26,    27,    28,    29,    30
 };
 
 #if YYDEBUG
@@ -562,7 +561,7 @@ static const yytype_uint16 yyrline[] =
      263,   262,   284,   327,   370,   380,   390,   391,   395,   410,
      411,   415,   416,   420,   421,   425,   426,   430,   431,   435,
      444,   445,   446,   450,   454,   455,   459,   460,   461,   465,
-     467,   469,   474,   478
+     467,   472
 };
 #endif
 
@@ -571,19 +570,19 @@ static const yytype_uint16 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "CONST_P", "ID", "OPEN", "XCLOSE",
-  "XCREATE", "INSERT_TUPLE", "XDECLARE", "INDEX", "ON", "USING", "XBUILD",
-  "INDICES", "UNIQUE", "XTOAST", "COMMA", "EQUALS", "LPAREN", "RPAREN",
-  "OBJ_ID", "XBOOTSTRAP", "XSHARED_RELATION", "XWITHOUT_OIDS",
-  "XROWTYPE_OID", "NULLVAL", "XFORCE", "XNOT", "XNULL", "low", "high",
-  "$accept", "TopLevel", "Boot_Queries", "Boot_Query", "Boot_OpenStmt",
+  "$end", "error", "$undefined", "ID", "OPEN", "XCLOSE", "XCREATE",
+  "INSERT_TUPLE", "XDECLARE", "INDEX", "ON", "USING", "XBUILD", "INDICES",
+  "UNIQUE", "XTOAST", "COMMA", "EQUALS", "LPAREN", "RPAREN", "OBJ_ID",
+  "XBOOTSTRAP", "XSHARED_RELATION", "XWITHOUT_OIDS", "XROWTYPE_OID",
+  "NULLVAL", "XFORCE", "XNOT", "XNULL", "low", "high", "$accept",
+  "TopLevel", "Boot_Queries", "Boot_Query", "Boot_OpenStmt",
   "Boot_CloseStmt", "Boot_CreateStmt", "$@1", "$@2", "Boot_InsertStmt",
   "$@3", "Boot_DeclareIndexStmt", "Boot_DeclareUniqueIndexStmt",
   "Boot_DeclareToastStmt", "Boot_BuildIndsStmt", "boot_index_params",
   "boot_index_param", "optbootstrap", "optsharedrelation",
   "optwithoutoids", "optrowtypeoid", "boot_column_list", "boot_column_def",
   "boot_column_nullness", "oidspec", "optoideq", "boot_column_val_list",
-  "boot_column_val", "boot_const", "boot_ident", YY_NULLPTR
+  "boot_column_val", "boot_ident", YY_NULLPTR
 };
 #endif
 
@@ -595,14 +594,14 @@ static const yytype_uint16 yytoknum[] =
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
      275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
-     285,   286
+     285
 };
 # endif
 
-#define YYPACT_NINF -41
+#define YYPACT_NINF -42
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-41)))
+  (!!((Yystate) == (-42)))
 
 #define YYTABLE_NINF -1
 
@@ -613,16 +612,16 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      36,     8,     8,     8,    -7,     0,     6,    24,    36,   -41,
-     -41,   -41,   -41,   -41,   -41,   -41,   -41,   -41,   -41,   -41,
-     -41,     8,    12,   -41,     8,    16,     8,   -41,   -41,   -41,
-      13,   -41,     8,    17,     8,     8,     8,   -41,    14,   -41,
-       3,    27,     8,    35,   -41,    26,   -41,   -41,     1,   -41,
-     -41,   -41,     8,    37,     8,   -41,    29,     3,   -41,   -41,
-      40,     8,   -41,     8,    38,   -41,     8,    43,   -41,   -41,
-      39,     8,     8,     8,    42,    45,   -41,    41,     5,   -41,
-       8,     8,     8,    44,     8,     8,   -41,   -41,    11,   -41,
-     -41,    46,   -41,   -41,     4,   -41,    34,   -41,   -41
+      24,     5,     5,     5,    -2,     7,    20,    35,    24,   -42,
+     -42,   -42,   -42,   -42,   -42,   -42,   -42,   -42,   -42,   -42,
+     -42,     5,    23,   -42,     5,    28,     5,   -42,   -42,   -42,
+      21,   -42,     5,    25,     5,     5,     5,   -42,    19,   -42,
+       2,    34,     5,    37,   -42,    22,   -42,     1,   -42,   -42,
+       5,    38,     5,   -42,    26,     2,   -42,   -42,    41,     5,
+     -42,     5,    39,   -42,     5,    42,   -42,   -42,    43,     5,
+       5,     5,    44,    40,   -42,    47,    -9,   -42,     5,     5,
+       5,    36,     5,     5,   -42,   -42,    -4,   -42,   -42,    33,
+     -42,   -42,    -3,   -42,    32,   -42,   -42
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -631,31 +630,31 @@ static const yytype_int8 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        3,     0,    16,     0,    45,     0,     0,     0,     2,     4,
-       6,     7,     8,     9,    10,    11,    12,    13,    53,    14,
+       6,     7,     8,     9,    10,    11,    12,    13,    51,    14,
       15,     0,     0,    20,     0,     0,     0,    25,     1,     5,
       30,    43,     0,     0,     0,     0,     0,    29,    32,    44,
-       0,     0,     0,     0,    31,    34,    52,    51,     0,    46,
-      50,    49,     0,     0,     0,    33,    36,     0,    21,    47,
-       0,     0,    24,     0,     0,    48,     0,     0,    35,    17,
-       0,     0,     0,     0,     0,    18,    37,     0,     0,    27,
-       0,     0,     0,     0,     0,     0,    22,    28,     0,    38,
-      19,    42,    26,    23,     0,    39,     0,    41,    40
+       0,     0,     0,     0,    31,    34,    50,     0,    46,    49,
+       0,     0,     0,    33,    36,     0,    21,    47,     0,     0,
+      24,     0,     0,    48,     0,     0,    35,    17,     0,     0,
+       0,     0,     0,    18,    37,     0,     0,    27,     0,     0,
+       0,     0,     0,     0,    22,    28,     0,    38,    19,    42,
+      26,    23,     0,    39,     0,    41,    40
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -41,   -41,   -41,    58,   -41,   -41,   -41,   -41,   -41,   -41,
-     -41,   -41,   -41,   -41,   -41,   -14,   -17,   -41,   -41,   -41,
-     -41,   -41,   -13,   -41,   -23,   -41,   -41,   -40,   -41,    -1
+     -42,   -42,   -42,    57,   -42,   -42,   -42,   -42,   -42,   -42,
+     -42,   -42,   -42,   -42,   -42,   -13,   -16,   -42,   -42,   -42,
+     -42,   -42,    -8,   -42,   -23,   -42,   -42,   -41,    -1
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     7,     8,     9,    10,    11,    12,    72,    83,    13,
-      33,    14,    15,    16,    17,    78,    79,    38,    45,    56,
-      64,    75,    76,    95,    30,    23,    48,    49,    50,    31
+      -1,     7,     8,     9,    10,    11,    12,    70,    81,    13,
+      33,    14,    15,    16,    17,    76,    77,    38,    45,    54,
+      62,    73,    74,    93,    30,    23,    47,    48,    31
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -663,55 +662,55 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-      19,    20,    21,    36,    46,    18,    46,    18,    59,    39,
-      24,    41,    18,    43,    22,    25,    26,    65,    57,    53,
-      27,    58,    85,    34,    28,    86,    35,    47,    85,    47,
-      32,    93,    96,    97,    42,    37,    40,    44,    52,    51,
-      68,     1,     2,     3,     4,     5,    54,    51,    61,     6,
-      55,    60,    66,    62,    63,    71,    51,    69,    73,    84,
-      67,    81,    82,    98,    90,    70,    29,    88,    92,    89,
-      74,    77,    80,    94,     0,     0,     0,     0,     0,    87,
-      80,    77,     0,    91,    80
+      19,    20,    21,    36,    18,    18,    57,    83,    18,    39,
+      84,    41,    83,    43,    63,    91,    24,    55,    22,    51,
+      56,    25,    26,    34,    94,    95,    46,    46,     1,     2,
+       3,     4,     5,    27,    42,    28,     6,    35,    66,    49,
+      32,    44,    37,    40,    50,    53,    49,    52,    59,    58,
+      61,    60,    64,    69,    49,    88,    80,    67,    65,    92,
+      96,    71,    79,    68,    82,    29,    86,    90,    72,    75,
+      78,     0,    87,     0,     0,     0,     0,    85,    78,    75,
+       0,    89,    78
 };
 
 static const yytype_int8 yycheck[] =
 {
-       1,     2,     3,    26,     3,     4,     3,     4,    48,    32,
-      10,    34,     4,    36,    21,    15,    16,    57,    17,    42,
-      14,    20,    17,    24,     0,    20,    10,    26,    17,    26,
-      18,    20,    28,    29,    35,    22,    19,    23,    11,    40,
-      63,     5,     6,     7,     8,     9,    11,    48,    11,    13,
-      24,    52,    12,    54,    25,    12,    57,    19,    19,    18,
-      61,    19,    17,    29,    20,    66,     8,    81,    85,    82,
-      71,    72,    73,    27,    -1,    -1,    -1,    -1,    -1,    80,
-      81,    82,    -1,    84,    85
+       1,     2,     3,    26,     3,     3,    47,    16,     3,    32,
+      19,    34,    16,    36,    55,    19,     9,    16,    20,    42,
+      19,    14,    15,    24,    27,    28,    25,    25,     4,     5,
+       6,     7,     8,    13,    35,     0,    12,     9,    61,    40,
+      17,    22,    21,    18,    10,    23,    47,    10,    10,    50,
+      24,    52,    11,    11,    55,    19,    16,    18,    59,    26,
+      28,    18,    18,    64,    17,     8,    79,    83,    69,    70,
+      71,    -1,    80,    -1,    -1,    -1,    -1,    78,    79,    80,
+      -1,    82,    83
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     5,     6,     7,     8,     9,    13,    33,    34,    35,
-      36,    37,    38,    41,    43,    44,    45,    46,     4,    61,
-      61,    61,    21,    57,    10,    15,    16,    14,     0,    35,
-      56,    61,    18,    42,    61,    10,    56,    22,    49,    56,
-      19,    56,    61,    56,    23,    50,     3,    26,    58,    59,
-      60,    61,    11,    56,    11,    24,    51,    17,    20,    59,
-      61,    11,    61,    25,    52,    59,    12,    61,    56,    19,
-      61,    12,    39,    19,    61,    53,    54,    61,    47,    48,
-      61,    19,    17,    40,    18,    17,    20,    61,    47,    54,
-      20,    61,    48,    20,    27,    55,    28,    29,    29
+       0,     4,     5,     6,     7,     8,    12,    32,    33,    34,
+      35,    36,    37,    40,    42,    43,    44,    45,     3,    59,
+      59,    59,    20,    56,     9,    14,    15,    13,     0,    34,
+      55,    59,    17,    41,    59,     9,    55,    21,    48,    55,
+      18,    55,    59,    55,    22,    49,    25,    57,    58,    59,
+      10,    55,    10,    23,    50,    16,    19,    58,    59,    10,
+      59,    24,    51,    58,    11,    59,    55,    18,    59,    11,
+      38,    18,    59,    52,    53,    59,    46,    47,    59,    18,
+      16,    39,    17,    16,    19,    59,    46,    53,    19,    59,
+      47,    19,    26,    54,    27,    28,    28
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    32,    33,    33,    34,    34,    35,    35,    35,    35,
-      35,    35,    35,    35,    36,    37,    37,    39,    40,    38,
-      42,    41,    43,    44,    45,    46,    47,    47,    48,    49,
-      49,    50,    50,    51,    51,    52,    52,    53,    53,    54,
-      55,    55,    55,    56,    57,    57,    58,    58,    58,    59,
-      59,    59,    60,    61
+       0,    31,    32,    32,    33,    33,    34,    34,    34,    34,
+      34,    34,    34,    34,    35,    36,    36,    38,    39,    37,
+      41,    40,    42,    43,    44,    45,    46,    46,    47,    48,
+      48,    49,    49,    50,    50,    51,    51,    52,    52,    53,
+      54,    54,    54,    55,    56,    56,    57,    57,    57,    58,
+      58,    59
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -722,7 +721,7 @@ static const yytype_uint8 yyr2[] =
        0,     6,    11,    12,     6,     2,     3,     1,     2,     1,
        0,     1,     0,     1,     0,     2,     0,     1,     3,     4,
        3,     2,     0,     1,     3,     0,     1,     2,     3,     1,
-       1,     1,     1,     1
+       1,     1
 };
 
 
@@ -1399,37 +1398,37 @@ yyreduce:
   switch (yyn)
     {
         case 14:
-#line 149 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 149 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					boot_openrel((yyvsp[0].str));
 					do_end();
 				}
-#line 1409 "bootparse.c" /* yacc.c:1646  */
+#line 1408 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 158 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 158 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					closerel((yyvsp[0].str));
 					do_end();
 				}
-#line 1419 "bootparse.c" /* yacc.c:1646  */
+#line 1418 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 164 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 164 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					closerel(NULL);
 					do_end();
 				}
-#line 1429 "bootparse.c" /* yacc.c:1646  */
+#line 1428 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 173 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 173 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					numattr = 0;
@@ -1439,19 +1438,19 @@ yyreduce:
 						 (yyvsp[-6].str),
 						 (yyvsp[-5].oidval));
 				}
-#line 1443 "bootparse.c" /* yacc.c:1646  */
+#line 1442 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 183 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 183 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_end();
 				}
-#line 1451 "bootparse.c" /* yacc.c:1646  */
+#line 1450 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 187 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 187 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					TupleDesc tupdesc;
 					bool	shared_relation;
@@ -1524,11 +1523,11 @@ yyreduce:
 					}
 					do_end();
 				}
-#line 1528 "bootparse.c" /* yacc.c:1646  */
+#line 1527 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 263 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 263 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					if ((yyvsp[0].oidval))
@@ -1537,11 +1536,11 @@ yyreduce:
 						elog(DEBUG4, "inserting row");
 					num_columns_read = 0;
 				}
-#line 1541 "bootparse.c" /* yacc.c:1646  */
+#line 1540 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 272 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 272 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					if (num_columns_read != numattr)
 						elog(ERROR, "incorrect number of columns in row (expected %d, got %d)",
@@ -1551,11 +1550,11 @@ yyreduce:
 					InsertOneTuple((yyvsp[-4].oidval));
 					do_end();
 				}
-#line 1555 "bootparse.c" /* yacc.c:1646  */
+#line 1554 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 285 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 285 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					IndexStmt *stmt = makeNode(IndexStmt);
 					Oid		relationId;
@@ -1595,11 +1594,11 @@ yyreduce:
 								false);
 					do_end();
 				}
-#line 1599 "bootparse.c" /* yacc.c:1646  */
+#line 1598 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 328 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 328 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					IndexStmt *stmt = makeNode(IndexStmt);
 					Oid		relationId;
@@ -1639,44 +1638,44 @@ yyreduce:
 								false);
 					do_end();
 				}
-#line 1643 "bootparse.c" /* yacc.c:1646  */
+#line 1642 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 371 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 371 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 
 					BootstrapToastTable((yyvsp[0].str), (yyvsp[-3].oidval), (yyvsp[-2].oidval));
 					do_end();
 				}
-#line 1654 "bootparse.c" /* yacc.c:1646  */
+#line 1653 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 381 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 381 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					do_start();
 					build_indices();
 					do_end();
 				}
-#line 1664 "bootparse.c" /* yacc.c:1646  */
+#line 1663 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 390 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 390 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.list) = lappend((yyvsp[-2].list), (yyvsp[0].ielem)); }
-#line 1670 "bootparse.c" /* yacc.c:1646  */
+#line 1669 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 391 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 391 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.list) = list_make1((yyvsp[0].ielem)); }
-#line 1676 "bootparse.c" /* yacc.c:1646  */
+#line 1675 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 396 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 396 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 					IndexElem *n = makeNode(IndexElem);
 					n->name = (yyvsp[-1].str);
@@ -1688,135 +1687,123 @@ yyreduce:
 					n->nulls_ordering = SORTBY_NULLS_DEFAULT;
 					(yyval.ielem) = n;
 				}
-#line 1692 "bootparse.c" /* yacc.c:1646  */
+#line 1691 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 410 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 410 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 1; }
-#line 1698 "bootparse.c" /* yacc.c:1646  */
+#line 1697 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 411 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 411 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 0; }
-#line 1704 "bootparse.c" /* yacc.c:1646  */
+#line 1703 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 415 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 415 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 1; }
-#line 1710 "bootparse.c" /* yacc.c:1646  */
+#line 1709 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 416 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 416 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 0; }
-#line 1716 "bootparse.c" /* yacc.c:1646  */
+#line 1715 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 420 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 420 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 1; }
-#line 1722 "bootparse.c" /* yacc.c:1646  */
+#line 1721 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 421 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 421 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = 0; }
-#line 1728 "bootparse.c" /* yacc.c:1646  */
+#line 1727 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 425 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 425 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.oidval) = (yyvsp[0].oidval); }
-#line 1734 "bootparse.c" /* yacc.c:1646  */
+#line 1733 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 426 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 426 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.oidval) = InvalidOid; }
-#line 1740 "bootparse.c" /* yacc.c:1646  */
+#line 1739 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 436 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 436 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {
 				   if (++numattr > MAXATTR)
 						elog(FATAL, "too many columns");
 				   DefineAttr((yyvsp[-3].str), (yyvsp[-1].str), numattr-1, (yyvsp[0].ival));
 				}
-#line 1750 "bootparse.c" /* yacc.c:1646  */
+#line 1749 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 444 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 444 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = BOOTCOL_NULL_FORCE_NOT_NULL; }
-#line 1756 "bootparse.c" /* yacc.c:1646  */
+#line 1755 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 445 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 445 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     {  (yyval.ival) = BOOTCOL_NULL_FORCE_NULL; }
-#line 1762 "bootparse.c" /* yacc.c:1646  */
+#line 1761 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 446 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 446 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.ival) = BOOTCOL_NULL_AUTO; }
-#line 1768 "bootparse.c" /* yacc.c:1646  */
+#line 1767 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 450 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 450 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.oidval) = atooid((yyvsp[0].str)); }
-#line 1774 "bootparse.c" /* yacc.c:1646  */
+#line 1773 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 454 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 454 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.oidval) = (yyvsp[0].oidval); }
-#line 1780 "bootparse.c" /* yacc.c:1646  */
+#line 1779 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 455 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 455 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.oidval) = InvalidOid; }
-#line 1786 "bootparse.c" /* yacc.c:1646  */
+#line 1785 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 466 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 466 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { InsertOneValue((yyvsp[0].str), num_columns_read++); }
-#line 1792 "bootparse.c" /* yacc.c:1646  */
+#line 1791 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 468 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
-    { InsertOneValue((yyvsp[0].str), num_columns_read++); }
-#line 1798 "bootparse.c" /* yacc.c:1646  */
+#line 468 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+    { InsertOneNull(num_columns_read++); }
+#line 1797 "bootparse.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 470 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
-    { InsertOneNull(num_columns_read++); }
-#line 1804 "bootparse.c" /* yacc.c:1646  */
-    break;
-
-  case 52:
-#line 474 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
+#line 472 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
     { (yyval.str) = yylval.str; }
-#line 1810 "bootparse.c" /* yacc.c:1646  */
-    break;
-
-  case 53:
-#line 478 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1646  */
-    { (yyval.str) = yylval.str; }
-#line 1816 "bootparse.c" /* yacc.c:1646  */
+#line 1803 "bootparse.c" /* yacc.c:1646  */
     break;
 
 
-#line 1820 "bootparse.c" /* yacc.c:1646  */
+#line 1807 "bootparse.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2044,7 +2031,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 480 "/home/osnapdev/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1906  */
+#line 474 "/home/osnapdev/322/postgres/src/backend/bootstrap/bootparse.y" /* yacc.c:1906  */
 
 
 #include "bootscanner.c"

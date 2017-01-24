@@ -1,8 +1,8 @@
-top_srcdir   = /home/osnapdev/httpd-2.4.25
-top_builddir = /home/osnapdev/httpd-2.4.25
-srcdir       = /home/osnapdev/httpd-2.4.25/support
-builddir     = /home/osnapdev/httpd-2.4.25/support
-VPATH        = /home/osnapdev/httpd-2.4.25/support
+top_srcdir   = /home/osnapdev/322/httpd-2.4.25
+top_builddir = /home/osnapdev/322/httpd-2.4.25
+srcdir       = /home/osnapdev/322/httpd-2.4.25/support
+builddir     = /home/osnapdev/322/httpd-2.4.25/support
+VPATH        = /home/osnapdev/322/httpd-2.4.25/support
 DISTCLEAN_TARGETS = apxs apachectl dbmmanage log_server_status \
 	logresolve.pl phf_abuse_log.cgi split-logfile envvars-std
 

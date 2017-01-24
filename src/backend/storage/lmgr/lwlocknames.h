@@ -44,5 +44,7 @@
 #define MultiXactTruncationLock (&MainLWLockArray[41].lock)
 #define OldSnapshotTimeMapLock (&MainLWLockArray[42].lock)
 #define BackendRandomLock (&MainLWLockArray[43].lock)
+#define LogicalRepLauncherLock (&MainLWLockArray[44].lock)
+#define LogicalRepWorkerLock (&MainLWLockArray[45].lock)
 
-#define NUM_INDIVIDUAL_LWLOCKS		44
+#define NUM_INDIVIDUAL_LWLOCKS		46

@@ -796,9 +796,9 @@ static yyconst YY_CHAR yy_ec[256] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 1 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 
-#line 27 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 27 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 #include "fe_utils/psqlscan_int.h"
 
 /*
@@ -1144,7 +1144,7 @@ YY_DECL
 		}
 
 	{
-#line 115 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 115 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 
 
 
@@ -1200,7 +1200,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 137 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 137 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 /*
@@ -1211,7 +1211,7 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 146 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 146 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					yyless(0);
 					cur_state->start_state = YY_START;
@@ -1220,7 +1220,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 152 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 152 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 
@@ -1233,12 +1233,12 @@ YY_RULE_SETUP
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 163 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 163 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 165 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 165 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					if (option_type == OT_FILEPIPE)
 					{
@@ -1256,7 +1256,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 180 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 180 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					yyless(0);
 					BEGIN(xslasharg);
@@ -1274,7 +1274,7 @@ YY_RULE_SETUP
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 196 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 196 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/*
 					 * Unquoted space is end of arg; do not eat.  Likewise
@@ -1292,7 +1292,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 211 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 211 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					*option_quote = '\'';
 					unquoted_option_chars = 0;
@@ -1301,7 +1301,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 217 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 217 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					backtick_start_offset = output_buf->len;
 					*option_quote = '`';
@@ -1311,7 +1311,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 224 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 224 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					ECHO;
 					*option_quote = '"';
@@ -1321,7 +1321,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 231 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 231 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* Possible psql variable substitution */
 					if (option_type == OT_NO_EVAL ||
@@ -1362,7 +1362,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 269 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 269 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					if (option_type == OT_NO_EVAL)
 						ECHO;
@@ -1376,7 +1376,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 281 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 281 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					if (option_type == OT_NO_EVAL)
 						ECHO;
@@ -1390,7 +1390,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 292 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 292 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* Throw back everything but the colon */
 					yyless(1);
@@ -1400,7 +1400,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 299 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 299 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* Throw back everything but the colon */
 					yyless(1);
@@ -1410,7 +1410,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 306 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 306 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					unquoted_option_chars++;
 					ECHO;
@@ -1424,42 +1424,42 @@ YY_RULE_SETUP
 	 */
 case 17:
 YY_RULE_SETUP
-#line 319 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 319 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { BEGIN(xslasharg); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 321 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 321 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\''); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 323 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 323 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\n'); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 324 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 324 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\t'); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 325 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 325 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\b'); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 326 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 326 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\r'); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 327 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 327 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { appendPQExpBufferChar(output_buf, '\f'); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 329 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 329 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* octal case */
 					appendPQExpBufferChar(output_buf,
@@ -1468,7 +1468,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 335 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 335 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* hex case */
 					appendPQExpBufferChar(output_buf,
@@ -1477,13 +1477,13 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 341 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 341 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { psqlscan_emit(cur_state, yytext + 1, 1); }
 	YY_BREAK
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 343 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 343 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 
@@ -1495,7 +1495,7 @@ YY_RULE_SETUP
 	 */
 case 28:
 YY_RULE_SETUP
-#line 354 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 354 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					/* In NO_EVAL mode, don't evaluate the command */
 					if (option_type != OT_NO_EVAL)
@@ -1506,7 +1506,7 @@ YY_RULE_SETUP
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 361 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 361 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 
@@ -1514,7 +1514,7 @@ YY_RULE_SETUP
 /* double-quoted text: copy verbatim, including the double quotes */
 case 30:
 YY_RULE_SETUP
-#line 368 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 368 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					ECHO;
 					BEGIN(xslasharg);
@@ -1523,7 +1523,7 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 373 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 373 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 
@@ -1533,7 +1533,7 @@ YY_RULE_SETUP
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 381 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 381 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					if (output_buf->len > 0)
 						ECHO;
@@ -1541,7 +1541,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 386 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 386 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 { ECHO; }
 	YY_BREAK
 
@@ -1549,7 +1549,7 @@ YY_RULE_SETUP
 /* at end of command, eat a double backslash, but not anything else */
 case 34:
 YY_RULE_SETUP
-#line 393 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 393 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					cur_state->start_state = YY_START;
 					return LEXRES_OK;
@@ -1558,7 +1558,7 @@ YY_RULE_SETUP
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 398 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 398 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					yyless(0);
 					cur_state->start_state = YY_START;
@@ -1575,7 +1575,7 @@ case YY_STATE_EOF(xslashbackquote):
 case YY_STATE_EOF(xslashdquote):
 case YY_STATE_EOF(xslashwholeline):
 case YY_STATE_EOF(xslashend):
-#line 406 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 406 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 {
 					if (cur_state->buffer_stack == NULL)
 					{
@@ -1593,7 +1593,7 @@ case YY_STATE_EOF(xslashend):
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 421 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 421 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 1600 "psqlscanslash.c"
@@ -2712,7 +2712,7 @@ void slash_yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 421 "/home/osnapdev/postgres/src/bin/psql/psqlscanslash.l"
+#line 421 "/home/osnapdev/322/postgres/src/bin/psql/psqlscanslash.l"
 
 
 

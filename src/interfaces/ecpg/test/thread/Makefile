@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/interfaces/ecpg/test/thread/Makefile
+/home/osnapdev/322/postgres/src/interfaces/ecpg/test/thread/Makefile

@@ -70,7 +70,7 @@
 #define yychar          syncrep_yychar
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:339  */
+#line 1 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:339  */
 
 /*-------------------------------------------------------------------------
  *
@@ -153,7 +153,7 @@ extern int syncrep_yydebug;
 
 union YYSTYPE
 {
-#line 43 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:355  */
+#line 43 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:355  */
 
 	char	   *str;
 	List	   *list;
@@ -1255,55 +1255,55 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 59 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 59 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { syncrep_parse_result = (yyvsp[0].config); }
 #line 1261 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 63 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 63 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.config) = create_syncrep_config("1", (yyvsp[0].list), SYNC_REP_PRIORITY); }
 #line 1267 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 64 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 64 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.config) = create_syncrep_config((yyvsp[-3].str), (yyvsp[-1].list), SYNC_REP_PRIORITY); }
 #line 1273 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 65 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 65 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.config) = create_syncrep_config((yyvsp[-3].str), (yyvsp[-1].list), SYNC_REP_QUORUM); }
 #line 1279 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 66 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 66 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.config) = create_syncrep_config((yyvsp[-3].str), (yyvsp[-1].list), SYNC_REP_PRIORITY); }
 #line 1285 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 70 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 70 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.list) = list_make1((yyvsp[0].str)); }
 #line 1291 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 71 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 71 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.list) = lappend((yyvsp[-2].list), (yyvsp[0].str)); }
 #line 1297 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 75 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 75 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].str); }
 #line 1303 "syncrep_gram.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 76 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
+#line 76 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].str); }
 #line 1309 "syncrep_gram.c" /* yacc.c:1646  */
     break;
@@ -1537,7 +1537,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 78 "/home/osnapdev/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1906  */
+#line 78 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_gram.y" /* yacc.c:1906  */
 
 
 static SyncRepConfigData *

@@ -8521,9 +8521,9 @@ static yyconst struct yy_trans_info *yy_start_state_list[27] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 1 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 
-#line 44 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 44 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 /* Avoid exit() on fatal scanner errors (a bit ugly -- see yy_fatal_error) */
 #undef fprintf
 #define fprintf(file, fmt, msg)  fprintf_to_ereport(fmt, msg)
@@ -9048,7 +9048,7 @@ YY_DECL
 		}
 
 	{
-#line 392 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 392 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 
 
 #line 9055 "scan.c"
@@ -9091,14 +9091,14 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 394 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 394 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 398 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 398 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* Set location in case of syntax error in comment */
 					SET_YYLLOC();
@@ -9110,7 +9110,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 407 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 407 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					(yyextra->xcdepth)++;
 					/* Put back any characters past slash-star; see above */
@@ -9119,7 +9119,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 413 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 413 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					if (yyextra->xcdepth <= 0)
 						BEGIN(INITIAL);
@@ -9130,32 +9130,32 @@ YY_RULE_SETUP
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 420 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 420 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 424 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 424 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 428 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 428 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case YY_STATE_EOF(xc):
-#line 432 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 432 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated /* comment"); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 434 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 434 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* Binary bit type.
 					 * At some point we should simply pass the string
@@ -9171,11 +9171,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 /* rule 9 can match eol */
-#line 447 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 447 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 447 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 447 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -9185,33 +9185,33 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
-#line 454 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 454 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 454 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 454 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
-#line 458 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 458 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 458 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 458 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case YY_STATE_EOF(xb):
-#line 461 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 461 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated bit string literal"); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 463 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 463 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* Hexadecimal bit type.
 					 * At some point we should simply pass the string
@@ -9227,11 +9227,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
-#line 476 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 476 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 476 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 476 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -9240,12 +9240,12 @@ YY_RULE_SETUP
 				}
 	YY_BREAK
 case YY_STATE_EOF(xh):
-#line 482 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 482 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated hexadecimal string literal"); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 484 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 484 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* National character.
 					 * We will pass this along as a normal character string,
@@ -9274,7 +9274,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 510 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 510 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyextra->warn_on_first_escape = true;
 					yyextra->saw_non_ascii = false;
@@ -9288,7 +9288,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 520 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 520 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyextra->warn_on_first_escape = false;
 					yyextra->saw_non_ascii = false;
@@ -9299,7 +9299,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 527 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 527 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					if (!yyextra->standard_conforming_strings)
@@ -9314,11 +9314,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 /* rule 22 can match eol */
-#line 539 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 539 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 539 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 539 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -9336,11 +9336,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 /* rule 24 can match eol */
-#line 554 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 554 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
-#line 554 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 554 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* throw back all but the quote */
 					yyless(1);
@@ -9351,20 +9351,20 @@ YY_RULE_SETUP
 case 26:
 /* rule 26 can match eol */
 YY_RULE_SETUP
-#line 560 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 560 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* stay in xusend state over whitespace */
 				}
 	YY_BREAK
 case YY_STATE_EOF(xusend):
-#line 563 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 563 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 27:
 /* rule 27 can match eol */
-#line 565 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 565 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 565 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 565 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* no UESCAPE after the quote, throw back everything */
 					yyless(0);
@@ -9376,7 +9376,7 @@ YY_RULE_SETUP
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 572 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 572 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* found UESCAPE after the end quote */
 					BEGIN(INITIAL);
@@ -9393,7 +9393,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 585 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 585 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlitchar('\'', yyscanner);
 				}
@@ -9401,7 +9401,7 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 588 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 588 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
@@ -9409,14 +9409,14 @@ YY_RULE_SETUP
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 591 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 591 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 594 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 594 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					pg_wchar	c = strtoul(yytext + 2, NULL, 16);
 
@@ -9435,7 +9435,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 609 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 609 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					pg_wchar	c = strtoul(yytext + 2, NULL, 16);
 
@@ -9451,22 +9451,22 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 621 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 621 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("invalid Unicode surrogate pair"); }
 	YY_BREAK
 case 36:
 /* rule 36 can match eol */
 YY_RULE_SETUP
-#line 622 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 622 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("invalid Unicode surrogate pair"); }
 	YY_BREAK
 case YY_STATE_EOF(xeu):
-#line 623 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 623 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("invalid Unicode surrogate pair"); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 624 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 624 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					ereport(ERROR,
 							(errcode(ERRCODE_INVALID_ESCAPE_SEQUENCE),
@@ -9478,7 +9478,7 @@ YY_RULE_SETUP
 case 38:
 /* rule 38 can match eol */
 YY_RULE_SETUP
-#line 631 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 631 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					if (yytext[1] == '\'')
 					{
@@ -9498,7 +9498,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 647 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 647 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					unsigned char c = strtoul(yytext + 1, NULL, 8);
 
@@ -9510,7 +9510,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 655 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 655 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					unsigned char c = strtoul(yytext + 2, NULL, 16);
 
@@ -9523,14 +9523,14 @@ YY_RULE_SETUP
 case 41:
 /* rule 41 can match eol */
 YY_RULE_SETUP
-#line 663 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 663 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* ignore */
 				}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 666 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 666 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* This is only needed for \ just before EOF */
 					addlitchar(yytext[0], yyscanner);
@@ -9539,12 +9539,12 @@ YY_RULE_SETUP
 case YY_STATE_EOF(xq):
 case YY_STATE_EOF(xe):
 case YY_STATE_EOF(xus):
-#line 670 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 670 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated quoted string"); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 672 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 672 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					yyextra->dolqstart = pstrdup(yytext);
@@ -9554,7 +9554,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 678 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 678 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					/* throw back all but the initial "$" */
@@ -9565,7 +9565,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 685 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 685 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					if (strcmp(yytext, yyextra->dolqstart) == 0)
 					{
@@ -9590,33 +9590,33 @@ YY_RULE_SETUP
 case 46:
 /* rule 46 can match eol */
 YY_RULE_SETUP
-#line 705 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 705 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 708 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 708 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 711 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 711 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* This is only needed for $ inside the quoted text */
 					addlitchar(yytext[0], yyscanner);
 				}
 	YY_BREAK
 case YY_STATE_EOF(xdolq):
-#line 715 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 715 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated dollar-quoted string"); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 717 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 717 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					BEGIN(xd);
@@ -9625,7 +9625,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 722 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 722 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					BEGIN(xui);
@@ -9634,7 +9634,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 727 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 727 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					char	   *ident;
 
@@ -9650,7 +9650,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 739 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 739 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					yyless(1);
 					/* xuiend state looks for possible UESCAPE */
@@ -9660,20 +9660,20 @@ YY_RULE_SETUP
 case 53:
 /* rule 53 can match eol */
 YY_RULE_SETUP
-#line 744 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 744 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* stay in xuiend state over whitespace */
 				}
 	YY_BREAK
 case YY_STATE_EOF(xuiend):
-#line 747 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 747 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 54:
 /* rule 54 can match eol */
-#line 749 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 749 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 case 55:
 /* rule 55 can match eol */
 YY_RULE_SETUP
-#line 749 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 749 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* no UESCAPE after the quote, throw back everything */
 					char	   *ident;
@@ -9695,7 +9695,7 @@ YY_RULE_SETUP
 case 56:
 /* rule 56 can match eol */
 YY_RULE_SETUP
-#line 766 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 766 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* found UESCAPE after the end quote */
 					char	   *ident;
@@ -9720,7 +9720,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 787 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 787 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlitchar('"', yyscanner);
 				}
@@ -9728,19 +9728,19 @@ YY_RULE_SETUP
 case 58:
 /* rule 58 can match eol */
 YY_RULE_SETUP
-#line 790 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 790 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					addlit(yytext, yyleng, yyscanner);
 				}
 	YY_BREAK
 case YY_STATE_EOF(xd):
 case YY_STATE_EOF(xui):
-#line 793 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 793 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 { yyerror("unterminated quoted identifier"); }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 795 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 795 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					char	   *ident;
 
@@ -9755,7 +9755,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 807 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 807 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return TYPECAST;
@@ -9763,7 +9763,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 812 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 812 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return DOT_DOT;
@@ -9771,7 +9771,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 817 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 817 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return COLON_EQUALS;
@@ -9779,7 +9779,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 822 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 822 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return EQUALS_GREATER;
@@ -9787,7 +9787,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 827 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 827 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return LESS_EQUALS;
@@ -9795,7 +9795,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 832 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 832 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return GREATER_EQUALS;
@@ -9803,7 +9803,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 837 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 837 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* We accept both "<>" and "!=" as meaning NOT_EQUALS */
 					SET_YYLLOC();
@@ -9812,7 +9812,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 843 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 843 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* We accept both "<>" and "!=" as meaning NOT_EQUALS */
 					SET_YYLLOC();
@@ -9821,7 +9821,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 849 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 849 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return yytext[0];
@@ -9829,7 +9829,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 854 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 854 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/*
 					 * Check for embedded slash-star or dash-dash; those
@@ -9908,7 +9908,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 930 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 930 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					yylval->ival = atol(yytext + 1);
@@ -9917,7 +9917,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 936 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 936 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return process_integer_literal(yytext, yylval);
@@ -9925,7 +9925,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 940 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 940 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					yylval->str = pstrdup(yytext);
@@ -9934,7 +9934,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 945 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 945 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* throw back the .., and treat as integer */
 					yyless(yyleng - 2);
@@ -9944,7 +9944,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 951 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 951 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					yylval->str = pstrdup(yytext);
@@ -9953,7 +9953,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 956 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 956 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/*
 					 * throw back the [Ee], and treat as {decimal}.  Note
@@ -9969,7 +9969,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 968 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 968 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					/* throw back the [Ee][+-], and proceed as above */
 					yyless(yyleng - 2);
@@ -9980,7 +9980,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 977 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 977 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					const ScanKeyword *keyword;
 					char	   *ident;
@@ -10008,14 +10008,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 1002 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 1002 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					return yytext[0];
 				}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 1007 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 1007 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 {
 					SET_YYLLOC();
 					yyterminate();
@@ -10023,7 +10023,7 @@ case YY_STATE_EOF(INITIAL):
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 1012 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 1012 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 10030 "scan.c"
@@ -11129,7 +11129,7 @@ static int yy_flex_strlen (yyconst char * s , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 1012 "/home/osnapdev/postgres/src/backend/parser/scan.l"
+#line 1012 "/home/osnapdev/322/postgres/src/backend/parser/scan.l"
 
 
 

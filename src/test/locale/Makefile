@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/locale/Makefile
+/home/osnapdev/322/postgres/src/test/locale/Makefile

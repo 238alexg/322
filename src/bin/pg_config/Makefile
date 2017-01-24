@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/bin/pg_config/Makefile
+/home/osnapdev/322/postgres/src/bin/pg_config/Makefile

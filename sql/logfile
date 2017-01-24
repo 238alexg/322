@@ -1,0 +1,6 @@
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19557) running in data directory "/home/osnapdev/322/sql/../lostdb"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19557) running in data directory "/home/osnapdev/322/sql/../lostdb"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19557) running in data directory "/home/osnapdev/322/sql/../lostdb"?

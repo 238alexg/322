@@ -1,0 +1,1 @@
+/home/osnapdev/322/postgres/src/test/subscription/Makefile

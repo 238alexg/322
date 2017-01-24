@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/locale/gr_GR.ISO8859-7/Makefile
+/home/osnapdev/322/postgres/src/test/locale/gr_GR.ISO8859-7/Makefile

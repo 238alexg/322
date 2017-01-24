@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/osnapdev/httpd-2.4.25'
+ac_pwd='/home/osnapdev/322/httpd-2.4.25'
 srcdir='.'
 AWK='gawk'
 test -n "$AWK" || AWK=awk
@@ -697,7 +697,7 @@ S["manualdir"]="${datadir}/manual"
 S["htdocsdir"]="${datadir}/htdocs"
 S["logfiledir"]="${localstatedir}/logs"
 S["cgidir"]="${datadir}/cgi-bin"
-S["abs_srcdir"]="/home/osnapdev/httpd-2.4.25"
+S["abs_srcdir"]="/home/osnapdev/322/httpd-2.4.25"
 S["HTTPD_MMN"]="20120211"
 S["HTTPD_VERSION"]="2.4.25"
 S["EXTRA_INCLUDES"]="-I. -I$(top_srcdir)/os/$(OS_DIR) -I$(top_srcdir)/include -I/usr/include/apr-1 -I/usr/include -I$(top_srcdir)/modules/aaa -I$(top_srcdir)/modules/cac"\

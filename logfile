@@ -1,0 +1,279 @@
+LOG:  database system was shut down at 2017-01-24 04:17:14 UTC
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "osnapdev" does not exist
+FATAL:  database "osnapdev" does not exist
+FATAL:  database "lostdb" does not exist
+FATAL:  database "../lostdb" does not exist
+FATAL:  database "lostdb" does not exist
+ERROR:  syntax error at or near "#" at character 1
+STATEMENT:  # Alex Geoffrey
+	# Assignment 2
+	# SQL Create tables script
+	CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "products" does not exist
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+FATAL:  database "osnapdev" does not exist
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);

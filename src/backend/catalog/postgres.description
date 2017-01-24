@@ -896,6 +896,7 @@
 3318	pg_proc	0	statistics: information about progress of backends running maintenance command
 3099	pg_proc	0	statistics: information about currently active replication
 3317	pg_proc	0	statistics: information about WAL receiver
+6118	pg_proc	0	statistics: information about subscription
 2026	pg_proc	0	statistics: current backend PID
 1937	pg_proc	0	statistics: PID of backend
 1938	pg_proc	0	statistics: database ID of backend
@@ -1972,6 +1973,7 @@
 6012	pg_proc	0	advance replication itentifier to specific location
 6013	pg_proc	0	get an individual replication origin's replication progress
 6014	pg_proc	0	get progress for all replication origins
+6119	pg_proc	0	get OIDs of tables in a publication
 3298	pg_proc	0	row security for current context active on table by table oid
 3299	pg_proc	0	row security for current context active on table by table name
 3400	pg_proc	0	pg_config binary as a function
@@ -1979,6 +1981,7 @@
 3442	pg_proc	0	pg_controldata checkpoint state information as a function
 3443	pg_proc	0	pg_controldata recovery state information as a function
 3444	pg_proc	0	pg_controldata init state information as a function
+3445	pg_proc	0	import collations from operating system
 16	pg_type	0	boolean, 'true'/'false'
 17	pg_type	0	variable-length string, binary values escaped
 18	pg_type	0	single character
@@ -2339,11 +2342,14 @@
 907	pg_operator	0	subtract
 908	pg_operator	0	multiply
 909	pg_operator	0	divide
+3346	pg_operator	0	multiply
+3347	pg_operator	0	divide
 912	pg_operator	0	multiply
 913	pg_operator	0	divide
 914	pg_operator	0	multiply
 915	pg_operator	0	divide
 916	pg_operator	0	multiply
+3349	pg_operator	0	multiply
 917	pg_operator	0	multiply
 918	pg_operator	0	multiply
 3825	pg_operator	0	divide
@@ -2821,6 +2827,7 @@
 3250	pg_operator	0	is contained by
 3284	pg_operator	0	concatenate
 3285	pg_operator	0	delete object field
+3398	pg_operator	0	delete object fields
 3286	pg_operator	0	delete array element
 3287	pg_operator	0	delete path
 403	pg_am	0	b-tree index access method

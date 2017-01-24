@@ -652,8 +652,8 @@ int replication_yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *replication_yytext;
-#line 1 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
-#line 2 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 1 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
+#line 2 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 /*-------------------------------------------------------------------------
  *
  * repl_scanner.l
@@ -919,7 +919,7 @@ YY_DECL
 		}
 
 	{
-#line 81 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 81 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 
 
 #line 926 "repl_scanner.c"
@@ -977,138 +977,138 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 83 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 83 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_BASE_BACKUP; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 84 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 84 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_FAST; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 85 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 85 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_IDENTIFY_SYSTEM; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 86 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 86 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_LABEL; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 87 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 87 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_NOWAIT; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 88 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 88 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_PROGRESS; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 89 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 89 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_MAX_RATE; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 90 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 90 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_WAL; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 91 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 91 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_TABLESPACE_MAP; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 92 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 92 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_TIMELINE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 93 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 93 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_START_REPLICATION; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 94 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 94 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_CREATE_REPLICATION_SLOT; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 95 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 95 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_DROP_REPLICATION_SLOT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 96 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 96 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_TIMELINE_HISTORY; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 97 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 97 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_PHYSICAL; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 98 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 98 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_RESERVE_WAL; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 99 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 99 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_LOGICAL; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 100 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 100 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_SLOT; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 101 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 101 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return K_TEMPORARY; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 103 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 103 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return ','; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 104 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 104 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return ';'; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 105 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 105 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return '('; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 106 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 106 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { return ')'; }
 	YY_BREAK
 case 24:
 /* rule 24 can match eol */
 YY_RULE_SETUP
-#line 108 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 108 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 ;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 109 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 109 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 ;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 110 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 110 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 ;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 112 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 112 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					yylval.uintval = strtoul(replication_yytext, NULL, 10);
 					return UCONST;
@@ -1116,7 +1116,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 117 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 117 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					uint32	hi,
 							lo;
@@ -1128,7 +1128,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 126 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 126 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					BEGIN(xq);
 					startlit();
@@ -1136,7 +1136,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 131 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 131 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					yyless(1);
 					BEGIN(INITIAL);
@@ -1146,7 +1146,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 138 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 138 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					addlitchar('\'');
 				}
@@ -1154,14 +1154,14 @@ YY_RULE_SETUP
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 142 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 142 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					addlit(replication_yytext, replication_yyleng);
 				}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 146 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 146 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					BEGIN(xd);
 					startlit();
@@ -1169,7 +1169,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 151 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 151 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					int len;
 					yyless(1);
@@ -1183,14 +1183,14 @@ YY_RULE_SETUP
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 161 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 161 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					addlit(replication_yytext, replication_yyleng);
 				}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 165 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 165 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					int len = strlen(replication_yytext);
 
@@ -1200,18 +1200,18 @@ YY_RULE_SETUP
 	YY_BREAK
 case YY_STATE_EOF(xq):
 case YY_STATE_EOF(xd):
-#line 172 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 172 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 { yyerror("unterminated quoted string"); }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 175 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 175 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					yyterminate();
 				}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 179 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 179 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 {
 					ereport(ERROR,
 							(errcode(ERRCODE_SYNTAX_ERROR),
@@ -1220,7 +1220,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 184 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 184 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 1227 "repl_scanner.c"
@@ -2186,7 +2186,7 @@ void replication_yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 184 "/home/osnapdev/postgres/src/backend/replication/repl_scanner.l"
+#line 184 "/home/osnapdev/322/postgres/src/backend/replication/repl_scanner.l"
 
 
 

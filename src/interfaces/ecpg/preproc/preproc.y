@@ -854,6 +854,7 @@ add_typedef(char *name, char *dimension, char *length, enum ECPGttype type_enum,
 %type <str> definition
 %type <str> def_list
 %type <str> def_elem
+%type <str> def_key
 %type <str> def_arg
 %type <str> old_aggr_definition
 %type <str> old_aggr_list
@@ -984,6 +985,16 @@ add_typedef(char *name, char *dimension, char *length, enum ECPGttype type_enum,
 %type <str> operator_def_list
 %type <str> operator_def_elem
 %type <str> AlterOwnerStmt
+%type <str> CreatePublicationStmt
+%type <str> opt_publication_for_tables
+%type <str> publication_for_tables
+%type <str> AlterPublicationStmt
+%type <str> CreateSubscriptionStmt
+%type <str> publication_name_list
+%type <str> publication_name_item
+%type <str> AlterSubscriptionStmt
+%type <str> DropSubscriptionStmt
+%type <str> opt_drop_slot
 %type <str> RuleStmt
 %type <str> RuleActionList
 %type <str> RuleActionMulti
@@ -1463,7 +1474,7 @@ add_typedef(char *name, char *dimension, char *length, enum ECPGttype type_enum,
 
  PARALLEL PARSER PARTIAL PARTITION PASSING PASSWORD PLACING PLANS POLICY
  POSITION PRECEDING PRECISION PRESERVE PREPARE PREPARED PRIMARY
- PRIOR PRIVILEGES PROCEDURAL PROCEDURE PROGRAM
+ PRIOR PRIVILEGES PROCEDURAL PROCEDURE PROGRAM PUBLICATION
 
  QUOTE
 
@@ -1474,9 +1485,9 @@ add_typedef(char *name, char *dimension, char *length, enum ECPGttype type_enum,
 
  SAVEPOINT SCHEMA SCROLL SEARCH SECOND_P SECURITY SELECT SEQUENCE SEQUENCES
  SERIALIZABLE SERVER SESSION SESSION_USER SET SETS SETOF SHARE SHOW
- SIMILAR SIMPLE SKIP SMALLINT SNAPSHOT SOME SQL_P STABLE STANDALONE_P START
- STATEMENT STATISTICS STDIN STDOUT STORAGE STRICT_P STRIP_P SUBSTRING
- SYMMETRIC SYSID SYSTEM_P
+ SIMILAR SIMPLE SKIP SLOT SMALLINT SNAPSHOT SOME SQL_P STABLE STANDALONE_P
+ START STATEMENT STATISTICS STDIN STDOUT STORAGE STRICT_P STRIP_P
+ SUBSCRIPTION SUBSTRING SYMMETRIC SYSID SYSTEM_P
 
  TABLE TABLES TABLESAMPLE TABLESPACE TEMP TEMPLATE TEMPORARY TEXT_P THEN
  TIME TIMESTAMP TO TRAILING TRANSACTION TRANSFORM TREAT TRIGGER TRIM TRUE_P
@@ -1624,9 +1635,13 @@ prog: statements;
  { output_statement($1, 0, ECPGst_normal); }
 |  AlterCompositeTypeStmt
  { output_statement($1, 0, ECPGst_normal); }
+|  AlterPublicationStmt
+ { output_statement($1, 0, ECPGst_normal); }
 |  AlterRoleSetStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  AlterRoleStmt
+ { output_statement($1, 0, ECPGst_normal); }
+|  AlterSubscriptionStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  AlterTSConfigurationStmt
  { output_statement($1, 0, ECPGst_normal); }
@@ -1698,6 +1713,8 @@ prog: statements;
  { output_statement($1, 0, ECPGst_normal); }
 |  CreateOpFamilyStmt
  { output_statement($1, 0, ECPGst_normal); }
+|  CreatePublicationStmt
+ { output_statement($1, 0, ECPGst_normal); }
 |  AlterOpFamilyStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  CreatePolicyStmt
@@ -1709,6 +1726,8 @@ prog: statements;
 |  CreateSeqStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  CreateStmt
+ { output_statement($1, 0, ECPGst_normal); }
+|  CreateSubscriptionStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  CreateTableSpaceStmt
  { output_statement($1, 0, ECPGst_normal); }
@@ -1763,6 +1782,8 @@ prog: statements;
 |  DropRuleStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  DropStmt
+ { output_statement($1, 0, ECPGst_normal); }
+|  DropSubscriptionStmt
  { output_statement($1, 0, ECPGst_normal); }
 |  DropTableSpaceStmt
  { output_statement($1, 0, ECPGst_normal); }
@@ -5552,13 +5573,25 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
 
 
  def_elem:
- ColLabel '=' def_arg
+ def_key '=' def_arg
  { 
  $$ = cat_str(3,$1,mm_strdup("="),$3);
 }
-|  ColLabel
+|  def_key
  { 
  $$ = $1;
+}
+;
+
+
+ def_key:
+ ColLabel
+ { 
+ $$ = $1;
+}
+|  ColLabel ColLabel
+ { 
+ $$ = cat_str(2,$1,$2);
 }
 ;
 
@@ -5946,6 +5979,10 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
 |  TEXT_P SEARCH CONFIGURATION
  { 
  $$ = mm_strdup("text search configuration");
+}
+|  PUBLICATION
+ { 
+ $$ = mm_strdup("publication");
 }
 ;
 
@@ -8138,6 +8175,140 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
  { 
  $$ = cat_str(4,mm_strdup("alter event trigger"),$4,mm_strdup("owner to"),$7);
 }
+|  ALTER PUBLICATION name OWNER TO RoleSpec
+ { 
+ $$ = cat_str(4,mm_strdup("alter publication"),$3,mm_strdup("owner to"),$6);
+}
+|  ALTER SUBSCRIPTION name OWNER TO RoleSpec
+ { 
+ $$ = cat_str(4,mm_strdup("alter subscription"),$3,mm_strdup("owner to"),$6);
+}
+;
+
+
+ CreatePublicationStmt:
+ CREATE PUBLICATION name opt_publication_for_tables opt_definition
+ { 
+ $$ = cat_str(4,mm_strdup("create publication"),$3,$4,$5);
+}
+;
+
+
+ opt_publication_for_tables:
+ publication_for_tables
+ { 
+ $$ = $1;
+}
+| 
+ { 
+ $$=EMPTY; }
+;
+
+
+ publication_for_tables:
+ FOR TABLE relation_expr_list
+ { 
+ $$ = cat_str(2,mm_strdup("for table"),$3);
+}
+|  FOR ALL TABLES
+ { 
+ $$ = mm_strdup("for all tables");
+}
+;
+
+
+ AlterPublicationStmt:
+ ALTER PUBLICATION name WITH definition
+ { 
+ $$ = cat_str(4,mm_strdup("alter publication"),$3,mm_strdup("with"),$5);
+}
+|  ALTER PUBLICATION name ADD_P TABLE relation_expr_list
+ { 
+ $$ = cat_str(4,mm_strdup("alter publication"),$3,mm_strdup("add table"),$6);
+}
+|  ALTER PUBLICATION name SET TABLE relation_expr_list
+ { 
+ $$ = cat_str(4,mm_strdup("alter publication"),$3,mm_strdup("set table"),$6);
+}
+|  ALTER PUBLICATION name DROP TABLE relation_expr_list
+ { 
+ $$ = cat_str(4,mm_strdup("alter publication"),$3,mm_strdup("drop table"),$6);
+}
+;
+
+
+ CreateSubscriptionStmt:
+ CREATE SUBSCRIPTION name CONNECTION ecpg_sconst PUBLICATION publication_name_list opt_definition
+ { 
+ $$ = cat_str(7,mm_strdup("create subscription"),$3,mm_strdup("connection"),$5,mm_strdup("publication"),$7,$8);
+}
+;
+
+
+ publication_name_list:
+ publication_name_item
+ { 
+ $$ = $1;
+}
+|  publication_name_list ',' publication_name_item
+ { 
+ $$ = cat_str(3,$1,mm_strdup(","),$3);
+}
+;
+
+
+ publication_name_item:
+ ColLabel
+ { 
+ $$ = $1;
+}
+;
+
+
+ AlterSubscriptionStmt:
+ ALTER SUBSCRIPTION name WITH definition
+ { 
+ $$ = cat_str(4,mm_strdup("alter subscription"),$3,mm_strdup("with"),$5);
+}
+|  ALTER SUBSCRIPTION name CONNECTION ecpg_sconst
+ { 
+ $$ = cat_str(4,mm_strdup("alter subscription"),$3,mm_strdup("connection"),$5);
+}
+|  ALTER SUBSCRIPTION name SET PUBLICATION publication_name_list
+ { 
+ $$ = cat_str(4,mm_strdup("alter subscription"),$3,mm_strdup("set publication"),$6);
+}
+|  ALTER SUBSCRIPTION name ENABLE_P
+ { 
+ $$ = cat_str(3,mm_strdup("alter subscription"),$3,mm_strdup("enable"));
+}
+|  ALTER SUBSCRIPTION name DISABLE_P
+ { 
+ $$ = cat_str(3,mm_strdup("alter subscription"),$3,mm_strdup("disable"));
+}
+;
+
+
+ DropSubscriptionStmt:
+ DROP SUBSCRIPTION name opt_drop_slot
+ { 
+ $$ = cat_str(3,mm_strdup("drop subscription"),$3,$4);
+}
+|  DROP SUBSCRIPTION IF_P EXISTS name opt_drop_slot
+ { 
+ $$ = cat_str(3,mm_strdup("drop subscription if exists"),$5,$6);
+}
+;
+
+
+ opt_drop_slot:
+ ecpg_ident SLOT
+ { 
+ $$ = cat_str(2,$1,mm_strdup("slot"));
+}
+| 
+ { 
+ $$=EMPTY; }
 ;
 
 
@@ -13206,6 +13377,10 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
  { 
  $$ = mm_strdup("program");
 }
+|  PUBLICATION
+ { 
+ $$ = mm_strdup("publication");
+}
 |  QUOTE
  { 
  $$ = mm_strdup("quote");
@@ -13374,6 +13549,10 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
  { 
  $$ = mm_strdup("skip");
 }
+|  SLOT
+ { 
+ $$ = mm_strdup("slot");
+}
 |  SNAPSHOT
  { 
  $$ = mm_strdup("snapshot");
@@ -13421,6 +13600,10 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to server")
 |  STRIP_P
  { 
  $$ = mm_strdup("strip");
+}
+|  SUBSCRIPTION
+ { 
+ $$ = mm_strdup("subscription");
 }
 |  SYSID
  { 

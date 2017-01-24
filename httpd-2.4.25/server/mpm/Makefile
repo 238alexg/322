@@ -1,8 +1,8 @@
-top_srcdir   = /home/osnapdev/httpd-2.4.25
-top_builddir = /home/osnapdev/httpd-2.4.25
-srcdir       = /home/osnapdev/httpd-2.4.25/server/mpm
-builddir     = /home/osnapdev/httpd-2.4.25/server/mpm
-VPATH        = /home/osnapdev/httpd-2.4.25/server/mpm
+top_srcdir   = /home/osnapdev/322/httpd-2.4.25
+top_builddir = /home/osnapdev/322/httpd-2.4.25
+srcdir       = /home/osnapdev/322/httpd-2.4.25/server/mpm
+builddir     = /home/osnapdev/322/httpd-2.4.25/server/mpm
+VPATH        = /home/osnapdev/322/httpd-2.4.25/server/mpm
 
 SUBDIRS = $(MPM_SUBDIRS)
 

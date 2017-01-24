@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/regress/Makefile
+/home/osnapdev/322/postgres/src/test/regress/Makefile

@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/doc/src/sgml/Makefile
+/home/osnapdev/322/postgres/doc/src/sgml/Makefile

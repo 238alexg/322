@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/test/modules/brin/Makefile
+/home/osnapdev/322/postgres/src/test/modules/brin/Makefile

@@ -1,8 +1,8 @@
-top_srcdir   = /home/osnapdev/httpd-2.4.25
-top_builddir = /home/osnapdev/httpd-2.4.25
-srcdir       = /home/osnapdev/httpd-2.4.25/modules/proxy/balancers
-builddir     = /home/osnapdev/httpd-2.4.25/modules/proxy/balancers
-VPATH        = /home/osnapdev/httpd-2.4.25/modules/proxy/balancers
+top_srcdir   = /home/osnapdev/322/httpd-2.4.25
+top_builddir = /home/osnapdev/322/httpd-2.4.25
+srcdir       = /home/osnapdev/322/httpd-2.4.25/modules/proxy/balancers
+builddir     = /home/osnapdev/322/httpd-2.4.25/modules/proxy/balancers
+VPATH        = /home/osnapdev/322/httpd-2.4.25/modules/proxy/balancers
 # a modules Makefile has no explicit targets -- they will be defined by
 # whatever modules are enabled. just grab special.mk to deal with this.
 include $(top_srcdir)/build/special.mk

@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/contrib/lo/Makefile
+/home/osnapdev/322/postgres/contrib/lo/Makefile

@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/contrib/dict_xsyn/Makefile
+/home/osnapdev/322/postgres/contrib/dict_xsyn/Makefile

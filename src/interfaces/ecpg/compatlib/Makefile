@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/interfaces/ecpg/compatlib/Makefile
+/home/osnapdev/322/postgres/src/interfaces/ecpg/compatlib/Makefile

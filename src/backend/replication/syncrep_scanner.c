@@ -1334,8 +1334,8 @@ int syncrep_yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *syncrep_yytext;
-#line 1 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
-#line 2 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 1 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
+#line 2 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 /*-------------------------------------------------------------------------
  *
  * syncrep_scanner.l
@@ -1591,7 +1591,7 @@ YY_DECL
 		}
 
 	{
-#line 64 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 64 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 
 #line 1597 "syncrep_scanner.c"
 
@@ -1633,22 +1633,22 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 65 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 65 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { /* ignore */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 67 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 67 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return ANY; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 68 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 68 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return FIRST; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 70 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 70 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				initStringInfo(&xdbuf);
 				BEGIN(xd);
@@ -1656,7 +1656,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 74 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 74 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				appendStringInfoChar(&xdbuf, '"');
 		}
@@ -1664,14 +1664,14 @@ YY_RULE_SETUP
 case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
-#line 77 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 77 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				appendStringInfoString(&xdbuf, syncrep_yytext);
 		}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 80 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 80 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				yylval.str = xdbuf.data;
 				xdbuf.data = NULL;
@@ -1680,7 +1680,7 @@ YY_RULE_SETUP
 		}
 	YY_BREAK
 case YY_STATE_EOF(xd):
-#line 86 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 86 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				yyerror("unterminated quoted identifier");
 				return JUNK;
@@ -1688,7 +1688,7 @@ case YY_STATE_EOF(xd):
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 91 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 91 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				yylval.str = pstrdup(syncrep_yytext);
 				return NAME;
@@ -1696,7 +1696,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 96 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 96 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				yylval.str = pstrdup(syncrep_yytext);
 				return NUM;
@@ -1704,7 +1704,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 101 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 101 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 {
 				yylval.str = "*";
 				return NAME;
@@ -1712,27 +1712,27 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 106 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 106 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return ','; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 107 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 107 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return '('; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 108 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 108 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return ')'; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 110 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 110 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 { return JUNK; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 111 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 111 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
 #line 1739 "syncrep_scanner.c"
@@ -2678,7 +2678,7 @@ void syncrep_yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 111 "/home/osnapdev/postgres/src/backend/replication/syncrep_scanner.l"
+#line 111 "/home/osnapdev/322/postgres/src/backend/replication/syncrep_scanner.l"
 
 
 

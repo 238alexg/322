@@ -1,1 +1,1 @@
-/home/osnapdev/postgres/src/backend/access/rmgrdesc/genericdesc.c
+/home/osnapdev/322/postgres/src/backend/access/rmgrdesc/genericdesc.c

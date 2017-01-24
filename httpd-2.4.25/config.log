@@ -27,6 +27,7 @@ uname -v = #1 SMP PREEMPT Fri Dec 9 07:24:34 CET 2016
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /osnap/bin
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
 PATH: /usr/bin
@@ -769,7 +770,7 @@ configure:7565: gcc -o conftest   -pthread   -DLINUX -D_REENTRANT -D_GNU_SOURCE 
 conftest.c:42:6: warning: conflicting types for built-in function 'sqrt'
  char sqrt ();
       ^~~~
-/tmp/cc1eGwNW.o: In function `main':
+/tmp/ccTULDY4.o: In function `main':
 conftest.c:(.text+0xa): undefined reference to `sqrt'
 collect2: error: ld returned 1 exit status
 configure:7565: $? = 1
@@ -831,7 +832,7 @@ configure:7565: $? = 0
 configure:7582: result: -lm
 configure:7599: checking for library containing crypt
 configure:7630: gcc -o conftest   -pthread   -DLINUX -D_REENTRANT -D_GNU_SOURCE   -L/usr/lib conftest.c  >&5
-/tmp/ccwCasL3.o: In function `main':
+/tmp/ccIBu9Su.o: In function `main':
 conftest.c:(.text+0xa): undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 configure:7630: $? = 1
@@ -902,7 +903,7 @@ configure:7676: $? = 0
 configure:7676: result: yes
 configure:7676: checking for bindprocessor
 configure:7676: gcc -o conftest   -pthread   -DLINUX -D_REENTRANT -D_GNU_SOURCE   -L/usr/lib conftest.c  >&5
-/tmp/cc7ODzSa.o: In function `main':
+/tmp/ccce77Fp.o: In function `main':
 conftest.c:(.text+0xa): undefined reference to `bindprocessor'
 collect2: error: ld returned 1 exit status
 configure:7676: $? = 1
@@ -1557,7 +1558,7 @@ configure:27055: result: yes
 configure:27124: checking whether APR supports thread-safe pollsets
 configure:27143: checking for kqueue
 configure:27143: gcc -o conftest   -pthread   -DLINUX -D_REENTRANT -D_GNU_SOURCE   -L/usr/lib conftest.c  >&5
-/tmp/ccdbzHkA.o: In function `main':
+/tmp/ccLrx3jh.o: In function `main':
 conftest.c:(.text+0xa): undefined reference to `kqueue'
 collect2: error: ld returned 1 exit status
 configure:27143: $? = 1
@@ -1664,7 +1665,7 @@ configure: failed program was:
 configure:27143: result: no
 configure:27143: checking for port_create
 configure:27143: gcc -o conftest   -pthread   -DLINUX -D_REENTRANT -D_GNU_SOURCE   -L/usr/lib conftest.c  >&5
-/tmp/ccCcg5wG.o: In function `main':
+/tmp/ccyhYCxs.o: In function `main':
 conftest.c:(.text+0xa): undefined reference to `port_create'
 collect2: error: ld returned 1 exit status
 configure:27143: $? = 1
@@ -2008,6 +2009,7 @@ config.status:1188: creating build/rules.mk
 config.status:1188: creating build/pkg/pkginfo
 config.status:1188: creating build/config_vars.sh
 config.status:1188: creating include/ap_config_auto.h
+config.status:1358: include/ap_config_auto.h is unchanged
 config.status:1372: executing default commands
 configure:37828: summary of build options:
 
@@ -2372,7 +2374,7 @@ UTIL_LDFLAGS=''
 ab_CFLAGS=''
 ab_LDFLAGS='-lssl -lcrypto  -luuid -lrt -lcrypt  -lpthread -ldl'
 ab_LTFLAGS=''
-abs_srcdir='/home/osnapdev/httpd-2.4.25'
+abs_srcdir='/home/osnapdev/322/httpd-2.4.25'
 ac_ct_CC='gcc'
 ap_make_delimiter=' '
 ap_make_include='include'
