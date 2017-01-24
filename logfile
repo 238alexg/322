@@ -857,3 +857,604 @@ STATEMENT:  CREATE TABLE convoys (
 		depart_dt timestamp,
 		arrive_dt timestamp
 	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  syntax error at or near "CASCASDE" at character 20
+STATEMENT:  DROP SCHEMA lostdb CASCASDE;
+FATAL:  database "osnapdev" does not exist
+FATAL:  role "schema" does not exist
+FATAL:  role "schema" does not exist
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" does not exist at character 13
+STATEMENT:  INSERT INTO products (vendor, description, alt_description) VALUES ('big n large', '1L H2O', '1L H2O vergeze spring fed')
+FATAL:  role "drop" does not exist
+FATAL:  role "create" does not exist
+ERROR:  database "lostdb" already exists
+STATEMENT:  CREATE DATABASE lostdb;
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  no schema has been selected to create in at character 14
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" does not exist at character 13
+STATEMENT:  INSERT INTO products (vendor, description, alt_description) VALUES ('big n large', '1L H2O', '1L H2O vergeze spring fed')
+FATAL:  role "drop" does not exist
+FATAL:  role "create" does not exist
+ERROR:  schema "public" does not exist
+STATEMENT:  grant usage on schema public to public;
+ERROR:  schema "lostdb" does not exist
+STATEMENT:  grant usage on schema lostdb to public;
+FATAL:  role "drop" does not exist
+FATAL:  role "create" does not exist
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  syntax error at or near "select" at character 24
+STATEMENT:  select * from products
+	select * from products;
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk) not null,
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  null value in column "product_fk" violates not-null constraint
+DETAIL:  Failing row contains (1, null, DC15467299, Red Lion, volt:z).
+STATEMENT:  INSERT INTO assets (asset_tag, description, alt_description) VALUES ('DC15467299', 'Red Lion', 'volt:z')
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  invalid input syntax for integer: "null" at character 82
+STATEMENT:  INSERT INTO assets (product_fk, asset_tag, description, alt_description) VALUES ('null', 'DC15467299', 'Red Lion', 'volt:z')
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);
+ERROR:  syntax error at or near "," at character 82
+STATEMENT:  INSERT INTO assets (product_fk, asset_tag, description, alt_description) VALUES (, 'DC15467299', 'Red Lion', 'volt:z')
+ERROR:  relation "products" already exists
+STATEMENT:  CREATE TABLE products (
+		product_pk serial primary key,
+		vendor text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		asset_pk serial primary key,
+		product_fk integer REFERENCES products(product_pk),
+		asset_tag text,
+		description text,
+		alt_description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		fcode text,
+		common_name text,
+		location text
+	);
+ERROR:  relation "asset_at" already exists
+STATEMENT:  CREATE TABLE asset_at (
+		asset_fk serial primary key,
+		facility_fk integer REFERENCES facilities(facility_pk) not null,
+		arrive_dt timestamp,
+		depart_dt timestamp
+	);
+ERROR:  relation "convoys" already exists
+STATEMENT:  CREATE TABLE convoys (
+		convoy_pk serial primary key,
+		request text,
+		source_fk integer REFERENCES facilities(facility_pk) not null,
+		dest_fk integer REFERENCES facilities(facility_pk) not null,
+		depart_dt timestamp,
+		arrive_dt timestamp
+	);

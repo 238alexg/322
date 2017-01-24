@@ -10,7 +10,7 @@ CREATE TABLE products (
 );
 CREATE TABLE assets (
 	asset_pk serial primary key,
-	product_fk integer REFERENCES products(product_pk) not null,
+	product_fk integer REFERENCES products(product_pk),
 	asset_tag text,
 	description text,
 	alt_description text
