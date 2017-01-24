@@ -24,7 +24,7 @@ with open('osnap_legacy/DC_inventory.csv') as csvfile:
             continue
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
         asset = cur.fetchone()[0]
-        arrival = datetime.datetime.strptime(row[4])
+        arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
 
 # Read in data from HQ_inventory
@@ -39,7 +39,7 @@ with open('osnap_legacy/HQ_inventory.csv') as csvfile:
             continue
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
         asset = cur.fetchone()[0]
-        arrival = datetime.datetime.strptime(row[4])
+        arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
 
 # Read in data from MB005_inventory
@@ -54,8 +54,8 @@ with open('osnap_legacy/MB005_inventory.csv') as csvfile:
             continue
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
         asset = cur.fetchone()[0]
-        arrival = datetime.datetime.strptime(row[4])
-        departure = datetime.datetime.strptime(row[5])
+        arrival = datetime.datetime.strptime(row[4], '%b-%y')
+        departure = datetime.datetime.strptime(row[5], '%d-%b-%Y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt, depart_dt) VALUES (%s, %s, %s, %s)", (asset,facility, arrival, departure)) 
 
 # Read in data from MB005_inventory
@@ -70,9 +70,12 @@ with open('osnap_legacy/NC_inventory.csv') as csvfile:
             continue
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
         asset = cur.fetchone()[0]
-        arrival = datetime.datetime.strptime(row[4])
-        if (i < 3):
-            departure = datetime.datetime.strptime(row[5])
+        arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
+        if (i < 2):
+            departure = datetime.datetime.strptime(row[5], '%d-%b-%Y')
+            cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt, depart_dt) VALUES (%s, %s, %s, %s)", (asset,facility, arrival, departure)) 
+        elif (i == 2):
+            departure = datetime.datetime.strptime(row[5], '%m/%d/%y')
             cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt, depart_dt) VALUES (%s, %s, %s, %s)", (asset,facility, arrival, departure)) 
         else:
             cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_d) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
@@ -89,7 +92,7 @@ with open('osnap_legacy/SPNV_inventory.csv') as csvfile:
             continue
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
         asset = cur.fetchone()[0]
-        arrival = datetime.datetime.strptime(row[4])
+        arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
 
 
