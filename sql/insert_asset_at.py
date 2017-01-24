@@ -16,7 +16,7 @@ cur = conn.cursor()
 firstline = True
 with open('osnap_legacy/DC_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_fk FROM facilities WHERE fcode = DC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = DC")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
@@ -31,7 +31,7 @@ with open('osnap_legacy/DC_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/HQ_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_fk FROM facilities WHERE fcode = HQ")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = HQ")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
@@ -46,7 +46,7 @@ with open('osnap_legacy/HQ_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/MB005_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_fk FROM facilities WHERE fcode = MB005")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = MB005")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
@@ -62,7 +62,7 @@ with open('osnap_legacy/MB005_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/NC_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_fk FROM facilities WHERE fcode = NC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = NC")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
@@ -81,7 +81,7 @@ with open('osnap_legacy/NC_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/SPNV_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_fk FROM facilities WHERE fcode = DC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = DC")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):

@@ -19,7 +19,7 @@ python3 insert_assets.py $1
 python3 insert_facilities.py $1
 python3 insert_asset_at.py $1
 python3 insert_levels.py $1
-python3 insert_compartments.py $1
+python3 insert_compartment.py $1
 
 # Destroy legacy data
 rm -R osnap_legacy

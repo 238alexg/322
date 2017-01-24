@@ -14,7 +14,7 @@ cur = conn.cursor()
 # so I don't even think I should do this, but:
 cur.execute("INSERT INTO facilities (fcode, location) VALUES (%s, %s)", ("DC","Washington, D.C."))
 cur.execute("INSERT INTO facilities (fcode, location) VALUES (%s, %s)", ("HQ", "Headquarters"))
-cur.execute("INSERT INTO facilities (fcode) VALUES (%s)", ("MB005"))
+cur.execute("INSERT INTO facilities (fcode) VALUES (%s)","MB005")
 cur.execute("INSERT INTO facilities (fcode, location) VALUES (%s, %s)", ("NC", "National City"))
 cur.execute("INSERT INTO facilities (fcode, location) VALUES (%s, %s)", ("SPNV","Sparks, NV"))
 
