@@ -37,9 +37,16 @@ with open('osnap_legacy/HQ_inventory.csv') as csvfile:
         if (firstline):
             firstline = False
             continue
+
         cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
+
+        # Check to see if it already exists
+        cur.execute("SELECT asset_fk FROM asset_at WHERE asset = %s",(asset,))
+        if (cur.fetchone()):
+            continue
+
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
 
 # Read in data from MB005_inventory
