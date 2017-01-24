@@ -16,13 +16,13 @@ cur = conn.cursor()
 firstline = True
 with open('osnap_legacy/DC_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = DC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = 'DC'")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
             firstline = False
             continue
-        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
+        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
@@ -31,13 +31,13 @@ with open('osnap_legacy/DC_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/HQ_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = HQ")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = 'HQ'")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
             firstline = False
             continue
-        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
+        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
@@ -46,13 +46,13 @@ with open('osnap_legacy/HQ_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/MB005_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = MB005")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = 'MB005'")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
             firstline = False
             continue
-        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
+        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%b-%y')
         departure = datetime.datetime.strptime(row[5], '%d-%b-%Y')
@@ -62,13 +62,13 @@ with open('osnap_legacy/MB005_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/NC_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = NC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = 'NC'")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
             firstline = False
             continue
-        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
+        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         if (i < 2):
@@ -84,13 +84,13 @@ with open('osnap_legacy/NC_inventory.csv') as csvfile:
 firstline = True
 with open('osnap_legacy/SPNV_inventory.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
-    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = DC")
+    cur.execute("SELECT facility_pk FROM facilities WHERE fcode = 'SPNV'")
     facility = cur.fetchone()[0]
     for row in reader:
         if (firstline):
             firstline = False
             continue
-        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1]))
+        cur.execute("SELECT asset_pk FROM assets WHERE description = %s",(row[1],))
         asset = cur.fetchone()[0]
         arrival = datetime.datetime.strptime(row[4], '%m/%d/%y')
         cur.execute("INSERT INTO asset_at (asset_fk, facility_fk, arrive_dt) VALUES (%s, %s, %s)", (asset,facility, arrival)) 
