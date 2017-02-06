@@ -34,7 +34,11 @@ def home(username = "User"):
 @app.route('/inventory', methods = ['GET','POST'])
 def inventory():
     facility = request.form.get('Facility')
-    date = request.form.get('date')
+    month = int(request.form.get('Month'))
+    day = int(request.form.get('Day'))
+    year = int(request.form.get('Year'))
+
+    date = datetime.datetime(year, month, day, 0, 0, 0, 0)
 
     print ("HERE IS THE DATE: " + date)
 
@@ -54,7 +58,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.arrive_dt > (%s);''', date))
+    				WHERE asset_at.arrive_dt > ''' + date + ";"))
     
     # If only Facility was specified
     elif (date == None):
@@ -72,7 +76,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > (%s);''', facility, date))
+    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > ''' + date + ";", facility))
     data = cur.fetchall()
     print(data)
 
@@ -89,15 +93,6 @@ def transit():
 @app.route('/logout', methods = ['GET','POST'])
 def logout():
 	return render_template('logout.html')
-
-
-
-
-
-
-
-
-
 
 
 app.run(host='0.0.0.0', port=8080)
