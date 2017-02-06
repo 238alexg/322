@@ -7,7 +7,7 @@ from flask import Flask, render_template, request, redirect
 import psycopg2
 import sys
 import os
-import datetime
+from datetime import datetime
 
 dbname = sys.argv[1]
 
@@ -39,9 +39,9 @@ def inventory():
     print ("HERE IS THE DATE: " + date)
 
     # If facility not specified
-    if (facility == "All" || facility == None):
+    if ((facility == "All") | (facility == None)):
     	# If there are no parameters for the query
-    	if (date = None):
+    	if ((date == None) | (date == "")):
     		print("No facility or date: ", facility, date)
     		cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
     				FROM asset_at
@@ -50,29 +50,29 @@ def inventory():
     	# If only date was specified
     	else:
     		print("No facility: ", facility, date)
-    		cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    		cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.arrive_dt > ''' + date + ";")
+    				WHERE asset_at.arrive_dt > (%s);''', date))
     
     # If only Facility was specified
     elif (date == None):
     	print("No date: ", facility, date)
-    	cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = ''' + facility + ";")
+    				WHERE asset_at.facility_fk = (%s);''', facility))
 
     # If both date and facility specified
     else :
     	print("Facility and date: ", facility, date)
-    	cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = ''' + facility + " AND asset_at.arrive_dt > " + date + ";")
+    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > (%s);''', facility, date))
     data = cur.fetchall()
     print(data)
 
