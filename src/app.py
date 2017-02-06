@@ -35,7 +35,41 @@ def inventory():
     facility = request.form.get('Facility')
     date = request.form.get('date')
 
-    cur.execute("SELECT assets.description, fcode, arrive_dt, depart_dt FROM asset_at INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;")
+    # If facility not specified
+    if (facility == "All" || facility == None):
+    	# If there are no parameters for the query
+    	if (date = None):
+    		print("No facility or date: ", facility, date)
+    		cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    				FROM asset_at
+       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;''')
+    	# If only date was specified
+    	else:
+    		print("No facility: ", facility, date)
+    		cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    				FROM asset_at 
+    				WHERE asset_at.arrive_dt > ''' + date + '''
+       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;''')
+    
+    # If only Facility was specified
+    elif (date == None):
+    	print("No date: ", facility, date)
+    	cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    				FROM asset_at 
+    				WHERE asset_at.facility_fk = ''' + facility + '''
+       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;''')
+
+    # If both date and facility specified
+    else :
+    	print("Facility and date: ", facility, date)
+    	cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    				FROM asset_at 
+    				WHERE asset_at.facility_fk = ''' + facility + " AND asset_at.arrive_dt > " + date + '''
+       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;''')
     data = cur.fetchall()
     print(data)
 
