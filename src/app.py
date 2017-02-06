@@ -47,7 +47,7 @@ def inventory():
     		    	FROM asset_at 
        	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-	    		WHERE asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND (asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
+	    		WHERE asset_at.arrive_dt ''' + "<= \'" + date + "\' AND asset_at.depart_dt is NULL;"))
     	facility = "All Facilities"
     # If both date and facility specified
     else:
@@ -56,7 +56,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-                                WHERE asset_at.facility_fk = ''' + facility + " AND (asset_at.arrive_dt >= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
+                                WHERE asset_at.facility_fk = ''' + facility + " AND asset_at.arrive_dt <= \'" + date + "\' AND asset_at.depart_dt is NULL;"))
     	facility = facs[int(facility)-1]
 
     data = cur.fetchall()
@@ -72,12 +72,11 @@ def transit():
     date = year + "-" + month + "-" + day
     print (date)
     
-	print("Facility and date: ", facility)
-	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
-				FROM asset_at 
-   				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
-				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-                WHERE ''' + "asset_at.arrive_dt < \'" + date + "\'::date OR asset_at.depart_dt > \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
+    cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+		    	FROM asset_at 
+   	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
+                        WHERE ''' + "(asset_at.depart_dt is NULL AND asset_at.arrive_dt >= \'" + date + "\') OR asset_at.depart_dt <= \'" + date + "\';"))
 
     data = cur.fetchall()
     return render_template('transit.html', date=date, rows=data)

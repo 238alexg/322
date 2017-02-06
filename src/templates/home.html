@@ -52,7 +52,7 @@
 		<form action="/transit" method="post" name="transit" id="transit">
 			<h4>Assets In Transit</h4>
 			<b>Date:</b>
-			<select name="Month" form="inventory">
+			<select name="Month" form="transit">
 			    <option value='1'>Janaury</option>
 			    <option value='2'>February</option>
 			    <option value='3'>March</option>
@@ -66,12 +66,12 @@
 			    <option value='11'>November</option>
 			    <option value='12'>December</option>
     		</select> 
-    		<select name="Day" form="inventory">
+    		<select name="Day" form="transit">
     			{% for n in range(1,32) %}
     			<option value='{{n}}'>{{n}}</option>
     			{% endfor %}
     		</select>
-    		<select name="Year" form="inventory">
+    		<select name="Year" form="transit">
 				<option value='2015'>2015</option>
 			    <option value='2016'>2016</option>
 			    <option value='2017'>2017</option>
