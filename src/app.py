@@ -7,7 +7,6 @@ from flask import Flask, render_template, request, redirect
 import psycopg2
 import sys
 import os
-from datetime import datetime
 
 dbname = sys.argv[1]
 
@@ -38,8 +37,9 @@ def inventory():
     day = request.form.get('Day')
     year = request.form.get('Year')
 
-    #date = datetime(year, month, day, 0, 0, 0, 0)
-
+    date = year + "-" + month + "-" + day
+    print (date)
+    
     # If facility not specified
     if ((facility == "All") | (facility == None)):
     	# If only date
@@ -48,7 +48,7 @@ def inventory():
     		    	FROM asset_at 
        	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-	    		WHERE asset_at.arrive_dt ''' + " >= \'" + year + "-" + month + "-" + day + "\'::date;"))
+	    		WHERE asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date;"))
     
     # If both date and facility specified
     else:
@@ -57,9 +57,8 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-                                WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt ''' + " > \'" + year + "-" + month + "-" + day + "\'::date;", facility))
+                                WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date;", facility))
     data = cur.fetchall()
-    print(data)
 
     return render_template('inventory.html', facility=facility, date="01-01-01", rows=data)
 
