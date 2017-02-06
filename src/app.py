@@ -34,51 +34,34 @@ def home(username = "User"):
 @app.route('/inventory', methods = ['GET','POST'])
 def inventory():
     facility = request.form.get('Facility')
-    month = int(request.form.get('Month'))
-    day = int(request.form.get('Day'))
-    year = int(request.form.get('Year'))
+    month = request.form.get('Month')
+    day = request.form.get('Day')
+    year = request.form.get('Year')
 
-    date = datetime(year, month, day, 0, 0, 0, 0)
+    #date = datetime(year, month, day, 0, 0, 0, 0)
 
     # If facility not specified
     if ((facility == "All") | (facility == None)):
-    	# If there are no parameters for the query
-    	if ((date == None) | (date == "")):
-    		print("No facility or date: ", facility, date)
-    		cur.execute('''SELECT assets.description, fcode, arrive_dt, depart_dt 
-    				FROM asset_at
-       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
-    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;''')
-    	# If only date was specified
-    	else:
-    		print("No facility: ", facility, date)
-    		cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
-    				FROM asset_at 
-       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
-    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.arrive_dt > (%s)-(%s)-(%s)::date;''', year, month, day))
+    	# If only date
+    	print("No facility: ", facility)
+    	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+    		    	FROM asset_at 
+       	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+    			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
+	    		WHERE asset_at.arrive_dt ''' + " >= \'" + year + "-" + month + "-" + day + "\'::date;"))
     
-    # If only Facility was specified
-    elif (date == None):
-    	print("No date: ", facility, date)
-    	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
-    				FROM asset_at 
-       				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
-    				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = (%s);''', facility))
-
     # If both date and facility specified
-    else :
-    	print("Facility and date: ", facility, date)
+    else:
+    	print("Facility and date: ", facility)
     	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > (%s)-(%s)-(%s)::date;''', facility, year, month, day))
+                                WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt ''' + " > \'" + year + "-" + month + "-" + day + "\'::date;", facility))
     data = cur.fetchall()
     print(data)
 
-    return render_template('inventory.html', facility=facility, date=date, rows=data)
+    return render_template('inventory.html', facility=facility, date="01-01-01", rows=data)
 
 @app.route('/transit', methods = ['GET','POST'])
 def transit():
