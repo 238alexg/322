@@ -38,9 +38,7 @@ def inventory():
     day = int(request.form.get('Day'))
     year = int(request.form.get('Year'))
 
-    date = datetime.datetime(year, month, day, 0, 0, 0, 0)
-
-    print ("HERE IS THE DATE: " + date)
+    date = datetime(year, month, day, 0, 0, 0, 0)
 
     # If facility not specified
     if ((facility == "All") | (facility == None)):
@@ -58,7 +56,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.arrive_dt > ''' + date + ";"))
+    				WHERE asset_at.arrive_dt > (%s);''', date))
     
     # If only Facility was specified
     elif (date == None):
@@ -76,7 +74,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > ''' + date + ";", facility))
+    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt >  (%s);''', facility, date))
     data = cur.fetchall()
     print(data)
 
