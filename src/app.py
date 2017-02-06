@@ -33,9 +33,45 @@ def login():
 @app.route('/home/<string:username>', methods = ['GET','POST'])
 def home(username = "User"):
     if (request.method == 'POST'):
-        print("PSOTED")
+        if(request.form.get('Facility')):
+        	facility = request.form.get('Facility')
+        	date = request.form.get('date')
+        	return redirect('/inventory/' + facility + date)
+        elif (request.form.get('soem')):
+        	date = request.form.get('date')
+        else:
+        	return redirect('/')
     return render_template('home.html', username=username)
+
+@app.route('/inventory', methods = ['GET','POST'])
+def inventory():
+    if (request.method == 'POST'):
+    	facility = request.form.get('Facility')
+    	date = request.form.get('date')
+    	data = []
+    return render_template('inventory.html', facility=facility, date=date)
+
+@app.route('/transit', methods = ['GET','POST'])
+def transit():
+    if (request.method == 'POST'):
+    	date = request.form.get('date')
+    	data = []
+    return render_template('inventory.html', date=date)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.run(host='0.0.0.0', port=8080)
+
+
 

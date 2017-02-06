@@ -4,14 +4,14 @@
 	<head><title>Home</title></head>
 	<body>
 		<h2>Hello, {{username}}</h2>
-		<form method="post" name="logout" id="logout">
+		<form action="/logout" method="post" name="logout" id="logout">
 			<input type="submit" value="Logout">
 		</form>
 		
-		<form method="post" name="inventory" id="inventory">
+		<form action="/inventory" method="post" name="inventory" id="inventory">
 			<h4>Inventory Check</h4>
 			<b>Facility: </b>
-			<select>
+			<select name="Facility" form="inventory">
 				<option value="All">All</option>
 				<option value="1">DC</option>
 				<option value="2">HQ</option>
@@ -20,13 +20,13 @@
 				<option value="4">SPNV</option>
 			</select><br>
 			<b>Date:</b>
-			<input type="date" value="Date">
+			<input type="date" name="date" value="Date">
 			<input type="submit" value="Check Facility Inventory">
 		</form><br>
 
 		<hr>
 
-		<form method="post" name="transit" id="transit">
+		<form action="/transit" method="post" name="transit" id="transit">
 			<h4>Assets In Transit</h4>
 			<b>Date:</b>
 			<input type="date" value="Date">

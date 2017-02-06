@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+	<head><title>Transit</title></head>
+	<body>
+		<h2>In transit on {{date}}</h2>
+		<form action="/home">
+		    <input type="submit" value="Go Back" />
+		</form>
+
+		<table>
+			<tr>
+				<th>From Location</th>
+				<th>Leave Time</th>
+				<th>To Location</th>
+				<th>Arrival Time</th>
+			</tr>
+			<tr>
+				{{for row in data}}
+					<td>{{row}}</td>
+				{{endfor}}
+			</tr>
+		</table>
+	</body>
+</html>
