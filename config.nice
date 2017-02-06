@@ -1,7 +1,0 @@
-#! /bin/sh
-#
-# Created by configure
-
-"httpd-2.4.25/configure" \
-"--prefix=/home/osnapdev/installed" \
-"$@"

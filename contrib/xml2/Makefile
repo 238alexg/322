@@ -1,1 +1,0 @@
-/home/osnapdev/322/postgres/contrib/xml2/Makefile
