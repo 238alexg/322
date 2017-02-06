@@ -48,7 +48,7 @@ def inventory():
     		    	FROM asset_at 
        	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-	    		WHERE asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND (asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt = NULL);"))
+	    		WHERE asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND (asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
     
     # If both date and facility specified
     else:
@@ -57,7 +57,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-                                WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt = NULL);", facility))
+                                WHERE asset_at.facility_fk = ''' + facility + " AND (asset_at.arrive_dt >= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
     data = cur.fetchall()
 
     return render_template('inventory.html', facility=facility, date="01-01-01", rows=data)
