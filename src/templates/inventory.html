@@ -10,16 +10,19 @@
 
 		<table>
 			<tr>
-				<th>Facility</th>
 				<th>Asset Name</th>
+				<th>Facility</th>
 				<th>Arrival</th>
 				<th>Departure</th>
 			</tr>
+			{% for row in rows %}		
 			<tr>
-				{% for row in data %}
-					<td>{{row}}</td>
-				{% endfor %}
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td style="padding: 0 5px 0 5px;">{{ row[3] }}</td>
 			</tr>
+			{% endfor %}
 		</table>
 	</body>
 </html>
