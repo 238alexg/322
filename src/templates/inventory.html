@@ -4,7 +4,7 @@
 	<head><title>Inventory</title></head>
 	<body>
 		<h2>Inventory for {{facility}} at {{date}}</h2>
-		<form action="/home">
+		<form action="/home/Tester">
 		    <input type="submit" value="Go Back" />
 		</form>
 
@@ -16,9 +16,9 @@
 				<th>Departure</th>
 			</tr>
 			<tr>
-				{{for row in data}}
+				{% for row in data %}
 					<td>{{row}}</td>
-				{{endfor}}
+				{% endfor %}
 			</tr>
 		</table>
 	</body>

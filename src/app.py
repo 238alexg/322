@@ -8,7 +8,6 @@ import psycopg2
 import sys
 import os
 
-
 dbname = sys.argv[1]
 
 app = Flask(__name__, template_folder='templates')
@@ -22,25 +21,13 @@ print (cur.fetchall())
 @app.route('/', methods=['GET','POST'])
 def login():
     if (request.method == 'POST'):
-        un = request.form.get('username')
+        loginUN = request.form.get('username')
         pw = request.form.get('password')
-
-        print("UN: " + un, "PW: " + pw)
-        return redirect('/home/' + un)
-
+        return redirect('/home/' + loginUN)
     return render_template('login.html')
 
 @app.route('/home/<string:username>', methods = ['GET','POST'])
 def home(username = "User"):
-    if (request.method == 'POST'):
-        if(request.form.get('Facility')):
-        	facility = request.form.get('Facility')
-        	date = request.form.get('date')
-        	return redirect('/inventory/' + facility + date)
-        elif (request.form.get('soem')):
-        	date = request.form.get('date')
-        else:
-        	return redirect('/')
     return render_template('home.html', username=username)
 
 @app.route('/inventory', methods = ['GET','POST'])
@@ -49,14 +36,14 @@ def inventory():
     	facility = request.form.get('Facility')
     	date = request.form.get('date')
     	data = []
-    return render_template('inventory.html', facility=facility, date=date)
+    return render_template('inventory.html', facility=facility, date=date, rows=data)
 
 @app.route('/transit', methods = ['GET','POST'])
 def transit():
     if (request.method == 'POST'):
     	date = request.form.get('date')
     	data = []
-    return render_template('inventory.html', date=date)
+    return render_template('transit.html', date=date, rows=data)
 
 
 
