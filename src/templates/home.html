@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+	<head><title>Home</title></head>
+	<body>
+		<h2>Hello, {{username}}</h2>
+		<form method="post" name="logout" id="logout">
+			<input type="submit" value="Logout">
+		</form>
+		
+		<form method="post" name="inventory" id="inventory">
+			<select>
+				<option value="All">All</option>
+				<option value="HQ">HQ</option>
+			</select>
+			<select>
+				<option value="January">January</option>
+				<option value=February">February</option>
+			</select>
+			<input type="submit" value="Check Facility Inventory">
+		</form>
+	</body>
+</html>
