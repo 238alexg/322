@@ -14,9 +14,6 @@ app = Flask(__name__, template_folder='templates')
 conn = psycopg2.connect(dbname=dbname, host='/tmp/')
 cur = conn.cursor()
 
-cur.execute("SELECT * FROM products;")
-print (cur.fetchall())
-
 # Login Page
 @app.route('/', methods=['GET','POST'])
 def login():
@@ -38,6 +35,8 @@ def inventory():
     year = request.form.get('Year')
 
     date = year + "-" + month + "-" + day
+    facs = ["DC","HQ","MB005","NC","SPNV"]
+
     print (date)
     
     # If facility not specified
@@ -49,7 +48,7 @@ def inventory():
        	    		INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     			INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
 	    		WHERE asset_at.arrive_dt ''' + ">= \'" + date + "\'::date AND (asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
-    
+    	facility = "All Facilities"
     # If both date and facility specified
     else:
     	print("Facility and date: ", facility)
@@ -58,15 +57,29 @@ def inventory():
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
                                 WHERE asset_at.facility_fk = ''' + facility + " AND (asset_at.arrive_dt >= \'" + date + "\'::date AND asset_at.depart_dt <= \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
+    	facility = facs[int(facility)-1]
+
     data = cur.fetchall()
 
-    return render_template('inventory.html', facility=facility, date="01-01-01", rows=data)
+    return render_template('inventory.html', facility=facility, date=date, rows=data)
 
 @app.route('/transit', methods = ['GET','POST'])
 def transit():
-    if (request.method == 'POST'):
-    	date = request.form.get('date')
-    	data = []
+    month = request.form.get('Month')
+    day = request.form.get('Day')
+    year = request.form.get('Year')
+
+    date = year + "-" + month + "-" + day
+    print (date)
+    
+	print("Facility and date: ", facility)
+	cur.execute(('''SELECT assets.description, fcode, arrive_dt, depart_dt 
+				FROM asset_at 
+   				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
+				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
+                WHERE ''' + "asset_at.arrive_dt < \'" + date + "\'::date OR asset_at.depart_dt > \'" + date + "\'::date OR asset_at.depart_dt is NULL);"))
+
+    data = cur.fetchall()
     return render_template('transit.html', date=date, rows=data)
 
 
