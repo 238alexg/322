@@ -56,7 +56,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.arrive_dt > (%s);''', date))
+    				WHERE asset_at.arrive_dt > (%s)-(%s)-(%s)::date;''', year, month, day))
     
     # If only Facility was specified
     elif (date == None):
@@ -74,7 +74,7 @@ def inventory():
     				FROM asset_at 
        				INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk 
     				INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk
-    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt >  (%s);''', facility, date))
+    				WHERE asset_at.facility_fk = (%s) AND asset_at.arrive_dt > (%s)-(%s)-(%s)::date;''', facility, year, month, day))
     data = cur.fetchall()
     print(data)
 
