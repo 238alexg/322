@@ -35,7 +35,9 @@ def inventory():
     if (request.method == 'POST'):
     	facility = request.form.get('Facility')
     	date = request.form.get('date')
-    	data = []
+
+    	cur.execute("SELECT assets.description, fcode, arrive_dt, depart_dt FROM asset_at INNER JOIN facilities ON asset_at.facility_fk = facilities.facility_pk INNER JOIN assets ON asset_at.asset_fk = assets.asset_pk;")
+    	data = cur.fetchall()
     return render_template('inventory.html', facility=facility, date=date, rows=data)
 
 @app.route('/transit', methods = ['GET','POST'])
@@ -46,7 +48,9 @@ def transit():
     return render_template('transit.html', date=date, rows=data)
 
 
-
+@app.route('/logout', methods = ['GET','POST'])
+def logout():
+	return render_template('logout.html')
 
 
 
