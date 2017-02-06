@@ -9,15 +9,28 @@
 		</form>
 		
 		<form method="post" name="inventory" id="inventory">
+			<h4>Inventory Check</h4>
+			<b>Facility: </b>
 			<select>
 				<option value="All">All</option>
-				<option value="HQ">HQ</option>
-			</select>
-			<select>
-				<option value="January">January</option>
-				<option value=February">February</option>
-			</select>
+				<option value="1">DC</option>
+				<option value="2">HQ</option>
+				<option value="3">MB005</option>
+				<option value="4">NC</option>
+				<option value="4">SPNV</option>
+			</select><br>
+			<b>Date:</b>
+			<input type="date" value="Date">
 			<input type="submit" value="Check Facility Inventory">
-		</form>
+		</form><br>
+
+		<hr>
+
+		<form method="post" name="transit" id="transit">
+			<h4>Assets In Transit</h4>
+			<b>Date:</b>
+			<input type="date" value="Date">
+			<input type="submit" value="Check Assets In Transit">
+		</form><br>
 	</body>
 </html>
