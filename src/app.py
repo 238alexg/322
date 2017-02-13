@@ -4,14 +4,15 @@
 # Flask python web application
 
 from flask import Flask, render_template, request, redirect
+from config import dbname, dbhost, dbport, lost_pub
+from datetime import datetime
+import json
 import psycopg2
 import sys
 import os
 
-dbname = sys.argv[1]
-
 app = Flask(__name__, template_folder='templates')
-conn = psycopg2.connect(dbname=dbname, host='/tmp/')
+conn = psycopg2.connect(dbname=dbname, host=dbhost)
 cur = conn.cursor()
 
 # Login Page
@@ -36,8 +37,6 @@ def inventory():
 
     date = year + "-" + month + "-" + day
     facs = ["DC","HQ","MB005","NC","SPNV"]
-
-    print (date)
     
     # If facility not specified
     if ((facility == "All") | (facility == None)):
@@ -80,6 +79,125 @@ def transit():
 
     data = cur.fetchall()
     return render_template('transit.html', date=date, rows=data)
+
+@app.route('/rest', methods = ['GET','POST'])
+def restMenu():
+    return render_template('restMenu.html')
+
+@app.route('/rest/lost_key', methods = ['GET','POST'])
+def lost_key():
+    # Try to handle as plaintext
+    if request.method=='POST' and 'arguments' in request.form:
+        req=json.loads(request.form['arguments'])
+
+        dat = dict()
+        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+        
+        if (lost_pub != NULL):
+            dat['result'] = 'OK'
+            dat['key'] = lost_pub
+        else:
+            dat['result'] = 'FAIL'
+            dat['key'] = 'FAIL'
+
+        data = json.dumps(dat)
+        return data
+
+    else:
+        return render_template('/rest/lost_key.html')
+
+@app.route('/rest/activate_user', methods = ['GET','POST'])
+def activate_user():
+    # Try to handle as plaintext
+    if request.method=='POST' and 'arguments' in request.form:
+        req=json.loads(request.form['arguments'])
+
+        dat = dict()
+        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+
+        if (req['username'] != NULL):
+            dat['result'] = 'OK'
+        else:
+            dat['result'] = 'FAIL'
+
+        data = json.dumps(dat)
+        return data
+
+    else:
+        return render_template('/rest/activate_user.html')
+
+@app.route('/rest/suspend_user', methods=('POST',))
+def suspend_user():
+    # Try to handle as plaintext
+    if request.method=='POST' and 'arguments' in request.form:
+        req=json.loads(request.form['arguments'])
+
+        dat = dict()
+        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+
+        if (req['username'] != NULL):
+            dat['result'] = 'OK'
+        else:
+            dat['result'] = 'FAIL'
+
+        data = json.dumps(dat)
+        return data
+
+    else:
+        return render_template('/rest/suspend_user.html')
+
+@app.route('/rest/list_products', methods = ['GET','POST'])
+def list_products():
+    # Try to handle as plaintext
+    if request.method=='POST' and 'arguments' in request.form:
+        req=json.loads(request.form['arguments'])
+
+        dat = dict()
+        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+        vendor = req['vendor']
+        description = req['description']
+        compartments = req['compartments']
+
+        if (vendor != ""):
+            print ("Contains vendor")
+        if (description != ""):
+            print ("Contains description")
+        if (compartments != []):
+            print ("Contains compartments")
+
+        data = json.dumps(dat)
+        return data
+
+    else:
+        return render_template('/rest/list_products.html')
+
+@app.route('/rest/add_products', methods = ['GET','POST'])
+def add_products():
+    # Try to handle as plaintext
+    if request.method=='POST' and 'arguments' in request.form:
+        req=json.loads(request.form['arguments'])
+
+        dat = dict()
+        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+        description = req['description']
+        compartments = req['compartments']
+
+        if (vendor != ""):
+            print ("Contains vendor")
+        if (description != ""):
+            print ("Contains description")
+        if (compartments != []):
+            print ("Contains compartments")
+        
+        data = json.dumps(dat)
+        return data
+
+    else:
+        return render_template('/rest/add_products.html')
+
+@app.route('/rest/add_asset', methods = ['GET','POST'])
+def add_asset():
+    return render_template('add_asset.html')
 
 
 @app.route('/logout', methods = ['GET','POST'])
