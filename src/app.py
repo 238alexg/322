@@ -101,6 +101,7 @@ def lost_key():
     else:
         return redirect('/rest')
 
+# Give user access/creates a new user and gives them access
 @app.route('/rest/activate_user', methods = ['GET','POST'])
 def activate_user():
     # Try to handle as plaintext
@@ -117,7 +118,6 @@ def activate_user():
                 cur.execute("INSERT INTO users (username, active) VALUES (%s, %s)", (req['username'],"TRUE")) 
             else:
                 cur.execute("UPDATE users SET active = 'TRUE' WHERE username = '" + req['username'] + "';")
-                print("GOT HIM")
             conn.commit()
             dat['result'] = 'OK'
         else:
@@ -129,19 +129,23 @@ def activate_user():
     else:
         return redirect('/rest')
 
+# Suspends user access
 @app.route('/rest/suspend_user', methods=('POST',))
 def suspend_user():
     # Try to handle as plaintext
-    if request.method=='POST' and 'arguments' in request.form:
-        req=json.loads(request.form['arguments'])
+    if request.method=='POST':
+        req=json.loads(request.form['suspend_user'])
 
         dat = dict()
-        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+        dat['timestamp'] = datetime.utcnow().isoformat()
+        dat['result'] = 'OK'
 
-        if (req['username'] != NULL):
-            dat['result'] = 'OK'
-        else:
-            dat['result'] = 'FAIL'
+        if (req['username'] != None):
+            cur.execute("SELECT * FROM users WHERE users.username = '" + req['username'] + "'")
+            user = cur.fetchone()
+            if (user != None):
+                cur.execute("UPDATE users SET active = 'FALSE' WHERE username = '" + req['username'] + "';")
+                conn.commit()
 
         data = json.dumps(dat)
         return data
@@ -152,8 +156,8 @@ def suspend_user():
 @app.route('/rest/list_products', methods = ['GET','POST'])
 def list_products():
     # Try to handle as plaintext
-    if request.method=='POST' and 'arguments' in request.form:
-        req=json.loads(request.form['arguments'])
+    if request.method=='POST':
+        req=json.loads(request.form['list_products'])
 
         dat = dict()
         dat['timestamp'] = datetime.datetime.utcnow().isoformat()
@@ -177,21 +181,23 @@ def list_products():
 @app.route('/rest/add_products', methods = ['GET','POST'])
 def add_products():
     # Try to handle as plaintext
-    if request.method=='POST' and 'arguments' in request.form:
-        req=json.loads(request.form['arguments'])
+    if request.method=='POST':
+        req=json.loads(request.form['add_products'])
 
         dat = dict()
-        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
-        description = req['description']
-        compartments = req['compartments']
+        dat['timestamp'] = datetime.utcnow().isoformat()
+        dat['result'] = 'OK'
 
-        if (vendor != ""):
-            print ("Contains vendor")
-        if (description != ""):
-            print ("Contains description")
-        if (compartments != []):
-            print ("Contains compartments")
-        
+        newProducts = req['new_products']
+        for product in newProducts:
+            print (product)
+            cur.execute("SELECT * FROM products WHERE products.vendor = '" + newProducts['vendor'] + "' AND products.description = '" + newProducts['description'] + "';")
+            prod = cur.fetchone()
+            if (prod != None):
+                dat['result'] = 'FAIL'
+            else:
+                cur.execute("INSERT INTO products (vendor, description, alt_description) VALUES (%s, %s, %s)", (req['vendor'],req['description'],req['compartments']))
+
         data = json.dumps(dat)
         return data
 
