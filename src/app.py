@@ -84,6 +84,7 @@ def transit():
 def restMenu():
     return render_template('restMenu.html')
 
+# Prints the lost public key in a JSON format
 @app.route('/rest/lost_key', methods = ['GET','POST'])
 def lost_key():
     if request.method=='POST':
@@ -111,9 +112,12 @@ def activate_user():
         dat = dict()
         dat['timestamp'] = datetime.utcnow().isoformat()
 
+        # If username provided, find user if one exists and set activity to true
         if (req['username'] != None):
             cur.execute("SELECT * FROM users WHERE users.username = '" + req['username'] + "'")
             user = cur.fetchone()
+
+            # If user doesn't exist, insert new user and set activity to true
             if (user == None):
                 cur.execute("INSERT INTO users (username, active) VALUES (%s, %s)", (req['username'],"TRUE")) 
             else:
@@ -132,7 +136,6 @@ def activate_user():
 # Suspends user access
 @app.route('/rest/suspend_user', methods=['POST'])
 def suspend_user():
-    # Try to handle as plaintext
     if request.method=='POST':
         req=json.loads(request.form['suspend_user'])
         print (req)
@@ -140,6 +143,7 @@ def suspend_user():
         dat['timestamp'] = datetime.utcnow().isoformat()
         dat['result'] = 'OK'
 
+        # If username provided, find user if one exists and set activity to false
         if (req['username'] != None):
             cur.execute("SELECT * FROM users WHERE users.username = '" + req['username'] + "'")
             user = cur.fetchone()
@@ -153,6 +157,9 @@ def suspend_user():
     else:
         return redirect('/rest')
 
+# Lists products from JSON query
+# NOTE: Almost entirely adopted from Professor Ellsworth's list_products API stub
+# https://github.com/dellswor/lost/blob/master/src/app.py
 @app.route('/rest/list_products', methods = ['GET','POST'])
 def list_products():
     """This function is huge... much of it should be broken out into other supporting
@@ -242,6 +249,7 @@ def list_products():
 
     return data
 
+# Adds a product to the database
 @app.route('/rest/add_products', methods = ['GET','POST'])
 def add_products():
     # Try to handle as plaintext
@@ -253,6 +261,8 @@ def add_products():
         dat['result'] = 'OK'
 
         newProducts = req['new_products']
+
+        # For each product, insert to the table if it is not a duplicate
         for product in newProducts:
             print (product)
             cur.execute("SELECT * FROM products WHERE products.vendor = '" + product['vendor'] + "' AND products.description = '" + product['description'] + "';")
@@ -269,6 +279,7 @@ def add_products():
     else:
         return redirect('/rest')
 
+# Adds an asset to the database if product can be found
 @app.route('/rest/add_asset', methods = ['GET','POST'])
 def add_asset():
     # Try to handle as plaintext
@@ -278,8 +289,11 @@ def add_asset():
         dat = dict()
         dat['timestamp'] = datetime.utcnow().isoformat()
 
+        # Get product, if it exists
         cur.execute("SELECT * FROM products WHERE products.vendor = '" + req['vendor'] + "' AND products.description = '" + req['description'] + "';")
         prod = cur.fetchone()
+
+        # If product is found, insert new asset into DB with product's product_pk, else fail
         if (prod == None):
             dat['result'] = 'FAIL'
         else:

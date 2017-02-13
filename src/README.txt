@@ -20,3 +20,4 @@ Files:
 	- inventory.html - The page wherein inventory queries are loaded and presented.
 	- transit.html - The page wherein transit queries are loaded and presented.
 	- logout.html - A very simple logout page with a button to log back in
+	- restMenu.html - A page describing/posting to all the RESTful API stubs in the application
