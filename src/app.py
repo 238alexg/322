@@ -86,14 +86,12 @@ def restMenu():
 
 @app.route('/rest/lost_key', methods = ['GET','POST'])
 def lost_key():
-    # Try to handle as plaintext
-    if request.method=='POST' and 'arguments' in request.form:
-        req=json.loads(request.form['arguments'])
-
+    print("GOT HERE")
+    if request.method=='POST':
         dat = dict()
-        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
-        
-        if (lost_pub != NULL):
+        dat['timestamp'] = datetime.utcnow().isoformat()
+        print ("HERE 2") 
+        if (lost_pub != None):
             dat['result'] = 'OK'
             dat['key'] = lost_pub
         else:
@@ -104,6 +102,7 @@ def lost_key():
         return data
 
     else:
+        print("AYO TECHNOLOGY")
         return redirect('/rest')
 
 @app.route('/rest/activate_user', methods = ['GET','POST'])
