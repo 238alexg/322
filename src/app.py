@@ -104,19 +104,21 @@ def lost_key():
 @app.route('/rest/activate_user', methods = ['GET','POST'])
 def activate_user():
     # Try to handle as plaintext
-    if request.method=='POST' and 'arguments' in request.form:
-        req=json.loads(request.form['arguments'])
+    if request.method=='POST':
+        req=json.loads(request.form['activate_user'])
 
         dat = dict()
-        dat['timestamp'] = datetime.datetime.utcnow().isoformat()
+        dat['timestamp'] = datetime.utcnow().isoformat()
 
-        if (req['username'] != NULL):
-            cur.execute("SELECT * FROM users WHERE users.username = " + req['username'])
+        if (req['username'] != None):
+            cur.execute("SELECT * FROM users WHERE users.username = '" + req['username'] + "'")
             user = cur.fetchone()
             if (user == None):
-                cur.execute("INSERT INTO users (username, active) VALUES (%s, %s, %s)", (req['username'],"TRUE")) 
+                cur.execute("INSERT INTO users (username, active) VALUES (%s, %s)", (req['username'],"TRUE")) 
             else:
-                cur.execute("UPDATE users SET active = 'TRUE' WHERE username = %s;", req['username'])
+                cur.execute("UPDATE users SET active = 'TRUE' WHERE username = '" + req['username'] + "';")
+                print("GOT HIM")
+            conn.commit()
             dat['result'] = 'OK'
         else:
             dat['result'] = 'FAIL'
