@@ -104,7 +104,7 @@ def lost_key():
         return data
 
     else:
-        return render_template('/rest/lost_key.html')
+        return redirect('restMenu.html')
 
 @app.route('/rest/activate_user', methods = ['GET','POST'])
 def activate_user():
@@ -124,7 +124,7 @@ def activate_user():
         return data
 
     else:
-        return render_template('/rest/activate_user.html')
+        return redirect('restMenu.html')
 
 @app.route('/rest/suspend_user', methods=('POST',))
 def suspend_user():
@@ -144,7 +144,7 @@ def suspend_user():
         return data
 
     else:
-        return render_template('/rest/suspend_user.html')
+        return redirect('restMenu.html')
 
 @app.route('/rest/list_products', methods = ['GET','POST'])
 def list_products():
@@ -169,7 +169,7 @@ def list_products():
         return data
 
     else:
-        return render_template('/rest/list_products.html')
+        return redirect('restMenu.html')
 
 @app.route('/rest/add_products', methods = ['GET','POST'])
 def add_products():
@@ -193,12 +193,11 @@ def add_products():
         return data
 
     else:
-        return render_template('/rest/add_products.html')
+        return redirect('restMenu.html')
 
 @app.route('/rest/add_asset', methods = ['GET','POST'])
 def add_asset():
-    return render_template('add_asset.html')
-
+    return redirect('restMenu.html')
 
 @app.route('/logout', methods = ['GET','POST'])
 def logout():
