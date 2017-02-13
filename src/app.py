@@ -196,8 +196,9 @@ def add_products():
             if (prod != None):
                 dat['result'] = 'FAIL'
             else:
-                cur.execute("INSERT INTO products (vendor, description, alt_description) VALUES (%s, %s, %s)", (product['vendor'],product['description'],product['compartments']))
-
+                cur.execute("INSERT INTO products (vendor, description, alt_description) VALUES (%s, %s, %s)", (product['vendor'],product['description'],product['alt_description']))
+        
+        conn.commit()
         data = json.dumps(dat)
         return data
 
