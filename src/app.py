@@ -86,11 +86,9 @@ def restMenu():
 
 @app.route('/rest/lost_key', methods = ['GET','POST'])
 def lost_key():
-    print("GOT HERE")
     if request.method=='POST':
         dat = dict()
         dat['timestamp'] = datetime.utcnow().isoformat()
-        print ("HERE 2") 
         if (lost_pub != None):
             dat['result'] = 'OK'
             dat['key'] = lost_pub
@@ -100,9 +98,7 @@ def lost_key():
 
         data = json.dumps(dat)
         return data
-
     else:
-        print("AYO TECHNOLOGY")
         return redirect('/rest')
 
 @app.route('/rest/activate_user', methods = ['GET','POST'])
@@ -115,6 +111,12 @@ def activate_user():
         dat['timestamp'] = datetime.datetime.utcnow().isoformat()
 
         if (req['username'] != NULL):
+            cur.execute("SELECT * FROM users WHERE users.username = " + req['username'])
+            user = cur.fetchone()
+            if (user == None):
+                cur.execute("INSERT INTO users (username, active) VALUES (%s, %s, %s)", (req['username'],"TRUE")) 
+            else:
+                cur.execute("UPDATE users SET active = 'TRUE' WHERE username = %s;", req['username'])
             dat['result'] = 'OK'
         else:
             dat['result'] = 'FAIL'
