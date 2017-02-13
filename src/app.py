@@ -130,12 +130,12 @@ def activate_user():
         return redirect('/rest')
 
 # Suspends user access
-@app.route('/rest/suspend_user', methods=('POST',))
+@app.route('/rest/suspend_user', methods=['POST'])
 def suspend_user():
     # Try to handle as plaintext
     if request.method=='POST':
         req=json.loads(request.form['suspend_user'])
-
+        print (req)
         dat = dict()
         dat['timestamp'] = datetime.utcnow().isoformat()
         dat['result'] = 'OK'
@@ -191,12 +191,12 @@ def add_products():
         newProducts = req['new_products']
         for product in newProducts:
             print (product)
-            cur.execute("SELECT * FROM products WHERE products.vendor = '" + newProducts['vendor'] + "' AND products.description = '" + newProducts['description'] + "';")
+            cur.execute("SELECT * FROM products WHERE products.vendor = '" + product['vendor'] + "' AND products.description = '" + product['description'] + "';")
             prod = cur.fetchone()
             if (prod != None):
                 dat['result'] = 'FAIL'
             else:
-                cur.execute("INSERT INTO products (vendor, description, alt_description) VALUES (%s, %s, %s)", (req['vendor'],req['description'],req['compartments']))
+                cur.execute("INSERT INTO products (vendor, description, alt_description) VALUES (%s, %s, %s)", (product['vendor'],product['description'],product['compartments']))
 
         data = json.dumps(dat)
         return data
