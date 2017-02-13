@@ -3,9 +3,5 @@
         "dbname": "lostdb",
         "dbhost": "/tmp",
         "dbport": 5432
-    },
-    "crypto": {
-        "lost_priv": "/home/osnapdev/keys/lost.priv",
-        "lost_pub":  "/home/osnapdev/keys/lost.pub"
     }
 }

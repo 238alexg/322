@@ -3,6 +3,7 @@
 import json
 import os
 import pathlib
+from Crypto.PublicKey import RSA
 
 # Get path for json file
 cpath = pathlib.Path(os.path.realpath(__file__)).parent.joinpath('lost_config.json')
@@ -19,5 +20,5 @@ with cpath.open() as conf:
     dbport = c['database']['dbport']
 
     # Keys
-    lost_pub  = c['crypto']['lost_pub']
-    lost_pub  = c['crypto']['lost_priv']
+    lost_pub  = RSA.generate(2048)
+    lost_pub  = lost_pub.exportKey(pkcs=8)
