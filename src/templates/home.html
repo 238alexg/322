@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+	<head><title>Home</title></head>
+	<body>
+		<h2>Hello, {{username}}</h2>
+		<form action="/logout" method="post" name="logout" id="logout">
+			<input type="submit" value="Logout">
+		</form>
+		
+		<form action="/inventory" method="post" name="inventory" id="inventory">
+			<h4>Inventory Check</h4>
+			<b>Facility: </b>
+			<select name="Facility" form="inventory">
+				<option value="All">All</option>
+				<option value="1">DC</option>
+				<option value="2">HQ</option>
+				<option value="3">MB005</option>
+				<option value="4">NC</option>
+				<option value="4">SPNV</option>
+			</select><br>
+			<b>Date:</b>
+			<select name="Month" form="inventory">
+			    <option value='1'>Janaury</option>
+			    <option value='2'>February</option>
+			    <option value='3'>March</option>
+			    <option value='4'>April</option>
+			    <option value='5'>May</option>
+			    <option value='6'>June</option>
+			    <option value='7'>July</option>
+			    <option value='8'>August</option>
+			    <option value='9'>September</option>
+			    <option value='10'>October</option>
+			    <option value='11'>November</option>
+			    <option value='12'>December</option>
+    		</select> 
+    		<select name="Day" form="inventory">
+    			{% for n in range(1,32) %}
+    			<option value='{{n}}'>{{n}}</option>
+    			{% endfor %}
+    		</select>
+    		<select name="Year" form="inventory">
+				<option value='2015'>2015</option>
+			    <option value='2016'>2016</option>
+			    <option value='2017'>2017</option>
+			    <option value='2017'>2018</option>
+    		</select>
+			<input type="submit" value="Check Facility Inventory">
+		</form><br>
+
+		<hr>
+
+		<form action="/transit" method="post" name="transit" id="transit">
+			<h4>Assets In Transit</h4>
+			<b>Date:</b>
+			<select name="Month" form="transit">
+			    <option value='1'>Janaury</option>
+			    <option value='2'>February</option>
+			    <option value='3'>March</option>
+			    <option value='4'>April</option>
+			    <option value='5'>May</option>
+			    <option value='6'>June</option>
+			    <option value='7'>July</option>
+			    <option value='8'>August</option>
+			    <option value='9'>September</option>
+			    <option value='10'>October</option>
+			    <option value='11'>November</option>
+			    <option value='12'>December</option>
+    		</select> 
+    		<select name="Day" form="transit">
+    			{% for n in range(1,32) %}
+    			<option value='{{n}}'>{{n}}</option>
+    			{% endfor %}
+    		</select>
+    		<select name="Year" form="transit">
+				<option value='2015'>2015</option>
+			    <option value='2016'>2016</option>
+			    <option value='2017'>2017</option>
+			    <option value='2017'>2018</option>
+			    <option value='2017'>2019</option>
+			    <option value='2017'>2020</option>
+			    <option value='2017'>2021</option>
+			    <option value='2017'>2022</option>
+			    <option value='2017'>2023</option>
+    		</select>
+			<input type="submit" value="Check Assets In Transit">
+		</form><br>
+
+		<hr>
+
+		<a href="/rest">Go to RESTful API</a>
+	</body>
+</html>
