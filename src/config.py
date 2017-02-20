@@ -20,6 +20,9 @@ with cpath.open() as conf:
     dbname = c['database']['dbname']
     dbhost = c['database']['dbhost']
     dbport = c['database']['dbport']
+    
+    # Secret key (for sessions)
+    secret_key = c['crypto']['lost_priv']
 
     print (dbname, dbhost, dbport)
 
