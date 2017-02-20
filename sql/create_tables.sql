@@ -6,9 +6,9 @@
 CREATE TABLE users (
 	-- I am using a primary key since I am more familiar with them (as opposed to using a string as a PK), and to me it makes more sense in terms of efficiency since comparing integers is faster than comparing each of the 16 characters of the username
 	user_pk serial primary key,
-	-- I am using a 16-character array for the username (since it is in the project specification)
+	-- I am using a 16-character variable size varchar for the username (since it is in the project specification). Variable size allows the password/username to not have a lot of whitespaces.
 	username varchar(16),
-	-- Similarly, I am using a 16-character password (since it is in the project specification)
+	-- Similarly, I am using a 16-character password (since it is in the project specification), with a variable size.
 	password varchar(16)
 );
 
