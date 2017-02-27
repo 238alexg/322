@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Facility</title>
+	</head>
+	<body>
+		<a href="/dashboard">Go Back To Dashboard</a>
+		<h1>Current Facilities</h1>
+		<table style="width:75%">
+			<tr>
+				<th>Facility Name</th>
+				<th>Facility Code</th>
+			</tr>
+		{% for facility in facilities  %}
+			<tr>
+				<td>{{ facility[1] }}</td>
+				<td>{{ facility[2] }}</td>
+			</tr>
+		{% endfor  %}
+		</table><br>
+		
+		<h1>Add Facility</h1>
+
+		<p style="color:red;">{{ error }} </p>
+		<form method="post" action="/add_facility" name="add_facility" id="add_facility">
+			<input type="text" name="facilityName" placeholder="Facility Name"><br>
+			<input type="text" name="facilityCode" placeholder="Facility Code"><br>
+			<input type="submit" value="Add Facility">
+		</form>
+	</body>
+</html>
+<!DOCTYPE html>

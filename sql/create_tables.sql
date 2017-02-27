@@ -24,12 +24,13 @@ CREATE TABLE assets (
 	assets_pk serial primary key,
 	tag varchar(16),
 	description text,
-	facility_pk integer REFERENCES facilities NULL
+	facility_fk integer REFERENCES facilities NULL,
+	arrival_dt timestamp
 );
 
 -- Facilities table, with PK, up to 32 chars for name and up to 6 chars for code
 CREATE TABLE facilities (
-	facilities serial primary key,
+	facility_pk serial primary key,
 	name varchar(32),
 	code varchar(6)
 );

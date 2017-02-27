@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Asset</title>
+	</head>
+	<body>	
+		<h1>Add Asset</h1>
+		
+		<p style="color:red;">{{ error }} </p>
+		
+		<a href="/dashboard">Go Back To Dashboard</a>
+
+		<form method="post" action="/add_asset" name="add_asset" id="add_asset">
+			<input type="text" name="assetTag" placeholder="Asset Tag"><br>
+			<input type="text" name="assetDesc" placeholder="Description"><br>
+			<p style="display:inline">Facility name: </p><select name="facility" form="add_asset">
+			{% for facility in facilities %}
+				<option>{{ facility[0] }} </option>
+			{% endfor  %}
+			</select><br>
+			<p style="display:inline">Date/time: </p><input type="datetime-local" name="date"><br>
+			<input type="submit" value="Add Facility">
+		</form>
+	</body>
+</html>
+<!DOCTYPE html>
