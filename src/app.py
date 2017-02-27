@@ -6,9 +6,10 @@ app = Flask(__name__, template_folder='templates')
 conn = psycopg2.connect(dbname=dbname, host=dbhost)
 cur = conn.cursor()
 
+# Set secret key
 app.secret_key = secret_key
 
-# Login page
+# Login page: logs in user or redirects them to the create_user page if no user found
 @app.route('/', methods=['GET','POST'])
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -38,7 +39,7 @@ def login():
 
     return render_template('login.html', error=" ")
 
-# Route for creating new users
+# Route for creating new users. If user already exists, loads error into html
 @app.route('/create_user', methods=['GET','POST'])
 def create_user():
     if (request.method == 'POST'):
@@ -64,11 +65,12 @@ def create_user():
     print("GOT HERE")
     return render_template('create_user.html', error=" ")
 
-
+# Route that presents incrediably simple dashboard with the user's username, and logout button
 @app.route('/dashboard', methods=['GET'])
 def dashboard():
     return render_template('dashboard.html', username=session['username'])
 
+# Logs user out of the session and returns them to the login screen
 @app.route('/logout', methods=['GET','POST'])
 def logout():
     session.pop('username', None)
