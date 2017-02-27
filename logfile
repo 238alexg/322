@@ -139,3 +139,482 @@ HINT:  In a moment you should be able to reconnect to the database and repeat yo
 WARNING:  terminating connection because of crash of another server process
 DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
 HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+LOG:  database system was shut down at 2017-02-27 01:09:48 UTC
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 1213) running in data directory "/home/osnapdev/nd/322/lostdb"?
+ERROR:  syntax error at or near "role" at character 103
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16)
+		role integer REFERENCES roles
+	);
+ERROR:  syntax error at or near "role_fk" at character 103
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16)
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "tables" at character 6
+STATEMENT:  drop tables;
+ERROR:  syntax error at or near "users" at character 6
+STATEMENT:  drop users;
+ERROR:  syntax error at or near "*" at character 12
+STATEMENT:  drop table *;
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  missing FROM-clause entry for table "role" at character 27
+STATEMENT:  SELECT * FROM roles WHERE role.rolename = 'Official Guy'
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "VALUE" at character 30
+STATEMENT:  INSERT INTO roles (rolename) VALUE Superior Being
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "Superior" at character 37
+STATEMENT:  INSERT INTO roles (rolename) VALUES Superior Being
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "'Superior Being'" at character 37
+STATEMENT:  INSERT INTO roles (rolename) VALUES 'Superior Being'
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "Being" at character 47
+STATEMENT:  INSERT INTO roles (rolename) VALUES (Superior Being)
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  unterminated quoted identifier at or near """ at character 60
+STATEMENT:  SELECT * FROM roles WHERE roles.rolename = 'Superior Being'"
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_pk integer REFERENCES facilities NULL
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facilities serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  syntax error at or near "WHERE" at character 41
+STATEMENT:  select * from users JOIN roles.rolename WHERE users.role_fk = roles.role_pk;
+ERROR:  syntax error at or near "WHERE" at character 41
+STATEMENT:  select * from users JOIN roles.rolename WHERE role_fk = role_pk;
+ERROR:  syntax error at or near "WHERE" at character 32
+STATEMENT:  select * from users JOIN roles WHERE role_fk = role_pk;
+ERROR:  syntax error at or near "WHERE" at character 38
+STATEMENT:  select * from users INNER JOIN roles WHERE role_fk = role_pk;
+ERROR:  relation "roles.rolename" does not exist at character 22
+STATEMENT:  select * from users, roles.rolename WHERE role_fk = role_pk;
+ERROR:  column "role_pk" does not exist at character 37
+HINT:  Perhaps you meant to reference the column "users.role_fk".
+STATEMENT:  select * from users WHERE role_fk = role_pk;
+ERROR:  column "role_pk" does not exist at character 43
+HINT:  Perhaps you meant to reference the column "users.role_fk".
+STATEMENT:  select * from users WHERE users.role_fk = role_pk;
+ERROR:  missing FROM-clause entry for table "roles" at character 43
+STATEMENT:  select * from users WHERE users.role_fk = roles.role_pk;
+ERROR:  missing FROM-clause entry for table "users" at character 8
+STATEMENT:  select users.username, roles.rolename WHERE users.role_fk = roles.role_pk;
+ERROR:  column roles.role_pk does not exist at character 79
+HINT:  Perhaps you meant to reference the column "roles.roles_pk".
+STATEMENT:  select users.username, roles.rolename FROM users, roles WHERE users.role_fk = roles.role_pk;
+ERROR:  column "role_pk" does not exist at character 73
+HINT:  Perhaps you meant to reference the column "users.role_fk" or the column "roles.roles_pk".
+STATEMENT:  select users.username, roles.rolename FROM users, roles WHERE role_fk = role_pk;

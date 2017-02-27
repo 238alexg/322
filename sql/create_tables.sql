@@ -9,7 +9,27 @@ CREATE TABLE users (
 	-- I am using a 16-character variable size varchar for the username (since it is in the project specification). Variable size allows the password/username to not have a lot of whitespaces.
 	username varchar(16),
 	-- Similarly, I am using a 16-character password (since it is in the project specification), with a variable size.
-	password varchar(16)
+	password varchar(16),
+	role_fk integer REFERENCES roles
 );
 
+-- Roles table, for the users column. Having seperate table means less redundency
+CREATE TABLE roles (
+	roles_pk serial primary key,
+	rolename varchar(25)
+);
 
+-- Assets table, with PK, up to 16 chars for tag, and any length for description
+CREATE TABLE assets (
+	assets_pk serial primary key,
+	tag varchar(16),
+	description text,
+	facility_pk integer REFERENCES facilities NULL
+);
+
+-- Facilities table, with PK, up to 32 chars for name and up to 6 chars for code
+CREATE TABLE facilities (
+	facilities serial primary key,
+	name varchar(32),
+	code varchar(6)
+);

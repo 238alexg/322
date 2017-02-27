@@ -16,7 +16,7 @@ def login():
     if (request.method == 'POST'):
         loginUN = request.form.get('username')
         pw = request.form.get('password')
-        
+
         # If user provided username and password
         if ((loginUN != "") & (pw != "")):
             cur.execute("SELECT * FROM users WHERE users.username = \'" + loginUN + "\';")
@@ -45,7 +45,8 @@ def create_user():
     if (request.method == 'POST'):
         loginUN = request.form.get('username')
         pw = request.form.get('password')
-        
+        role = request.form.get('role')
+
         # If user provided username and password
         if ((loginUN != "") & (pw != "")):
             cur.execute("SELECT * FROM users WHERE users.username = \'" + loginUN + "\';")
@@ -54,11 +55,28 @@ def create_user():
             # If username is available, create user or return with error
             if (user != None):
                 return render_template('create_user.html', error="User already exists!")
+            
+            # If role is entered, try to find it in DB
+            elif (role != None):
+                cur.execute("SELECT * FROM roles WHERE roles.rolename = \'" + role + "\'")
+                userRole = cur.fetchone()
+                
+                # If not found, create it before inserting new user
+                if (userRole == None):
+                    cur.execute("INSERT INTO roles (rolename) VALUES (\'" + role + "\')")
+                    cur.execute("SELECT * FROM roles WHERE roles.rolename = \'" + role + "\'")
+                    userRole = cur.fetchone()
+                
+                # Insert new user
+                cur.execute("INSERT INTO users (username, password, role_fk) VALUES (%s, %s, %s)", (loginUN, pw, str(userRole[0])))
+            # If creating user with no role, don't give user a role
             else:
                 cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (loginUN, pw))
-                conn.commit()
-                session['username'] = loginUN
-                return redirect('/dashboard')
+
+            # Commit changes, login user
+            conn.commit()
+            session['username'] = loginUN
+            return redirect('/dashboard')
         else:
             return render_template('create_user.html', error="Cannot have blank username or password!")
     
@@ -76,6 +94,6 @@ def logout():
     session.pop('username', None)
     return render_template('/login.html', error="Successfully logged out!")
 
-app.run(host='0.0.0.0', port='8080')
+#app.run(host='0.0.0.0', port='8080')
 
 
