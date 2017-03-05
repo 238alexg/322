@@ -215,10 +215,12 @@ def asset_report():
         facility = request.form.get('facility')
         rawdate = request.form.get('date')
         dtobj = datetime.strptime(rawdate, "%Y-%m-%d" + "T" + "%H:%M")
+        print (dtobj)
 
         # If no facility indicated, load all assets from DB where arrival date is BEFORE date on form (already arrived)
         if (facility == "All"):
             cur.execute("SELECT * FROM assets WHERE assets.arrival_dt <= %s", [dtobj])
+            print("GOT HERE")
         
         # Else do above only with assets from given facility
         else:
@@ -228,6 +230,7 @@ def asset_report():
 
         # Load report results and facility names into the page
         assets = cur.fetchall()
+        print (assets)
         return render_template('asset_report.html', assets=assets, facilities=facilityNames)
 
 # Logs user out of the session and returns them to the login screen
