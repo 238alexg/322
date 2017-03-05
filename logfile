@@ -2335,3 +2335,10 @@ STATEMENT:  CREATE TABLE assets (
 		facility_fk integer REFERENCES facilities NULL,
 		arrival_dt timestamp
 	);
+LOG:  database system was interrupted; last known up at 2017-03-02 20:31:12 UTC
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  invalid record length at 0/179FB98
+LOG:  redo is not required
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -2,11 +2,14 @@
 -- Created on 2/19/17 by Alex Geoffrey
 -- For CIS322 at the University of Oregon
 
+
+-- Roles table, for the users column. Having seperate table means less redundency
 CREATE TABLE roles (
 	roles_pk serial primary key,
 	rolename varchar(25)
 );
 
+-- Facilities table, with PK, up to 32 char name and 6 char code.
 CREATE TABLE facilities (
 	facility_pk serial primary key,
 	name varchar(32),
@@ -25,9 +28,6 @@ CREATE TABLE users (
 	role_fk integer REFERENCES roles
 );
 
--- Roles table, for the users column. Having seperate table means less redundency
-
-
 -- Assets table, with PK, up to 16 chars for tag, and any length for description
 CREATE TABLE assets (
 	assets_pk serial primary key,
@@ -37,4 +37,31 @@ CREATE TABLE assets (
 	arrival_dt timestamp
 );
 
--- Facilities table, with PK, up to 32 chars for name and up to 6 chars for code
+-- Transfer request table. PK for indexing. 
+  -- requester_fk and approver_fk to reference users requesting/approving
+  -- submit_dt and approve_dt as datetimes specifying the date something was submitted/approved
+  -- source_fk and dest_fk to reference facilities where asset is being transfered to/from
+  -- asset_fk to reference the asset being transferred
+CREATE TABLE transfers (
+	transfer_pk serial primary key,
+	requester_fk integer REFERENCES users,
+	submit_dt timestamp,
+	source_fk integer REFERENCES facilities,
+	dest_fk integer REFERENCES facilities,
+	asset_fk integer REFERENCES assets,
+	approver_fk integer REFERENCES users,
+	approve_dt timestamp
+);
+
+-- Assets in transit table. PK for indexing
+  -- source_fk and dest_fk to reference facilities asset being transported between
+  -- load_dt and unload_dt to track time when asset is not at a facility
+CREATE TABLE intransits (
+	intransit_pk serial primary key,
+	source_fk integer REFERENCES facilities,
+	load_dt timestamp,
+	dest_fk integer REFERENCES facilities,
+	unload_dt timestamp
+);
+
+

@@ -10,5 +10,5 @@ cp -R src/* $HOME/wsgi
 
 # Comment out before submission!
 # Restarts server
-apachectl restart
+#apachectl restart
 #python3 ../../wsgi/app.py $1
