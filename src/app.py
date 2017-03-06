@@ -93,14 +93,17 @@ def create_user():
 @app.route('/dashboard/<string:message>', methods=['GET'])
 @app.route('/dashboard', methods=['GET'])
 def dashboard(message=''):
+    # Render different aspects of template based on user role
     if (session['role'] == "Logistics Officer"):
-        # Select all asset tags from transfers without a set load to unload time
+        # Select all asset tags from transfers that are in transit
         cur.execute("SELECT assets.tag, transfers.transfer_pk FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.unload_dt IS NULL) AND (transfers.load_dt IS NOT NULL) AND (transfers.approver_fk IS NOT NULL)")
         transfers = cur.fetchall()
-        
+
+        # Select all asset tags from transfers that are not in transit yet
         cur.execute("SELECT assets.tag, transfers.transfer_pk FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt IS NULL) AND (transfers.approver_fk IS NOT NULL)")
         loadedTransfers = cur.fetchall()
 
+        # Render template with both assets in transit and assets waiting on being loaded
         return render_template('dashboard.html', username=session['username'],role=session['role'], message=message, transfers=transfers, loadedTransfers=loadedTransfers)
     elif (session['role'] == "Facilities Officer"):
         # Select all transfers still needing approval
@@ -258,14 +261,19 @@ def asset_report():
 # Route to initiate transit requests
 @app.route('/transfer_req', methods=['GET','POST'])
 def transfer_req():
+    # Verify user is a Logistics Officer
     if (session['role'] != "Logistics Officer"):
         return render_template('error.html', error="Must be a Logistics Officer to initiate transfer requests!")
+    
+    # Display assets available to be transferred
     elif (request.method == "GET"):
         cur.execute("SELECT facilities.name FROM facilities")
         facilities = cur.fetchall()
         cur.execute("SELECT assets.tag, facilities.name FROM assets, facilities WHERE assets.facility_fk = facilities.facility_pk")
         assets = cur.fetchall()
         return render_template('transfer_req.html', facilities=facilities, assets=assets)
+    
+    # If user requested a transfer
     elif (request.method == "POST"):
         # Check validity of asset tag (kept as text input instead of select options since it sounded 
         # like some kind of input validation was needed)
@@ -285,15 +293,15 @@ def transfer_req():
         # Since facilities are loaded into select from DB, they must be valid, no validation necessary
         cur.execute("SELECT facilities.facility_pk FROM facilities WHERE facilities.name = \'" + source + "\';")
         source_fk = cur.fetchone()
-       
-        print (source_fk)
 
+        # If asset is not saved as being in the facility transferred FROM
         if (asset[3] != source_fk[0]):
             return render_template('error.html', error="Asset is not at the source facility!")
         
         cur.execute("SELECT facilities.facility_pk FROM facilities WHERE facilities.name = \'" + dest + "\';")
         dest_fk = cur.fetchone()
 
+        # Get current time
         curdt = datetime.now()
 
         cur.execute("SELECT users.user_pk FROM users WHERE users.username = \'" + session['username'] + "\';")
@@ -309,8 +317,10 @@ def transfer_req():
 @app.route('/approve_req/<transfer_pk>', methods=['GET'])
 @app.route('/approve_req/<transfer_pk>/<approve>', methods=['POST'])
 def approve_req(transfer_pk=-1, approve="True"):
+    # Verify user is a Facilities Officer
     if (session['role'] != "Facilities Officer"):
         return render_template('error.html', error="Must be a Facilities Officer to approve assets!")
+    # Verify transfer_pk is valid
     elif (request.method == 'GET'):
         if (transfer_pk == -1):
             return render_template('error.html', error="Invalid transfer key! Transfer is not logged in the database!")
@@ -318,6 +328,7 @@ def approve_req(transfer_pk=-1, approve="True"):
             cur.execute("SELECT assets.tag, facilities.name, transfers.transfer_pk FROM assets, facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk)")
             transfer = cur.fetchone()
             return render_template('approve_req.html', transfer=transfer)
+    # If Facilities Officer approved/disapproved of transfer
     elif (request.method == 'POST'):
         # If transfer is approved, update DB with approving user and datetime of approval
         if (approve == "True"):
@@ -336,39 +347,51 @@ def approve_req(transfer_pk=-1, approve="True"):
 # Route to set the load and unload times of approved transfer requests
 @app.route('/update_transit/<transfer_pk>', methods=['GET', 'POST'])
 def update_transit(transfer_pk = -1):
+    # Only allow Logistics Officers to use this route
     if (session['role'] != "Logistics Officer"):
         return render_template('error.html', error="Only Logistics Officers can update load and unload times!")
+    # Verify transfer_pk is valid
     elif (request.method == 'GET'):
         if (transfer_pk == -1):
             return render_template('error.html', error="Invalid transfer key! Transfer does not exist in the database!")
         else:
+            # Generate and display asset tag, source and dest facility for transfer
             cur.execute("SELECT assets.tag, facilities.name, transfer_pk, transfers.load_dt FROM assets, facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk)")
             transfer = cur.fetchone()
             cur.execute("SELECT facilities.name FROM facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (facilities.facility_pk = transfers.source_fk)")
             source = cur.fetchone()[0]
             return render_template('update_transit.html', transfer=transfer, source=source)
+    # Updated load/unload time
     elif (request.method == 'POST'):
+        # If request was for updating load, update load time
         if (request.form.get('load_dt')):
             rawLDT = request.form.get('load_dt')
             load_dt = datetime.strptime(rawLDT, "%Y-%m-%d" + "T" + "%H:%M")
             cur.execute("UPDATE transfers SET load_dt = %s WHERE transfers.transfer_pk = %s", (load_dt, transfer_pk))
             message = "Transfer load time recorded"
+        # If request was for updating unload, update unload time
         elif (request.form.get('unload_dt')):
             rawUDT = request.form.get('unload_dt')
             unload_dt = datetime.strptime(rawUDT, "%Y-%m-%d" + "T" + "%H:%M")
             cur.execute("UPDATE transfers SET unload_dt = %s WHERE transfers.transfer_pk = %s", (unload_dt, transfer_pk))
             message = "Transfer unload time recorded"
+        
+        # Commit changes and redirect to the dashboard
         conn.commit()
         return redirect("/dashboard/" + message)
 
 # Route for a transfer report of all assets in transit
 @app.route('/transfer_report', methods=['GET','POST'])
 def transfer_report():
+    # Render template without results
     if (request.method == 'GET'):
         return render_template('transfer_report.html')
+    # Generate results list and render template with results
     elif (request.method == 'POST'):
         rawdt = request.form.get('date')
         dtobj = datetime.strptime(rawdt, "%Y-%m-%d" + "T" + "%H:%M")
+
+        # Add to results if transfer load <= dtobj, and transfer unload >= dtobj
         cur.execute("SELECT assets.tag, transfers.load_dt, transfers.unload_dt FROM assets, transfers WHERE (transfers.load_dt <= %s) AND (transfers.unload_dt >= %s) AND (transfers.asset_fk = assets.assets_pk)", (dtobj, dtobj))
         results = cur.fetchall()
 

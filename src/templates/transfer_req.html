@@ -20,16 +20,16 @@
 			{% endfor %}
 		</table><br><br>
 		<form method="post" action="/transfer_req" name="transfer_req" id="transfer_req">
-			<select name="source">
+			<p>Source Facility: <select name="source">
 				{% for facility in facilities %}
 				<option>{{ facility[0] }}</option>
 				{% endfor %}
-			</select><br>
-			<select name="dest">
+			</select></p><br>
+			<p>Destination Facility: <select name="dest">
 				{% for facility in facilities %}
 				<option>{{ facility[0] }}</option>
 				{% endfor %}
-			</select><br>
+			</select></p><br>
 			<input type="text" name="tag" placeholder="Asset Tag">
 			<input type="submit" value="Request Transfer">
 		</form>

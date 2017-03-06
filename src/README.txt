@@ -11,3 +11,8 @@
 	asset_report.html: Loads/posts data generating asset reports for facilities/dates
 	dispose_asset.html: Allows qualified users to dispose of assets
 	error.html: A generic template feeding various errors to the user. Also links back to the dashboard.
+	approve_req.html: Allows Facilities Officers to approve of transit requests
+	transfer_report.html: Post and displays reports for assets in transit on the given date
+	transfer_req.html: Allows Logistics Officers to post requests for asset transfers
+	update_transit.html: Allows Logistics Officers to update transfer's transit status
+	success.html: Unused, a temporary file used during testing
