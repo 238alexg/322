@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transfer Report</title>
+	</head>
+	<body>
+		<a href="/dashboard">Go Back To Dashboard</a>
+		<h1>Transfer Report</h1>
+		<table style="width:75%">
+			<tr>
+				<th>Asset Tag</th>
+				<th>Load Time</th>
+				<th>Unload Time</th>
+			</tr>
+		{% for result in results  %}
+			<tr>
+				<td>{{ result[0] }}</td>
+				<td>{{ result[1] }}</td>
+				<td>{{ result[2] }}</td>
+			</tr>
+		{% endfor  %}
+		</table><br>
+		
+		<h1>Generate Report</h1>
+		<form method="post" action="/transfer_report" name="transfer_report" id="transfer_report">
+			<input type="datetime-local" name="date"><br>
+			<input type="submit" value="Generate Report">
+		</form>
+	</body>
+</html>
+<!DOCTYPE html>

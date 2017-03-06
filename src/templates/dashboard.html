@@ -20,11 +20,19 @@
 		
 		<table>
 			<tr>
-				<th>Assets Needing Time Set</th>
+				<th>Assets In Transit</th>
 			</tr>
 			{% for transfer in transfers  %}
 			<tr>
-				<td><a href="/">{{ transfer[0] }}</a></td>
+				<td><a href="/update_transit/{{ transfer[1] }}">{{ transfer[0] }}</a></td>
+			</tr>
+			{% endfor %}
+			<tr>
+				<th>Assets Before Loading</th>
+			</tr>
+			{% for transfer in loadedTransfers %}
+			<tr>
+				<td><a href="/update_transit/{{ transfer[1] }}">{{ transfer[0] }}</a></td>
 			</tr>
 			{% endfor %}
 		</table>
@@ -33,15 +41,11 @@
 			<tr>
 				<th>Asset</th>
 				<th>Destination</th>
-				<th>Approve</th>
-				<th>Disapprove</th>
 			</tr>
 			{% for transfer in transfers  %}
 			<tr>
-				<td>{{ transfer[0] }}</td>
-				<td>{{ transfer[1] }}</td>
-				<td><a href="/approve_req/{{ transfer[2] }}/True">Approve</a></td>
-				<td><a href="/approve_req/{{ transfer[2] }}/False">Disapprove</a></td>
+				<td><a href="/approve_req/{{ transfer[2] }}">{{ transfer[0] }}</a></td>
+				<td><a href="/approve_req/{{ transfer[2] }}">{{ transfer[1] }}</a></td>
 			</tr>
 			{% endfor %}
 		</table>

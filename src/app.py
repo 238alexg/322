@@ -95,9 +95,13 @@ def create_user():
 def dashboard(message=''):
     if (session['role'] == "Logistics Officer"):
         # Select all asset tags from transfers without a set load to unload time
-        cur.execute("SELECT assets.tag FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt IS NULL OR transfers.unload_dt IS NULL)")
+        cur.execute("SELECT assets.tag, transfers.transfer_pk FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.unload_dt IS NULL) AND (transfers.load_dt IS NOT NULL) AND (transfers.approver_fk IS NOT NULL)")
         transfers = cur.fetchall()
-        return render_template('dashboard.html', username=session['username'],role=session['role'], message=message, transfers=transfers)
+        
+        cur.execute("SELECT assets.tag, transfers.transfer_pk FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt IS NULL) AND (transfers.approver_fk IS NOT NULL)")
+        loadedTransfers = cur.fetchall()
+
+        return render_template('dashboard.html', username=session['username'],role=session['role'], message=message, transfers=transfers, loadedTransfers=loadedTransfers)
     elif (session['role'] == "Facilities Officer"):
         # Select all transfers still needing approval
         cur.execute("SELECT assets.tag, facilities.name, transfers.transfer_pk FROM assets, facilities, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk) AND (transfers.approver_fk IS NULL)")
@@ -185,7 +189,9 @@ def dispose_asset():
     
     # If visiting page, load vanilla page
     elif (request.method == 'GET'):
-        return render_template('dispose_asset.html')
+        cur.execute("SELECT * FROM assets")
+        assets = cur.fetchall()
+        return render_template('dispose_asset.html', assets=assets)
     
     # If trying to dispose of an asset
     elif (request.method == 'POST'):
@@ -300,26 +306,73 @@ def transfer_req():
         return render_template("success.html", message="Transfer request for asset " + tag + " successfully submitted") 
 
 # Route to approve of transit requests
-@app.route('/approve_req/<transfer_pk>', methods=['GET','POST'])
-def approve_req(transfer_pk=-1):
+@app.route('/approve_req/<transfer_pk>', methods=['GET'])
+@app.route('/approve_req/<transfer_pk>/<approve>', methods=['POST'])
+def approve_req(transfer_pk=-1, approve="True"):
     if (session['role'] != "Facilities Officer"):
-        return render_template('error.html', error="Must be a Facilities Officer in order to view this page!")
+        return render_template('error.html', error="Must be a Facilities Officer to approve assets!")
     elif (request.method == 'GET'):
         if (transfer_pk == -1):
             return render_template('error.html', error="Invalid transfer key! Transfer is not logged in the database!")
         else:
-
-            return render_template('approve_req.html', 
-        
-        elif (approve):
+            cur.execute("SELECT assets.tag, facilities.name, transfers.transfer_pk FROM assets, facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk)")
+            transfer = cur.fetchone()
+            return render_template('approve_req.html', transfer=transfer)
+    elif (request.method == 'POST'):
+        # If transfer is approved, update DB with approving user and datetime of approval
+        if (approve == "True"):
             cur.execute("SELECT user_pk FROM users WHERE users.username = \'" + session['username'] + "\';")
             user_pk = cur.fetchone()[0]
             cur.execute("UPDATE transfers SET approver_fk = %s, approve_dt = %s WHERE transfers.transfer_pk = %s", (user_pk, datetime.now(), transfer_pk))
+            message = "Transfer approved"
+        # If transfer is not approved, remove it from the DB
         else:
             cur.execute("DELETE FROM transfers WHERE transfers.transfer_pk = \'" + str(transfer_pk) + "\';")
-
+            message = "Transfer removed from databse"
+        # Regardless of approval, save DB changes and redirect to dashboard
         conn.commit()
-        return redirect('/dashboard')
+        return redirect('/dashboard/' + message)
+
+# Route to set the load and unload times of approved transfer requests
+@app.route('/update_transit/<transfer_pk>', methods=['GET', 'POST'])
+def update_transit(transfer_pk = -1):
+    if (session['role'] != "Logistics Officer"):
+        return render_template('error.html', error="Only Logistics Officers can update load and unload times!")
+    elif (request.method == 'GET'):
+        if (transfer_pk == -1):
+            return render_template('error.html', error="Invalid transfer key! Transfer does not exist in the database!")
+        else:
+            cur.execute("SELECT assets.tag, facilities.name, transfer_pk, transfers.load_dt FROM assets, facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk)")
+            transfer = cur.fetchone()
+            cur.execute("SELECT facilities.name FROM facilities, transfers WHERE (transfers.transfer_pk = \'" + str(transfer_pk) + "\') AND (facilities.facility_pk = transfers.source_fk)")
+            source = cur.fetchone()[0]
+            return render_template('update_transit.html', transfer=transfer, source=source)
+    elif (request.method == 'POST'):
+        if (request.form.get('load_dt')):
+            rawLDT = request.form.get('load_dt')
+            load_dt = datetime.strptime(rawLDT, "%Y-%m-%d" + "T" + "%H:%M")
+            cur.execute("UPDATE transfers SET load_dt = %s WHERE transfers.transfer_pk = %s", (load_dt, transfer_pk))
+            message = "Transfer load time recorded"
+        elif (request.form.get('unload_dt')):
+            rawUDT = request.form.get('unload_dt')
+            unload_dt = datetime.strptime(rawUDT, "%Y-%m-%d" + "T" + "%H:%M")
+            cur.execute("UPDATE transfers SET unload_dt = %s WHERE transfers.transfer_pk = %s", (unload_dt, transfer_pk))
+            message = "Transfer unload time recorded"
+        conn.commit()
+        return redirect("/dashboard/" + message)
+
+# Route for a transfer report of all assets in transit
+@app.route('/transfer_report', methods=['GET','POST'])
+def transfer_report():
+    if (request.method == 'GET'):
+        return render_template('transfer_report.html')
+    elif (request.method == 'POST'):
+        rawdt = request.form.get('date')
+        dtobj = datetime.strptime(rawdt, "%Y-%m-%d" + "T" + "%H:%M")
+        cur.execute("SELECT assets.tag, transfers.load_dt, transfers.unload_dt FROM assets, transfers WHERE (transfers.load_dt <= %s) AND (transfers.unload_dt >= %s) AND (transfers.asset_fk = assets.assets_pk)", (dtobj, dtobj))
+        results = cur.fetchall()
+
+        return render_template('transfer_report.html', results=results)
 
 # Logs user out of the session and returns them to the login screen
 @app.route('/logout', methods=['GET','POST'])

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Update Transit</title>
+	</head>
+	<body>
+		<h1>Update Timeline of Asset {{ transfer[0] }} from {{ source }} to {{ transfer[1] }}</h1>
+
+		{% if transfer[3] == None %}
+		<h3>Confirming Asset LOAD TIME</h3>
+		<form method="post" action="/update_transit/{{ transfer[2] }}">
+			<p>Load time: <input type="datetime-local" name="load_dt"></p>
+			<input type="Submit" value="Confirm Load Time">
+		</form><br><br>
+		{% else %}
+		<h3>Confirming Asset UNLOAD TIME</h3>
+		<form method="post" action="/update_transit/{{ transfer[2] }}">
+			<p>Unload time: <input type="datetime-local" name="unload_dt"></p>
+			<input type="Submit" value="Confirm Unload Time">
+		</form><br><br>
+		{% endif %}
+
+		<a href="/dashboard">Back to Dashboard</a>
+	</body>
+</html>
+<!DOCTYPE html>

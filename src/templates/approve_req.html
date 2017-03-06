@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transfer Approval</title>
+	</head>
+	<body>
+		<h1>Tramsfer Approval of Asset {{ transfer[0] }} to {{ transfer[1] }}</h1>
+		
+		<form method="post" action="/approve_req/{{ transfer[2] }}/True">
+			<input type="Submit" value="Approve">
+		</form>
+		<form method="post" action="/approve_req/{{ transfer[2] }}/False">
+			<input type="Submit" value="Disapprove">
+		</form><br><br>
+
+		<a href="/dashboard">Back to Dashboard</a>
+	</body>
+</html>
+<!DOCTYPE html>
