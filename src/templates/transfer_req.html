@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transfer Request</title>
+	</head>
+	<body>
+		<a href="/dashboard">Go Back To Dashboard</a>
+		<h1>Transfer Request Form</h1>
+		<h3>Outstanding Assets</h3>
+		<table>
+			<tr>
+				<th>Asset Tag</th>
+				<th>Asset Facility</th>
+			</tr>
+			{% for asset in assets %}
+			<tr>
+				<td>{{ asset[0] }}</td>
+				<td>{{ asset[1] }}</td>
+			</tr>
+			{% endfor %}
+		</table><br><br>
+		<form method="post" action="/transfer_req" name="transfer_req" id="transfer_req">
+			<select name="source">
+				{% for facility in facilities %}
+				<option>{{ facility[0] }}</option>
+				{% endfor %}
+			</select><br>
+			<select name="dest">
+				{% for facility in facilities %}
+				<option>{{ facility[0] }}</option>
+				{% endfor %}
+			</select><br>
+			<input type="text" name="tag" placeholder="Asset Tag">
+			<input type="submit" value="Request Transfer">
+		</form>
+	</body>
+</html>
+<!DOCTYPE html>

@@ -42,26 +42,18 @@ CREATE TABLE assets (
   -- submit_dt and approve_dt as datetimes specifying the date something was submitted/approved
   -- source_fk and dest_fk to reference facilities where asset is being transfered to/from
   -- asset_fk to reference the asset being transferred
+  -- load_dt and unload_dt as datetimes specifying when asset was loaded/unloaded
+    -- These two values eliminate the need for a seperate "in transit" table
 CREATE TABLE transfers (
 	transfer_pk serial primary key,
 	requester_fk integer REFERENCES users,
 	submit_dt timestamp,
 	source_fk integer REFERENCES facilities,
+	load_dt timestamp NULL,
 	dest_fk integer REFERENCES facilities,
+	unload_dt timestamp NULL,
 	asset_fk integer REFERENCES assets,
 	approver_fk integer REFERENCES users,
 	approve_dt timestamp
 );
-
--- Assets in transit table. PK for indexing
-  -- source_fk and dest_fk to reference facilities asset being transported between
-  -- load_dt and unload_dt to track time when asset is not at a facility
-CREATE TABLE intransits (
-	intransit_pk serial primary key,
-	source_fk integer REFERENCES facilities,
-	load_dt timestamp,
-	dest_fk integer REFERENCES facilities,
-	unload_dt timestamp
-);
-
 

@@ -28,6 +28,12 @@ def login():
                 # Password matches form data
                 if (user[2] == pw):
                     session['username'] = loginUN
+                    
+                    # Save role in session
+                    cur.execute("SELECT roles.rolename FROM roles WHERE roles.roles_pk = \'" + str(user[3]) + "\';")
+                    rolename = cur.fetchone()
+                    session['role'] = rolename[0]
+
                     return redirect('/dashboard')
                 else:
                     return render_template('login.html', error="Incorrect password!")
@@ -75,6 +81,7 @@ def create_user():
             # Commit changes, login user
             conn.commit()
             session['username'] = loginUN
+            session['role'] = role
             return redirect('/dashboard')
         else:
             return render_template('create_user.html', error="Cannot have blank username or password!")
@@ -83,9 +90,21 @@ def create_user():
     return render_template('create_user.html', error=" ")
 
 # Route that presents incrediably simple dashboard with the user's username, and logout button
+@app.route('/dashboard/<string:message>', methods=['GET'])
 @app.route('/dashboard', methods=['GET'])
-def dashboard():
-    return render_template('dashboard.html', username=session['username'])
+def dashboard(message=''):
+    if (session['role'] == "Logistics Officer"):
+        # Select all asset tags from transfers without a set load to unload time
+        cur.execute("SELECT assets.tag FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt IS NULL OR transfers.unload_dt IS NULL)")
+        transfers = cur.fetchall()
+        return render_template('dashboard.html', username=session['username'],role=session['role'], message=message, transfers=transfers)
+    elif (session['role'] == "Facilities Officer"):
+        # Select all transfers still needing approval
+        cur.execute("SELECT assets.tag, facilities.name, transfers.transfer_pk FROM assets, facilities, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_pk = transfers.dest_fk) AND (transfers.approver_fk IS NULL)")
+        transfers = cur.fetchall()
+        return render_template('dashboard.html', username=session['username'], role=session['role'], message=message, transfers=transfers)
+    
+    return render_template('dashboard.html', username=session['username'], role=session['role'], message=message)
 
 # Route to add a facility
 @app.route('/add_facility', methods=['GET','POST'])
@@ -158,13 +177,10 @@ def add_asset():
 def dispose_asset():
     # Get logged in user's UN
     loginUN = session['username']
-
-    # Find user's role in the DB
-    cur.execute("SELECT roles.rolename FROM users, roles WHERE (users.username = \'" + loginUN + "\' AND users.role_fk = roles.roles_pk)")
-    role = cur.fetchone()
+    role = session['role']
 
     # If they don't have the correct role, error
-    if (role[0] != "Logistics Officer"):
+    if (role != "Logistics Officer"):
         return render_template("error.html", error="User's role must be Losgistics Officer in order to modify assets")
     
     # If visiting page, load vanilla page
@@ -233,6 +249,78 @@ def asset_report():
         print (assets)
         return render_template('asset_report.html', assets=assets, facilities=facilityNames)
 
+# Route to initiate transit requests
+@app.route('/transfer_req', methods=['GET','POST'])
+def transfer_req():
+    if (session['role'] != "Logistics Officer"):
+        return render_template('error.html', error="Must be a Logistics Officer to initiate transfer requests!")
+    elif (request.method == "GET"):
+        cur.execute("SELECT facilities.name FROM facilities")
+        facilities = cur.fetchall()
+        cur.execute("SELECT assets.tag, facilities.name FROM assets, facilities WHERE assets.facility_fk = facilities.facility_pk")
+        assets = cur.fetchall()
+        return render_template('transfer_req.html', facilities=facilities, assets=assets)
+    elif (request.method == "POST"):
+        # Check validity of asset tag (kept as text input instead of select options since it sounded 
+        # like some kind of input validation was needed)
+        tag = request.form.get('tag')
+        cur.execute("SELECT * FROM assets WHERE assets.tag = \'" + tag + "\';")
+        asset = cur.fetchone()
+        if (asset == None):
+            return render_template('error.html', error="Error: Asset tag does not exist!")
+        
+        source = request.form.get('source')
+        dest = request.form.get('dest')
+
+        # If user tries to transfer asset to the same facility
+        if (source == dest):
+            return render_template('error.html', error="Source and destination cannot be the same facility!")
+
+        # Since facilities are loaded into select from DB, they must be valid, no validation necessary
+        cur.execute("SELECT facilities.facility_pk FROM facilities WHERE facilities.name = \'" + source + "\';")
+        source_fk = cur.fetchone()
+       
+        print (source_fk)
+
+        if (asset[3] != source_fk[0]):
+            return render_template('error.html', error="Asset is not at the source facility!")
+        
+        cur.execute("SELECT facilities.facility_pk FROM facilities WHERE facilities.name = \'" + dest + "\';")
+        dest_fk = cur.fetchone()
+
+        curdt = datetime.now()
+
+        cur.execute("SELECT users.user_pk FROM users WHERE users.username = \'" + session['username'] + "\';")
+        user = cur.fetchone()
+        
+        # Insert transfer request into table and commit
+        cur.execute("INSERT INTO transfers (requester_fk, submit_dt, source_fk, dest_fk, asset_fk) VALUES (%s, %s, %s, %s, %s)", (user[0], curdt, source_fk[0], dest_fk[0], asset[0]))
+        conn.commit()
+
+        return render_template("success.html", message="Transfer request for asset " + tag + " successfully submitted") 
+
+# Route to approve of transit requests
+@app.route('/approve_req/<transfer_pk>', methods=['GET','POST'])
+def approve_req(transfer_pk=-1):
+    if (session['role'] != "Facilities Officer"):
+        return render_template('error.html', error="Must be a Facilities Officer in order to view this page!")
+    elif (request.method == 'GET'):
+        if (transfer_pk == -1):
+            return render_template('error.html', error="Invalid transfer key! Transfer is not logged in the database!")
+        else:
+
+            return render_template('approve_req.html', 
+        
+        elif (approve):
+            cur.execute("SELECT user_pk FROM users WHERE users.username = \'" + session['username'] + "\';")
+            user_pk = cur.fetchone()[0]
+            cur.execute("UPDATE transfers SET approver_fk = %s, approve_dt = %s WHERE transfers.transfer_pk = %s", (user_pk, datetime.now(), transfer_pk))
+        else:
+            cur.execute("DELETE FROM transfers WHERE transfers.transfer_pk = \'" + str(transfer_pk) + "\';")
+
+        conn.commit()
+        return redirect('/dashboard')
+
 # Logs user out of the session and returns them to the login screen
 @app.route('/logout', methods=['GET','POST'])
 def logout():
@@ -240,6 +328,6 @@ def logout():
     return render_template('/login.html', error="Successfully logged out!")
 
 # When not using mod-wsgi, uncomment below
-#app.run(host='0.0.0.0', port='8080')
+app.run(host='0.0.0.0', port='8080')
 
 

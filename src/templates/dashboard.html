@@ -7,10 +7,45 @@
 		<h1>Hello, {{ username }}</h1>
 		<h2>What would you like to do today?</h2>
 
+		<p style="color:green">{{ message }}</p>
+
 		<a href="/add_facility">Add Facility</a><br>
 		<a href="/add_asset">Add Asset</a><br>
+		<a href="/asset_report">Asset Report</a><br>
+		<a href="/transfer_report">Transfer Report</a><br><br>
+		
+		{% if (role == "Logistics Officer") %}
 		<a href="/dispose_asset">Dispose Asset</a><br>
-		<a href="/asset_report">Asset Report</a><br><br>
+		<a href="/transfer_req">Transfer Request</a><br><br>
+		
+		<table>
+			<tr>
+				<th>Assets Needing Time Set</th>
+			</tr>
+			{% for transfer in transfers  %}
+			<tr>
+				<td><a href="/">{{ transfer[0] }}</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% elif (role == "Facilities Officer") %}
+		<table>
+			<tr>
+				<th>Asset</th>
+				<th>Destination</th>
+				<th>Approve</th>
+				<th>Disapprove</th>
+			</tr>
+			{% for transfer in transfers  %}
+			<tr>
+				<td>{{ transfer[0] }}</td>
+				<td>{{ transfer[1] }}</td>
+				<td><a href="/approve_req/{{ transfer[2] }}/True">Approve</a></td>
+				<td><a href="/approve_req/{{ transfer[2] }}/False">Disapprove</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif  %}
 
 		<a href="/logout">Logout</a>
 	</body>

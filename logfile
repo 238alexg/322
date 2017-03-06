@@ -2342,3 +2342,1434 @@ LOG:  redo is not required
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  column roles.pk does not exist at character 40
+STATEMENT:  SELECT roles.rolename FROM roles WHERE roles.pk = '1';
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  column assets.asset_pk does not exist at character 39
+HINT:  Perhaps you meant to reference the column "assets.assets_pk".
+STATEMENT:  SELECT assets.tag FROM assets WHERE ((assets.asset_pk = transfers.asset_fk) AND (transfers.load_dt = NULL OR transfers.unload_dt = NULL))
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  missing FROM-clause entry for table "transfers" at character 58
+STATEMENT:  SELECT assets.tag FROM assets WHERE ((assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt = NULL OR transfers.unload_dt = NULL))
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		dest_fk integer REFERENCES facilities,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "intransits" already exists
+STATEMENT:  CREATE TABLE intransits (
+		intransit_pk serial primary key,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp
+	);
+ERROR:  column transfers.load_dt does not exist at character 94
+STATEMENT:  SELECT assets.tag FROM assets, transfers WHERE ((assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt = NULL OR transfers.unload_dt = NULL))
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  missing FROM-clause entry for table "transfer" at character 93
+STATEMENT:  SELECT assets.tag FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfer.load_dt = NULL)
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  invalid input syntax for type timestamp: "" at character 113
+STATEMENT:  SELECT assets.tag FROM assets, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (transfers.load_dt = '')
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  column facilities.facility_fk does not exist at character 122
+HINT:  Perhaps you meant to reference the column "facilities.facility_pk".
+STATEMENT:  SELECT assets.tag, facilities.name FROM assets, facilities, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_fk = transfers.dest_fk) AND (transfers.approver_fk IS NULL)
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  column facilities.facility_fk does not exist at character 122
+HINT:  Perhaps you meant to reference the column "facilities.facility_pk".
+STATEMENT:  SELECT assets.tag, facilities.name FROM assets, facilities, transfers WHERE (assets.assets_pk = transfers.asset_fk) AND (facilities.facility_fk = transfers.dest_fk) AND (transfers.approver_fk IS NULL)
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  invalid input syntax for integer: "Los Angeles" at character 122
+STATEMENT:  UPDATE transfers SET approver_fk = 2, approve_dt = '2017-03-06T01:34:02.925539'::timestamp WHERE transfers.transfer_pk = 'Los Angeles'
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
