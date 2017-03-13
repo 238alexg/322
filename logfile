@@ -5417,3 +5417,130 @@ STATEMENT:  CREATE TABLE transfers (
 		approver_fk integer REFERENCES users,
 		approve_dt timestamp
 	);
+LOG:  database system was interrupted; last known up at 2017-03-06 04:45:37 UTC
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  invalid record length at 0/1E090D0
+LOG:  redo is not required
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "roles" already exists
+STATEMENT:  CREATE TABLE roles (
+		roles_pk serial primary key,
+		rolename varchar(25)
+	);
+ERROR:  relation "facilities" already exists
+STATEMENT:  CREATE TABLE facilities (
+		facility_pk serial primary key,
+		name varchar(32),
+		code varchar(6)
+	);
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+		
+		user_pk serial primary key,
+		
+		username varchar(16),
+		
+		password varchar(16),
+		role_fk integer REFERENCES roles
+	);
+ERROR:  relation "assets" already exists
+STATEMENT:  CREATE TABLE assets (
+		assets_pk serial primary key,
+		tag varchar(16),
+		description text,
+		facility_fk integer REFERENCES facilities NULL,
+		arrival_dt timestamp
+	);
+ERROR:  relation "transfers" already exists
+STATEMENT:  CREATE TABLE transfers (
+		transfer_pk serial primary key,
+		requester_fk integer REFERENCES users,
+		submit_dt timestamp,
+		source_fk integer REFERENCES facilities,
+		load_dt timestamp NULL,
+		dest_fk integer REFERENCES facilities,
+		unload_dt timestamp NULL,
+		asset_fk integer REFERENCES assets,
+		approver_fk integer REFERENCES users,
+		approve_dt timestamp
+	);
+ERROR:  invalid reference to FROM-clause entry for table "assets" at character 8
+HINT:  Perhaps you meant to reference the table alias "a".
+STATEMENT:  SELECT assets.tag, assets.description, facilities.name, assets.arrival_dt, assets.diaposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY assets.tag ASC
+ERROR:  invalid reference to FROM-clause entry for table "facilities" at character 30
+HINT:  Perhaps you meant to reference the table alias "f".
+STATEMENT:  SELECT a.tag, a.description, facilities.name, a.arrival_dt, a.diaposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY assets.tag ASC
+ERROR:  column a.diaposal_dt does not exist at character 52
+HINT:  Perhaps you meant to reference the column "a.disposal_dt".
+STATEMENT:  SELECT a.tag, a.description, f.name, a.arrival_dt, a.diaposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY assets.tag ASC
+ERROR:  invalid reference to FROM-clause entry for table "assets" at character 140
+HINT:  Perhaps you meant to reference the table alias "a".
+STATEMENT:  SELECT a.tag, a.description, f.name, a.arrival_dt, a.disposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY assets.tag ASC
+ERROR:  syntax error at or near "true" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive true;
+ERROR:  syntax error at or near "True" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive True;
+ERROR:  syntax error at or near "T" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive T;
+ERROR:  syntax error at or near "'True'" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive 'True';
+ERROR:  type "anytpe" does not exist
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive TYPE anytpe;
+ERROR:  syntax error at or near "VALUE" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive VALUE ;
+ERROR:  syntax error at or near "'True'" at character 1
+STATEMENT:  'True';
+ERROR:  syntax error at or near "VALUE" at character 41
+STATEMENT:  ALTER TABLE users ALTER COLUMN isActive VALUE 'True';
+ERROR:  syntax error at or near "'True'" at character 23
+STATEMENT:  UPDATE users.isActive 'True'
+	select * from users;
+ERROR:  syntax error at or near "'True'" at character 23
+STATEMENT:  UPDATE users.isActive 'True';
+ERROR:  column roles.role_pk does not exist at character 77
+HINT:  Perhaps you meant to reference the column "roles.roles_pk".
+STATEMENT:  SELECT username, password, role.rolename, isActive FROM users JOIN roles ON roles.role_pk = users.role_fk
+ERROR:  syntax error at or near "users" at character 211
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.users_pk = transfers.requester_fk, JOIN users a ON a.users_pk = transfers.approver_fk, JOIN facilities s ON s.facility_pk = transfers.source_fk, JOIN facilities d ON d.facility_pk = transfers.destination_fk
+ERROR:  column r.users_pk does not exist at character 169
+HINT:  Perhaps you meant to reference the column "r.user_pk".
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.users_pk = transfers.requester_fk JOIN users a ON a.users_pk = transfers.approver_fk JOIN facilities s ON s.facility_pk = transfers.source_fk JOIN facilities d ON d.facility_pk = transfers.destination_fk
+ERROR:  column transfers.destination_fk does not exist at character 348
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.user_pk = transfers.requester_fk JOIN users a ON a.user_pk = transfers.approver_fk JOIN facilities s ON s.facility_pk = transfers.source_fk JOIN facilities d ON d.facility_pk = transfers.destination_fk
+ERROR:  missing FROM-clause entry for table "assets" at character 8
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.user_pk = transfers.requester_fk JOIN users a ON a.user_pk = transfers.approver_fk JOIN facilities s ON s.facility_pk = transfers.source_fk JOIN facilities d ON d.facility_pk = transfers.dest_fk
+ERROR:  column assets.asset_pk does not exist at character 381
+HINT:  Perhaps you meant to reference the column "assets.assets_pk".
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.user_pk = transfers.requester_fk JOIN users a ON a.user_pk = transfers.approver_fk JOIN facilities s ON s.facility_pk = transfers.source_fk JOIN facilities d ON d.facility_pk = transfers.dest_fk JOIN assets ON assets.asset_pk = transfers.asset_fk
+ERROR:  missing FROM-clause entry for table "transfer" at character 32
+STATEMENT:  SELECT assets.tag, r.username, transfer.submit_dt, a.username, transfer.approve_dt, s.code, d.code, transfer.load_dt, transfer.unload_dt FROM transfers JOIN users r ON r.user_pk = transfers.requester_fk JOIN users a ON a.user_pk = transfers.approver_fk JOIN facilities s ON s.facility_pk = transfers.source_fk JOIN facilities d ON d.facility_pk = transfers.dest_fk JOIN assets ON assets.assets_pk = transfers.asset_fk
+ERROR:  relation "roles" does not exist at character 15
+STATEMENT:  SELECT * FROM roles WHERE roles.rolename = 'Logistics Officer'
+ERROR:  column "isactive" of relation "users" does not exist at character 49
+STATEMENT:  INSERT INTO users (username, password, role_fk, isActive) VALUES ('asdf', 'asdf', 'Logistics Officer', 'True')
+ERROR:  invalid input syntax for integer: "Logistics Officer" at character 83
+STATEMENT:  INSERT INTO users (username, password, role_fk, isActive) VALUES ('asdf', 'asdf', 'Logistics Officer', 'True')
+ERROR:  column a.disposal_dt does not exist at character 52
+STATEMENT:  SELECT a.tag, a.description, f.code, a.arrival_dt, a.disposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY a.tag ASC
+ERROR:  column "dispose_dt" of relation "assets" does not exist at character 64
+STATEMENT:  INSERT INTO assets (tag, description, facility_fk, arrival_dt, dispose_dt) VALUES ('MILK', 'Milk', 1, '2017-03-05T01:01:00', 'NULL')
+ERROR:  column "dispose_dt" of relation "assets" does not exist at character 64
+STATEMENT:  INSERT INTO assets (tag, description, facility_fk, arrival_dt, dispose_dt) VALUES ('MILK', 'Milk', 1, '2017-03-05T01:01:00', 'NULL')
+ERROR:  syntax error at or near "DELETE" at character 20
+STATEMENT:  ALTER TABLE assets DELETE COLUMN disposal_dt;
+ERROR:  syntax error at or near "REMOVE" at character 20
+STATEMENT:  ALTER TABLE assets REMOVE COLUMN disposal_dt;
+ERROR:  invalid input syntax for type timestamp: "NULL" at character 126
+STATEMENT:  INSERT INTO assets (tag, description, facility_fk, arrival_dt, dispose_dt) VALUES ('MILK', 'Milk', 1, '2017-03-05T01:01:00', 'NULL')
+ERROR:  invalid input syntax for type timestamp: "NULL" at character 126
+STATEMENT:  INSERT INTO assets (tag, description, facility_fk, arrival_dt, dispose_dt) VALUES ('MILK', 'Milk', 1, '2017-03-05T01:01:00', 'NULL')
+ERROR:  unterminated quoted string at or near "'" at character 96
+STATEMENT:  SELECT r.user_pk, a.user_pk FROM users r, users a WHERE (r.username = 'asdf' AND a.username = a'
+ERROR:  syntax error at end of input at character 98
+STATEMENT:  SELECT r.user_pk, a.user_pk FROM users r, users a WHERE (r.username = 'asdf' AND a.username = 'a'
+ERROR:  syntax error at or near "%" at character 131
+STATEMENT:  INSERT INTO transfers(requester_fk, submit_dt, source_fk, load_dt, dest_fk, unload_dt, asset_fk, approver_fk, approve_dt) VALUES (%s, %s, %s, NULL, %s, NULL, %s, '2', '2017-03-06T01:35:24.599153')
+ERROR:  relation "asssets" does not exist at character 15
+STATEMENT:  select * from asssets;
