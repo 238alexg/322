@@ -5542,3 +5542,5 @@ ERROR:  syntax error at end of input at character 98
 STATEMENT:  SELECT r.user_pk, a.user_pk FROM users r, users a WHERE (r.username = 'asdf' AND a.username = 'a'
 ERROR:  syntax error at or near "%" at character 131
 STATEMENT:  INSERT INTO transfers(requester_fk, submit_dt, source_fk, load_dt, dest_fk, unload_dt, asset_fk, approver_fk, approve_dt) VALUES (%s, %s, %s, NULL, %s, NULL, %s, '2', '2017-03-06T01:35:24.599153')
+ERROR:  relation "asssets" does not exist at character 15
+STATEMENT:  select * from asssets;
