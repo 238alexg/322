@@ -25,7 +25,8 @@ CREATE TABLE users (
 	username varchar(16),
 	-- Similarly, I am using a 16-character password (since it is in the project specification), with a variable size.
 	password varchar(16),
-	role_fk integer REFERENCES roles
+	role_fk integer REFERENCES roles,
+	isActive boolean
 );
 
 -- Assets table, with PK, up to 16 chars for tag, and any length for description
@@ -34,7 +35,8 @@ CREATE TABLE assets (
 	tag varchar(16),
 	description text,
 	facility_fk integer REFERENCES facilities NULL,
-	arrival_dt timestamp
+	arrival_dt timestamp,
+	dispose_dt timestamp NULL
 );
 
 -- Transfer request table. PK for indexing. 
