@@ -25,8 +25,11 @@ def login():
 
             # If username exists, check password
             if (user != None):
+                if (user[4] == False):
+                    return render_template('error.html', error="User exists but is not active! Use the CLI client to set active status for " + loginUN)
+
                 # Password matches form data
-                if (user[2] == pw):
+                elif (user[2] == pw):
                     session['username'] = loginUN
                     
                     # Save role in session
