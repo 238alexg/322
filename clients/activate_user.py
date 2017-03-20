@@ -20,7 +20,15 @@ def main():
     args = dict()
     args['username'] = sys.argv[2]
     args['password'] = sys.argv[3]
-    args['role'] = sys.argv[4]
+    role = sys.argv[4]
+    
+    if (role == "facofc"):
+        args['role'] = "Facilities Officer"
+    elif (role == "logofc"):
+        args['role'] = "Logistics Officer"
+    else:
+        print ("Role must be one of the following:\nfacofc = Facilities Officer\nlogofc = Logistics Officer")
+        return
 
     # Set up data
     data = urlencode(args)
