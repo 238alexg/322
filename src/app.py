@@ -45,23 +45,25 @@ def login():
     return render_template('login.html', error=" ")
 
 # Route for creating new users. If user already exists, loads error into html
-@app.route('/create_user', methods=['GET','POST'])
+@app.route('/activate_user', methods=['GET','POST'])
 def create_user():
     if (request.method == 'POST'):
-        loginUN = request.form.get('username')
-        pw = request.form.get('password')
-        role = request.form.get('role')
+        loginUN = request.form['username']
+        pw = request.form['password']
+        role = request.form['role']
 
         # If user provided username and password
         if ((loginUN != "") & (pw != "")):
             cur.execute("SELECT * FROM users WHERE users.username = \'" + loginUN + "\';")
             user = cur.fetchone()
 
-            # If username is available, create user or return with error
+            # If user exists, update password and active status
             if (user != None):
-                return render_template('create_user.html', error="User already exists!")
+                cur.execute("UPDATE users SET password = %s, isActive = True WHERE user_pk = %s", (pw, user[0]))
+                conn.commit()
+                return ("Updated user " + user[1] + " to active status")
             
-            # If role is entered, try to find it in DB
+            # If role exists, try to find it in DB
             elif (role != None):
                 cur.execute("SELECT * FROM roles WHERE roles.rolename = \'" + role + "\'")
                 userRole = cur.fetchone()
@@ -73,21 +75,38 @@ def create_user():
                     userRole = cur.fetchone()
                 
                 # Insert new user
-                cur.execute("INSERT INTO users (username, password, role_fk) VALUES (%s, %s, %s)", (loginUN, pw, str(userRole[0])))
-            # If creating user with no role, don't give user a role
+                cur.execute("INSERT INTO users (username, password, role_fk, isActive) VALUES (%s, %s, %s, True)", (loginUN, pw, str(userRole[0])))
+            # If creating user with no role, return error
             else:
-                cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (loginUN, pw))
+                return ("Error: User must have a role")
 
             # Commit changes, login user
             conn.commit()
-            session['username'] = loginUN
-            session['role'] = role
-            return redirect('/dashboard')
+            return ("Successfully created user " + loginUN)
         else:
-            return render_template('create_user.html', error="Cannot have blank username or password!")
+            return ("Error: Cannot have blank username or password!")
     
-    print("GOT HERE")
-    return render_template('create_user.html', error=" ")
+    return render_template('error.html', error="This route is only used by a CLI client now. Thank you for your understanding and patience")
+
+# Route to revoke user access
+@app.route('/revoke_user', methods=['GET','POST'])
+def revoke_user():
+    if (request.method == 'POST'):
+        loginUN = request.form['username']
+
+        cur.execute("SELECT * FROM users WHERE username = '" + loginUN + "';")
+        user = cur.fetchone()
+
+        if (user != None):
+            cur.execute("UPDATE users SET isActive = False WHERE user_pk = '" + str(user[0]) + "';")
+            conn.commit()
+            return ("Successfully revoked active status of user " + loginUN)
+        else:
+            return ("Error: User " + loginUN + " does not exist. Try using the activate_user CLI to add this user")
+        
+    else:
+        return render_template('error.html', error="This route is only used by a CLI client now. Thank you for your understand and patience")
+
 
 # Route that presents incrediably simple dashboard with the user's username, and logout button
 @app.route('/dashboard/<string:message>', methods=['GET'])
@@ -381,6 +400,6 @@ def logout():
     return render_template('/login.html', error="Successfully logged out!")
 
 # When not using mod-wsgi, uncomment below
-app.run(host='0.0.0.0', port='8080')
+#app.run(host='0.0.0.0', port='8080')
 
 
