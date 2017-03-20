@@ -1,0 +1,40 @@
+Getting started: 
+    preflight script calls python3 ../../wsgi, which breaks things. Since I believe 
+    the grader will call apachectl start, this line is unnecessary.
+
+Creating Users:
+    Can create roles besides the specified 2. While this would be useful, it 
+    also allows typos to affect a user's ability to access needed pages. For 
+    instance, someone who has difficulty getting the i's in the right places 
+    in facilities could prevent a user from being able to approve requests. 
+    Not hugely relevant, of course, since we're getting rid of the page and 
+    using clients instead.
+    
+Login:
+    Works as described.
+    
+Add 2 Facilities:
+    Your error page made me laugh, thank you.
+    Works as advertised, and fails as advertised as well.
+    
+Add 2 Assets:
+    The button on your Add Assets page says 'Add Facility'. Also, page 
+    doesn't display a list of assets already in inventory.
+    However, everything you described happening happens perfectly.
+    
+Complete Asset Transfer:
+    Works exactly as advertised(and the different-colored updates 
+    stating what happened are a great idea). 
+    Assets can have load/unload times set before their approval, 
+    and can have unload time set before load time, which would play 
+    merry heck with the reporting system. Speaking of which...
+    
+Complete Asset Report:
+    Works as described; however, I am fairly certain that this is 
+    supposed to display facilities so that a general report(all facilities)
+    will still show what asset is at what location. The report also doesn't 
+    take into account transfers changing an asset's location.
+    
+Complete Transfer Report:
+    Works as described, except in cases where either due to error or malign intent, 
+    the load date is after the unload date.
