@@ -3,6 +3,8 @@
 # import_data.sh
 
 # Download the testable export file
+# NOTE: Curling this file was broken for me, so I instead manually opened
+#   on my mac then pushed the folder thru git.
 #curl https://classes.cs.uoregon.edu//17W/cis322/files/lost_data.tar.gz
 
 # Unpack files to /lost_data

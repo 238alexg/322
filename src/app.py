@@ -428,6 +428,10 @@ def logout():
     return render_template('/login.html', error="Successfully logged out!")
 
 # When not using mod-wsgi, uncomment below
+<<<<<<< HEAD
+# app.run(host='0.0.0.0', port='8080')
+=======
 #app.run(host='0.0.0.0', port='8080')
+>>>>>>> assignment10
 
 
