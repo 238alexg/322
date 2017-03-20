@@ -38,15 +38,20 @@ def login():
                 else:
                     return render_template('login.html', error="Incorrect password!")
             else:
-                return render_template('/create_user.html', error="User doesn't exist. Create new user below!")
+                return render_template('/login.html', error="User doesn't exist. Use CLI client activate_user to add a user!")
         else:
             return render_template('login.html', error="Cannot log in with blank username or password. If you want to create a new user, type in any input and press login, and you will be taken to the page. Alternatively, visit localhost:8080/create_user")
 
     return render_template('login.html', error=" ")
 
+# Error catching route for old create_user route
+@app.route('/create_user', methods = ['GET','POST'])
+def create_user():
+    return render_template('/login.html', error="This route was removed as of Assignment 10. Please use the CLI client activate_user to add or activate a user in the future. Thank you for your patience and understanding")
+
 # Route for creating new users. If user already exists, loads error into html
 @app.route('/activate_user', methods=['GET','POST'])
-def create_user():
+def activate_user():
     if (request.method == 'POST'):
         loginUN = request.form['username']
         pw = request.form['password']
