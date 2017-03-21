@@ -11,7 +11,7 @@ conn = psycopg2.connect(dbname = sys.argv[1], host = '127.0.0.1')
 cur = conn.cursor()
 
 # Get asset_tag, description, facility, aquired, disposed
-cur.execute("SELECT a.tag, a.description, f.code, a.arrival_dt, a.disposal_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY a.tag ASC")
+cur.execute("SELECT a.tag, a.description, f.code, a.arrival_dt, a.dispose_dt FROM assets a JOIN facilities f ON a.facility_fk = f.facility_pk ORDER BY a.tag ASC")
 assets = cur.fetchall()
 
 # Create new/overwrite CSV, load in assets

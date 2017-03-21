@@ -9,7 +9,22 @@
 		<p style="color:red;">{{ error }} </p>
 		
 		<a href="/dashboard">Go Back To Dashboard</a>
-
+		<br>
+		<h3>Current Assets:</h3>
+		<table>
+			<tr>
+				<th>Asset Tag</th>
+				<th>Description</th>
+			</tr>
+			{% for asset in assets %}
+			<tr>
+				<td>{{ asset[1] }}</td>
+				<td>{{ asset[2] }}</td>
+			</tr>
+			{% endfor %}
+		</table><br><br>
+		
+		<h3>Add New Asset:</h3>
 		<form method="post" action="/add_asset" name="add_asset" id="add_asset">
 			<input type="text" name="assetTag" placeholder="Asset Tag"><br>
 			<input type="text" name="assetDesc" placeholder="Description"><br>

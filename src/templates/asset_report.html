@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<a href="/dashboard">Go Back To Dashboard</a>
-		<h1>Asset Report</h1>
+		{% if date %}
+		<h1>Asset Report for {{ facility }} on {{ date }}</h1>
 		<table style="width:75%">
 			<tr>
 				<th>Asset Tag</th>
@@ -18,6 +19,7 @@
 			</tr>
 		{% endfor  %}
 		</table><br>
+		{% endif %}
 		
 		<h1>Generate Report</h1>
 		<form method="post" action="/asset_report" name="asset_report" id="asset_report">

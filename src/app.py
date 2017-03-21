@@ -178,8 +178,11 @@ def add_asset():
         # Get all the facility names
         cur.execute("SELECT name FROM facilities;")
         facilityNames = cur.fetchall()
+        # Get all current assets
+        cur.execute("SELECT * FROM assets;")
+        assets = cur.fetchall()
         # And load them into the page
-        return render_template('add_asset.html', facilities=facilityNames)
+        return render_template('add_asset.html', facilities=facilityNames, assets=assets)
     
     # If trying to add an asset
     elif (request.method == 'POST'):
@@ -241,7 +244,7 @@ def dispose_asset():
                 return render_template('error.html', error="Asset already disposed")
             # Else, update with disposed facility (NULL) and form date
             else:
-                cur.execute("UPDATE assets SET facility_fk = NULL, arrival_dt = %s WHERE assets.tag = %s", (dtobj, tag))
+                cur.execute("UPDATE assets SET dispose_dt = %s WHERE assets.tag = %s", (dtobj, tag))
         # Asset not found, error
         else:
             return render_template('error.html', error="Asset does not exist!")
@@ -271,19 +274,18 @@ def asset_report():
 
         # If no facility indicated, load all assets from DB where arrival date is BEFORE date on form (already arrived)
         if (facility == "All"):
-            cur.execute("SELECT * FROM assets WHERE assets.arrival_dt <= %s", [dtobj])
-            print("GOT HERE")
+            cur.execute("SELECT * FROM assets WHERE (assets.arrival_dt <= %s) AND (assets.dispose_dt IS NULL OR assets.dispose_dt > %s)", (dtobj, dtobj))
         
         # Else do above only with assets from given facility
         else:
             cur.execute("SELECT facilities.facility_pk FROM facilities WHERE facilities.name = \'" + facility + "\'")
             fpk = cur.fetchone()
-            cur.execute("SELECT * FROM assets WHERE (assets.arrival_dt <= %s AND assets.facility_fk = %s)", (dtobj, fpk))
+            cur.execute("SELECT * FROM assets WHERE (assets.arrival_dt <= %s AND assets.facility_fk = %s AND (assets.dispose_dt IS NULL OR assets.dispose_dt > %s))", (dtobj, fpk, dtobj))
 
         # Load report results and facility names into the page
         assets = cur.fetchall()
         print (assets)
-        return render_template('asset_report.html', assets=assets, facilities=facilityNames)
+        return render_template('asset_report.html', assets=assets, facilities=facilityNames, facility=facility, date=dtobj)
 
 # Route to initiate transit requests
 @app.route('/transfer_req', methods=['GET','POST'])
@@ -333,7 +335,7 @@ def transfer_req():
 
         cur.execute("SELECT users.user_pk FROM users WHERE users.username = \'" + session['username'] + "\';")
         user = cur.fetchone()
-        
+
         # Insert transfer request into table and commit
         cur.execute("INSERT INTO transfers (requester_fk, submit_dt, source_fk, dest_fk, asset_fk) VALUES (%s, %s, %s, %s, %s)", (user[0], curdt, source_fk[0], dest_fk[0], asset[0]))
         conn.commit()
